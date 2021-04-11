@@ -1,0 +1,61 @@
+body{
+    background-color: antiquewhite;
+    text-align: center;
+    margin: 20px;
+
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li{
+    display: line
+    
+}
+a{
+    margin: 0px;
+    padding: 4px 4px;
+    position: sticky;
+    color:white;
+    background-color:darkgrey;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    float: right;
+    border-right: 1px solid white;
+}
+.active{
+    background-color:brown;
+}
+.active:hover{
+    background-color: chocolate;
+}
+.hier:hover{
+    background-color: chocolate;
+}
+h1{
+    position: sticky;
+    text-align: center;
+    font-family: Arial, Helvetica, "sans-serif";
+    font-weight: bold;
+    font-style: italic;
+    color: sienna;
+    font-size: 70px;
+}
+p{
+    text-align: center;
+    font-family: Arial, Helvetica, "sans-serif";
+    font-size: 30px;
+    font-weight: bolder;
+    color: saddlebrown;
+
+
+}
+
+#Bild{
+    width: 800px;
+}
+#Foto{
+    width: 800px;
+}

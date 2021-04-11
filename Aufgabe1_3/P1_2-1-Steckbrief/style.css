@@ -54,11 +54,13 @@ p{
 
 }
 #Foto{
+    margin: 0px 50px 50px;
     float: left;
     width: 350px;
 }
 table{
-    width: 500px;
+    padding:50px 200px 100px;
+    width: 1000px;
 }
 th, td{
     border: 1px solid black;

@@ -1,0 +1,120 @@
+body{
+    background-image: url("bg.png");
+    width: 800px;
+    margin: auto;
+    
+}
+header{
+    background: url("Dreieck.png") top center no-repeat ;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+#Navigation{
+    position: sticky;
+    top: 0px;
+    height: 1.5cm;
+}
+li{
+    display: line
+    
+}
+a{
+    background-color:darkgrey;
+    text-decoration: none;
+    color:white;
+    font-family: Arial, Helvetica, "sans-serif";
+    float: right;
+    border-right: 1px solid white;
+    padding: 15px;
+    border-radius: 5px;
+
+}
+.active{
+    background-color:brown;
+}
+.active:hover{
+    background-color: chocolate;
+}
+.hier:hover{
+    background-color: chocolate;
+}
+h1{
+    padding: 10px;
+    position: sticky;
+    text-align: center;
+    font-family: Arial, Helvetica, "sans-serif";
+    font-weight: bold;
+    font-style: italic;
+    color: sienna;
+    font-size: 70px;
+    text-shadow:5px 5px 6px lightgrey;
+}
+p{
+    font-family: Arial, Helvetica, "sans-serif";
+    font-size: 30px;
+    font-weight: bolder;
+    color: saddlebrown;
+}
+i, q{
+    font-family: Arial, Helvetica, "sans-serif";
+}
+.Bild{
+    width: 800px;
+}
+#Foto{
+    width: 150px;
+    
+}
+
+table{
+    padding: 0px;
+    background-color: lightgrey;
+    width: 600px; 
+    float: right;
+}
+th, td{
+    border: 1px solid black;
+    padding: 15px;
+}
+
+
+.Formular p{
+    font-family: Arial, Helvetica, "sans-serif";
+    font-size: 15px;
+    color: #000;
+    padding: 0px;
+}
+.Formular{
+    width: 40%;
+    height: 50%;
+}
+#Nachricht{
+    width: 150%;
+}
+.Media li{
+    list-style: none;
+    margin: 10px 30px;
+    display: inline-block;
+    font-size: 45px;
+    padding: 10px 10px;
+
+}
+.Media{
+    left: 50%;
+    text-align: center;
+}
+.Media a{
+    margin: 10px 30px;
+    padding: 30px;
+    background-color: transparent;
+
+
+}
+.Media li:hover{
+    color: brown;
+}

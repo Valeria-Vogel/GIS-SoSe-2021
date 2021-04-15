@@ -92,6 +92,7 @@ th, td{
 .Formular{
     width: 40%;
     height: 50%;
+    background-color: lightgrey;
 }
 #Nachricht{
     width: 150%;

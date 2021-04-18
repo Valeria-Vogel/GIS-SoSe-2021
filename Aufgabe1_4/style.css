@@ -20,11 +20,11 @@ ul{
     top: 0px;
     height: 1.5cm;
 }
-li{
+ul + li{
     display: line
     
 }
-a{
+li>a{
     background-color:darkgrey;
     text-decoration: none;
     color:white;
@@ -151,12 +151,15 @@ th, td{
     table{
         width: 100%;
     }
-    name::before{
+    #name::before{
         content: "";
         height: 20px;
     }
 }
 @media screen and (max-width: 800px) {
+    body{
+        background-color: goldenrod;
+    }
     .Formular li{
         width:90%;
         height: 50px;

@@ -98,6 +98,7 @@ th, td{
 }
 
 .Formular{
+    margin-top: 30px;
     width: 40%;
     height: 50%;
 }
@@ -150,11 +151,22 @@ th, td{
     table{
         width: 100%;
     }
+    name::before{
+        content: "";
+        height: 20px;
+    }
 }
 @media screen and (max-width: 800px) {
-    .Formular{
+    .Formular li{
         width:90%;
-        height: 70%;
-        margin: 50%;
+        height: 50px;
+        margin-top: 30px;
     }
+    li{
+        display: block;
+    }
+    #Navigation{
+        width: 800px;
+    }
+
 }

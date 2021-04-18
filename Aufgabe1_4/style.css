@@ -6,6 +6,7 @@ body{
 }
 header{
     background: url("Dreieck.png") top center no-repeat ;
+
 }
 
 ul{
@@ -44,7 +45,8 @@ a{
     background-color: chocolate;
 }
 h1{
-    padding: 10px;
+    margin: 20px;
+    padding: 20px;
     position: sticky;
     text-align: center;
     font-family: Arial, Helvetica, "sans-serif";
@@ -53,6 +55,19 @@ h1{
     color: sienna;
     font-size: 70px;
     text-shadow:5px 5px 6px lightgrey;
+    transition: color 4s ease-in-out 0s ;
+    animation-duration: 2s;
+    animation-name: showin;
+}
+@keyframes showin{
+    from{
+        width: 150%;
+    }
+    to{
+        margin: auto;
+        width: 50%;
+
+    }
 }
 p{
     font-family: Arial, Helvetica, "sans-serif";
@@ -91,7 +106,7 @@ th, td{
 }
 .Media li{
     list-style: none;
-    margin: 10px 30px;
+    margin: 10px ;
     display: inline-block;
     font-size: 45px;
     padding: 10px 10px;
@@ -100,13 +115,46 @@ th, td{
 .Media{
     left: 50%;
     text-align: center;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+@keyframes slidein{
+    from{
+        margin-top: 0%;
+        width: 300%;   
+    }
+    to{
+        margin: auto;
+        width: 50%;
+
+    }
 }
 .Media a{
-   
+    margin: 10px;
+    padding: 10px;
     background-color: transparent;
 
 
 }
-.Media li:hover{
+.Media a:hover{
     color: brown;
+}
+
+@media screen and (max-width: 1024px){
+    #Foto{
+        width: 250px;
+       margin: 275px;
+       margin-top: 0px;
+       margin-bottom: 10px;
+    }
+    table{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 800px) {
+    .Formular{
+        width:90%;
+        height: 70%;
+        margin: 50%;
+    }
 }

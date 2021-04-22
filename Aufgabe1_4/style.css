@@ -171,7 +171,7 @@ th, td{
 }
 @media screen and (max-width: 799px) {
     body{
-        width: 800px;
+        width: auto;
         display: block;
         background-color: rgba(189, 162, 95, 0.918);
     }

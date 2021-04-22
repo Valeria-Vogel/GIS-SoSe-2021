@@ -143,7 +143,10 @@ th, td{
     color: brown;
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1023px){
+    body{
+        display: block;
+    }
     #Foto{
         width: 250px;
        margin: 275px;
@@ -160,10 +163,14 @@ th, td{
     .Media a{
         background-color: rgba(221, 151, 124, 0.74);
     }
+    img{
+        margin: auto;
+        width: 90%
+    }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 780px) {
     body{
-
+        display: block;
         background-color: goldenrod;
     }
     .Formular li{

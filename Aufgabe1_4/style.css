@@ -201,6 +201,7 @@ th, td{
     }
     #Foto{
         width:100%;
+        float: left;
         
     }
 

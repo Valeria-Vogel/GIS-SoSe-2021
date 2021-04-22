@@ -184,7 +184,7 @@ th, td{
         display: inline;
     }
     #Navigation{
-        width: 800px;
+        width: 100%;
         background-color: burlywood;
 
     }
@@ -195,6 +195,13 @@ th, td{
     }
     i, q{
         font-size: 20px;
+    }
+    .Bild{
+        width: 100%;
+    }
+    #Foto{
+        width:100%;
+        
     }
 
 }

@@ -146,6 +146,7 @@ th, td{
 @media screen and (max-width: 1023px){
     body{
         display: block;
+        position: relative;
     }
     #Foto{
         width: 250px;
@@ -168,10 +169,11 @@ th, td{
         width: 90%
     }
 }
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 799px) {
     body{
+        width: 800px;
         display: block;
-        background-color: goldenrod;
+        background-color: rgba(189, 162, 95, 0.918);
     }
     .Formular li{
         width:50%;

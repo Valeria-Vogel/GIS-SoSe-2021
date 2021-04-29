@@ -2,7 +2,9 @@ function a1(): void {
     let xyz: string = "Alles";
     console.log(xyz);  //a- String x "Alles" wir in der Konsole ausgegeben b- Es wird am Haltepunkt gehalten und im nächsten Schritt "Alles" ausgegeben
     andere();
+    console.log(xyz);
     weiter();  //a- Es wird auf die Funktion func1 verwiesen b- hier wird auf die funktion verwiesen und im nächsten Schritt wird auf "Klar?"gesprungen
+    console.log(xyz);
     console.log("Logo!");  //a- Nach Ausgabe der Funktion wird "Logo!" ausgegeben
 }   //b- Hier wird "Logo!" ausgegen 
 
@@ -79,12 +81,11 @@ function max(c: number, d: number): number {
 }
 
 //c
-let nummer: number = 1;  //verlangsamt den Browser und läd nicht zu ende
-let q: number = 0;
+/*q: number = 0;
 while (nummer <= 100) {
     q += nummer;
     nummer = nummer++;
-}
+}*/
 
 
 //d

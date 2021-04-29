@@ -3,7 +3,9 @@ function a1() {
     let xyz = "Alles";
     console.log(xyz); //a- String x "Alles" wir in der Konsole ausgegeben b- Es wird am Haltepunkt gehalten und im nächsten Schritt "Alles" ausgegeben
     andere();
+    console.log(xyz);
     weiter(); //a- Es wird auf die Funktion func1 verwiesen b- hier wird auf die funktion verwiesen und im nächsten Schritt wird auf "Klar?"gesprungen
+    console.log(xyz);
     console.log("Logo!"); //a- Nach Ausgabe der Funktion wird "Logo!" ausgegeben
 } //b- Hier wird "Logo!" ausgegen 
 a1();
@@ -56,12 +58,11 @@ function max(c, d) {
         return c;
 }
 //c
-let nummer = 1; //verlangsamt den Browser und läd nicht zu ende
-let q = 0;
+/*q: number = 0;
 while (nummer <= 100) {
     q += nummer;
     nummer = nummer++;
-}
+}*/
 //d
 for (let i = 0; i < 10; i++) {
     let random = Math.random() * 100;

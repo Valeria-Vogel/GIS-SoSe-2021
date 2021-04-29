@@ -58,7 +58,9 @@ function max(c, d) {
         return c;
 }
 //c
-/*q: number = 0;
+/*
+-let nummer: number = 1;  //verlangsamt den Browser und läd nicht zu ende
+let q: number = 0;
 while (nummer <= 100) {
     q += nummer;
     nummer = nummer++;

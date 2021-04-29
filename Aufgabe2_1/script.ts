@@ -64,58 +64,139 @@ function func3(): void {
 
 
 
-multiply();
-function multiply(): void {
-    let y: number = 4;
-    let z: number = 5;
-    console.log(z * y); 
-    
+//5. a
+function multiply(a: number, b: number): number {
+    let ergebnis: number = a * b;
+    return ergebnis;
+
+}
+//b
+function max(c: number, d: number): number {
+    if (c < d)
+        return d;
+    else
+        return c;
 }
 
-/*max();
-
-function max(): void {
-    let x: number = 9; 
-    let y: number = 45;
-    do {
-         console.log(y);
-    }while (x < y);
+//c
+let nummer: number = 1;
+let q: number = 0;
+while (nummer <= 100) {
+    q += nummer;
+    nummer = nummer++;
 }
 
-add();
 
-function add(): void {
-    let i: number = 0;
-    do{
-        i = i + i++;
+//d
+for (let i: number = 0; i < 10; i++) {
+    let random: number = Math.random() * 100;
+    console.log(random);
+}
+
+//e
+function factorial(z: number): number {
+    let g: number = 1;
+    if (z < 1) {
+        return 1;
+    } else {
+        for (let i: number = 0; i <= z; i++) {
+            g = g * i;
+
+        }
+    }
+    return g;
+}
+
+//f
+for (let i: number = 1900; i < 2021; i++) {
+    let leapyear: boolean = false;
+    if (i % 4 == 0) {
+        if (i % 100 == 0) {
+            if (i % 400 == 0) {
+                leapyear = true;
+            }
+        } else {
+            leapyear = true;
+        }
+    }
+    if (leapyear) {
         console.log(i);
-    }while (i <= 100);
-}*/
 
-for (let i: number = 10; i <= 100; i++) {
-  console.log( Math.random() * i);
+    }
+
+}
+//6. a
+let output: string = "";
+for (let i: number = 0; i < 8; i++) {
+    output += "#";
+    console.log(output);
+
 }
 
-factorial();
-function factorial(): void {
-    for (let i: number = 1; i <= 9; i++) {
-        i = i * i++;
+// b
+for (let i: number = 1; i <= 100; i++) {
+
+    if (i % 3 == 0) {
+        console.log("Fizz");
+    } else if (i % 5 == 0) {
+        console.log("Buzz");
+    } else {
         console.log(i);
     }
 }
 
-//function leapyears(): void { }
+//c
 
-console.log("# \n## \n### \n#### \n##### \n###### \n#######");
 
 for (let i: number = 1; i <= 100; i++) {
- if ( i % 3) {
-     console.log("Fizz");
- }
- if (i % 5) {
-    console.log("Buzz");
- }
- console.log(i);
+
+    if (i % 3 == 0 && i % 5 == 0) {
+        console.log("FizzBuzz");
+        if (i % 3 == 0) {
+            console.log("Fizz");
+        } else if (i % 5 == 0) {
+            console.log("Buzz");
+        } else {
+            console.log(i);
+        }
+    }
+}
+//d
+
+function Schach(): string {
+    let schachbrett: string = "";
+    let reihenafangraute: boolean = false;
+    let reihe: number = 8;
+    let spalte: number = 8;
+
+    for (let i: number = 0; i < reihe; i++) {
+        let naechstereihe: boolean = reihenafangraute;
+
+        for (let j: number = 0; j < spalte; j++) {
+            schachbrett += naechstereihe ? "#" : " ";
+            naechstereihe = !naechstereihe;
+        }
+
+        reihenafangraute = !reihenafangraute;
+        schachbrett += "\n";
+    }
+    return schachbrett;
 }
 
-console.log("# # # # \n # # # # \n# # # # \n # # # # \n# # # # \n # # # # \n# # # # \n # # # # \n# # # #");
+//e
+function schach(reihe: number, spalte: number): string {
+    let schachbrett: string = "#";
+    let reihenafangraute: boolean = false;
+
+    for (let i: number = 0; i < reihe; i++) {
+        let naechstereihe: boolean = reihenafangraute;
+
+        for (let j: number = 0; j < spalte; j++) {
+            schachbrett += naechstereihe ? "#" : " ";
+            naechstereihe = !naechstereihe;
+        }
+        reihenafangraute = !reihenafangraute;
+        schachbrett += "\n";
+    }
+    return schachbrett;
+}

@@ -81,13 +81,15 @@ function max(c: number, d: number): number {
 }
 
 //c
-/*
--let nummer: number = 1;  //verlangsamt den Browser und läd nicht zu ende
+
+let nummer: number = 1;  //verlangsamt den Browser und läd nicht zu ende
 let q: number = 0;
 while (nummer <= 100) {
     q += nummer;
-    nummer = nummer++;
-}*/
+    nummer++;
+}
+console.log("Summe: " + q);
+
 
 
 //d
@@ -152,23 +154,24 @@ for (let i: number = 1; i <= 100; i++) {
 
 
 for (let i: number = 1; i <= 100; i++) {
-
+    //  let gegeben: boolean = true;
     if (i % 3 == 0 && i % 5 == 0) {
         console.log("FizzBuzz");
-        if (i % 3 == 0) {
-            console.log("Fizz");
-        } else if (i % 5 == 0) {
-            console.log("Buzz");
-        } else {
-            console.log(i);
-        }
     }
+    else if (i % 3 == 0) {
+        console.log("Fizz");
+    } else if (i % 5 == 0) {
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
+
 }
 //d
+Schach(8, 16);
 
-
-function Schach(reihe: number = 8, spalte: number = 8 ): void {
-    let schachbrett: string = "#";
+function Schach(reihe: number, spalte: number): void {
+    let schachbrett: string = "";
     let reihenafangraute: boolean = false;
 
     for (let i: number = 0; i < reihe; i++) {
@@ -183,11 +186,12 @@ function Schach(reihe: number = 8, spalte: number = 8 ): void {
         schachbrett += "\n";
     }
     console.log(schachbrett);
-    
+
 }
 
 //e
-function schach(reihe: number, spalte: number): string {
+schach(4, 5);
+function schach(reihe: number, spalte: number): void {
     let schachbrett: string = "#";
     let reihenafangraute: boolean = false;
 
@@ -201,5 +205,6 @@ function schach(reihe: number, spalte: number): string {
         reihenafangraute = !reihenafangraute;
         schachbrett += "\n";
     }
-    return schachbrett;
+    console.log(schachbrett);
+
 }

@@ -58,13 +58,13 @@ function max(c, d) {
         return c;
 }
 //c
-/*
--let nummer: number = 1;  //verlangsamt den Browser und läd nicht zu ende
-let q: number = 0;
+let nummer = 1; //verlangsamt den Browser und läd nicht zu ende
+let q = 0;
 while (nummer <= 100) {
     q += nummer;
-    nummer = nummer++;
-}*/
+    nummer++;
+}
+console.log("Summe: " + q);
 //d
 for (let i = 0; i < 10; i++) {
     let random = Math.random() * 100;
@@ -120,22 +120,24 @@ for (let i = 1; i <= 100; i++) {
 }
 //c
 for (let i = 1; i <= 100; i++) {
+    //  let gegeben: boolean = true;
     if (i % 3 == 0 && i % 5 == 0) {
         console.log("FizzBuzz");
-        if (i % 3 == 0) {
-            console.log("Fizz");
-        }
-        else if (i % 5 == 0) {
-            console.log("Buzz");
-        }
-        else {
-            console.log(i);
-        }
+    }
+    else if (i % 3 == 0) {
+        console.log("Fizz");
+    }
+    else if (i % 5 == 0) {
+        console.log("Buzz");
+    }
+    else {
+        console.log(i);
     }
 }
 //d
-function Schach(reihe = 8, spalte = 8) {
-    let schachbrett = "#";
+Schach(8, 16);
+function Schach(reihe, spalte) {
+    let schachbrett = "";
     let reihenafangraute = false;
     for (let i = 0; i < reihe; i++) {
         let naechstereihe = reihenafangraute;
@@ -149,6 +151,7 @@ function Schach(reihe = 8, spalte = 8) {
     console.log(schachbrett);
 }
 //e
+schach(4, 5);
 function schach(reihe, spalte) {
     let schachbrett = "#";
     let reihenafangraute = false;
@@ -161,6 +164,6 @@ function schach(reihe, spalte) {
         reihenafangraute = !reihenafangraute;
         schachbrett += "\n";
     }
-    return schachbrett;
+    console.log(schachbrett);
 }
 //# sourceMappingURL=script.js.map

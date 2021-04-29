@@ -43,51 +43,123 @@ function func2() {
 function func3() {
     x = "Test"; // x bekommt den Wert "Test" (10)
 }
-multiply();
-function multiply() {
-    let y = 4;
-    let z = 5;
-    console.log(z * y);
+//5. a
+function multiply(a, b) {
+    let ergebnis = a * b;
+    return ergebnis;
 }
-/*max();
-
-function max(): void {
-    let x: number = 9;
-    let y: number = 45;
-    do {
-         console.log(y);
-    }while (x < y);
+//b
+function max(c, d) {
+    if (c < d)
+        return d;
+    else
+        return c;
 }
-
-add();
-
-function add(): void {
-    let i: number = 0;
-    do{
-        i = i + i++;
-        console.log(i);
-    }while (i <= 100);
-}*/
-for (let i = 10; i <= 100; i++) {
-    console.log(Math.random() * i);
+//c
+let nummer = 1;
+let q = 0;
+while (nummer <= 100) {
+    q += nummer;
+    nummer = nummer++;
 }
-factorial();
-function factorial() {
-    for (let i = 1; i <= 9; i++) {
-        i = i * i++;
+//d
+for (let i = 0; i < 10; i++) {
+    let random = Math.random() * 100;
+    console.log(random);
+}
+//e
+function factorial(z) {
+    let g = 1;
+    if (z < 1) {
+        return 1;
+    }
+    else {
+        for (let i = 0; i <= z; i++) {
+            g = g * i;
+        }
+    }
+    return g;
+}
+//f
+for (let i = 1900; i < 2021; i++) {
+    let leapyear = false;
+    if (i % 4 == 0) {
+        if (i % 100 == 0) {
+            if (i % 400 == 0) {
+                leapyear = true;
+            }
+        }
+        else {
+            leapyear = true;
+        }
+    }
+    if (leapyear) {
         console.log(i);
     }
 }
-//function leapyears(): void { }
-console.log("# \n## \n### \n#### \n##### \n###### \n#######");
+//6. a
+let output = "";
+for (let i = 0; i < 8; i++) {
+    output += "#";
+    console.log(output);
+}
+// b
 for (let i = 1; i <= 100; i++) {
-    if (i % 3) {
+    if (i % 3 == 0) {
         console.log("Fizz");
     }
-    if (i % 5) {
+    else if (i % 5 == 0) {
         console.log("Buzz");
     }
-    console.log(i);
+    else {
+        console.log(i);
+    }
 }
-console.log("# # # # \n # # # # \n# # # # \n # # # # \n# # # # \n # # # # \n# # # # \n # # # # \n# # # #");
+//c
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+        console.log("FizzBuzz");
+        if (i % 3 == 0) {
+            console.log("Fizz");
+        }
+        else if (i % 5 == 0) {
+            console.log("Buzz");
+        }
+        else {
+            console.log(i);
+        }
+    }
+}
+//d
+function Schach() {
+    let schachbrett = "";
+    let reihenafangraute = false;
+    let reihe = 8;
+    let spalte = 8;
+    for (let i = 0; i < reihe; i++) {
+        let naechstereihe = reihenafangraute;
+        for (let j = 0; j < spalte; j++) {
+            schachbrett += naechstereihe ? "#" : " ";
+            naechstereihe = !naechstereihe;
+        }
+        reihenafangraute = !reihenafangraute;
+        schachbrett += "\n";
+    }
+    return schachbrett;
+}
+//e
+function schach(reihe, spalte) {
+    let schachbrett = "#";
+    let reihenafangraute = false;
+    for (let i = 0; i < reihe; i++) {
+        let naechstereihe = reihenafangraute;
+        for (let j = 0; j < spalte; j++) {
+            schachbrett += naechstereihe ? "#" : " ";
+            naechstereihe = !naechstereihe;
+        }
+        reihenafangraute = !reihenafangraute;
+        schachbrett += "\n";
+    }
+    return schachbrett;
+}
 //# sourceMappingURL=script.js.map

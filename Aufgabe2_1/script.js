@@ -56,7 +56,7 @@ function max(c, d) {
         return c;
 }
 //c
-let nummer = 1;
+let nummer = 1; //verlangsamt den Browser und läd nicht zu ende
 let q = 0;
 while (nummer <= 100) {
     q += nummer;
@@ -131,11 +131,9 @@ for (let i = 1; i <= 100; i++) {
     }
 }
 //d
-function Schach() {
-    let schachbrett = "";
+function Schach(reihe = 8, spalte = 8) {
+    let schachbrett = "#";
     let reihenafangraute = false;
-    let reihe = 8;
-    let spalte = 8;
     for (let i = 0; i < reihe; i++) {
         let naechstereihe = reihenafangraute;
         for (let j = 0; j < spalte; j++) {
@@ -145,7 +143,7 @@ function Schach() {
         reihenafangraute = !reihenafangraute;
         schachbrett += "\n";
     }
-    return schachbrett;
+    console.log(schachbrett);
 }
 //e
 function schach(reihe, spalte) {

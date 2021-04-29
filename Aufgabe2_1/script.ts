@@ -79,7 +79,7 @@ function max(c: number, d: number): number {
 }
 
 //c
-let nummer: number = 1;
+let nummer: number = 1;  //verlangsamt den Browser und läd nicht zu ende
 let q: number = 0;
 while (nummer <= 100) {
     q += nummer;
@@ -163,11 +163,10 @@ for (let i: number = 1; i <= 100; i++) {
 }
 //d
 
-function Schach(): string {
-    let schachbrett: string = "";
+
+function Schach(reihe: number = 8, spalte: number = 8 ): void {
+    let schachbrett: string = "#";
     let reihenafangraute: boolean = false;
-    let reihe: number = 8;
-    let spalte: number = 8;
 
     for (let i: number = 0; i < reihe; i++) {
         let naechstereihe: boolean = reihenafangraute;
@@ -180,7 +179,8 @@ function Schach(): string {
         reihenafangraute = !reihenafangraute;
         schachbrett += "\n";
     }
-    return schachbrett;
+    console.log(schachbrett);
+    
 }
 
 //e

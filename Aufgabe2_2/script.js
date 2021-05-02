@@ -207,44 +207,40 @@ var aufgabe2_2;
     context.lineWidth = 5;
     context.strokeStyle = "green";
     context.stroke();
-    let context2 = canvas.getContext("2d");
-    context2.beginPath();
-    context2.rect(50, 450, 200, 100);
-    context2.fillStyle = "coral";
-    context2.fill();
-    context2.lineWidth = 4;
-    context2.strokeStyle = "black";
-    context2.stroke();
-})(aufgabe2_2 || (aufgabe2_2 = {}));
-//c
-function createRect(x, y, dx, dy) {
-    let canvas = document.getElementById("myCanvas");
-    let context3 = canvas.getContext("2d");
-    let _x = x;
-    let _y = y;
-    let _dx = dx;
-    let _dy = dy;
-    zufall();
-    function zufall() {
-        if (_dx + _x > canvas.width || _dx - _x < 0) {
-            _dx = -_dx;
+    //c
+    createRect();
+    function createRect() {
+        let x, y, w, h;
+        let canvas = document.getElementById("myCanvas");
+        let context3 = canvas.getContext("2d");
+        let _x = x;
+        let _y = y;
+        let _w = w;
+        let _h = h;
+        zufall();
+        function zufall() {
+            if (_w + _x > canvas.width || _w - _x < 0) {
+                _w = -_w;
+            }
+            if (_h + _y > canvas.height || _h - _y < 0) {
+                _h = -_h;
+            }
+            _x += _w;
+            _y += _h;
         }
-        if (_dy + _y > canvas.height || _dy - _y < 0) {
-            _dy = -_dy;
-        }
-        _x += _dx;
-        _y += _dy;
+        //d
         drawRect();
+        function drawRect() {
+            context3.beginPath();
+            context3.fillRect(_x, _y, _w, _h);
+        }
+        drawRandom(2);
+        function drawRandom(_a) {
+            let rects = [];
+            for (let v = 0; v < rects.length - 1; v++) {
+                rects[v].drawRect();
+            }
+        }
     }
-    //d
-    function drawRect() {
-        context3.beginPath();
-        context3.rect(170, 650, 30, 70);
-        context3.fillStyle = "red";
-        context3.fill();
-        context3.strokeStyle = "orange";
-        context3.stroke();
-    }
-}
-//e
+})(aufgabe2_2 || (aufgabe2_2 = {}));
 //# sourceMappingURL=script.js.map

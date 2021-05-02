@@ -262,50 +262,51 @@ namespace aufgabe2_2 {
 
 
     interface Rechteck {
-    let context2: CanvasRenderingContext2D = canvas.getContext("2d");
-    context2.beginPath();
-    context2.rect(50, 450, 200, 100);
-    context2.fillStyle = "coral";
-    context2.fill();
-    context2.lineWidth = 4;
-    context2.strokeStyle = "black";
-    context2.stroke();
-}
-//c
+        [x: string]: any;
+        x: number;
+        y: number;
+        w: number;
+        h: number;
+    }
+    //c
+    createRect();
+    function createRect(): void {
+        let x: number, y: number, w: number, h: number;
+        let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("myCanvas");
+        let context3: CanvasRenderingContext2D = canvas.getContext("2d");
+        let _x: number = x;
+        let _y: number = y;
+        let _w: number = w;
+        let _h: number = h;
 
-function createRect(x: number, y: number, dx: number, dy: number) {
+        zufall();
+        function zufall(): void {
+            if (_w + _x > canvas.width || _w - _x < 0) {
+                _w = -_w;
+            }
+            if (_h + _y > canvas.height || _h - _y < 0) {
+                _h = -_h;
+            }
+            _x += _w;
+            _y += _h;
 
-    let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("myCanvas");
-    let context3: CanvasRenderingContext2D = canvas.getContext("2d");
-    let _x: number = x;
-    let _y: number = y;
-    let _dx: number = dx;
-    let _dy: number = dy;
 
-    zufall();
-    function zufall(): void {
-        if (_dx + _x > canvas.width || _dx - _x < 0) {
-            _dx = -_dx;
         }
-        if (_dy + _y > canvas.height || _dy - _y < 0) {
-            _dy = -_dy;
-        }
-        _x += _dx;
-        _y += _dy;
 
+        //d
         drawRect();
+        function drawRect(): void {
+            context3.beginPath();
+            context3.fillRect(_x, _y, _w, _h);
+        }
+        drawRandom(2);
+        function drawRandom(_a: number): void {
+            let rects: Rechteck[] = [];
+            for (let v: number = 0; v < rects.length - 1; v++) {
+                rects[v].drawRect();
+            }
+        }
     }
 
-    //d
-    function drawRect(): void {
-        context3.beginPath();
-        context3.rect(170, 650, 30, 70);
-        context3.fillStyle = "red";
-        context3.fill();
-        context3.strokeStyle = "orange";
-        context3.stroke();
-    }
+
 }
-    //e
-
-

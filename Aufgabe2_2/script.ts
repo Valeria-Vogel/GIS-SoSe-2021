@@ -86,9 +86,9 @@ namespace aufgabe2_2 {
             console.log(`Nachname: ${this.nachname}, Vorname: ${this.vorname}, Matrikelnummer: ${this.martrikelnummer}, Studiengang: ${this.studiengang}`);
         }
     }
-    let Student1: Student = new Student ("Baum", "Laura", "425782", "MIB");
-    let Student2: Student = new Student ("Winkler", "Dennis", "967334", "OMB");
-    let Student3: Student = new Student ("Fischer", "Vivien", "456834", "MKb");
+    let Student1: Student = new Student("Baum", "Laura", "425782", "MIB");
+    let Student2: Student = new Student("Winkler", "Dennis", "967334", "OMB");
+    let Student3: Student = new Student("Fischer", "Vivien", "456834", "MKb");
 
     let studentArr: Student[] = [Student1, Student2];
     studierendeArr.push(Student3);
@@ -96,7 +96,7 @@ namespace aufgabe2_2 {
 
     console.log(studentArr[0].nachname);
     console.log(studentArr[1].vorname);
-   
+
 
     console.log(showInfo(Student1));
     console.log(showInfo(Student2));
@@ -104,23 +104,24 @@ namespace aufgabe2_2 {
 
     for (let student of studentArr) {
         student.showInfo();
-      }
+    }
 
     // 3. a)
-    function backwards(..._arr: number[]): number[] {
+    function backwards(_arr: number[]): void {
         let reversed: number[] = [];
         for (let i: number = _arr.length; i > 0; i++) {
             reversed.push(_arr[i - 1]);
 
         }
 
-        return reversed;
+        console.log(reversed);
+
     }
-    backwards(2, 3, 6, 5, 5, 3, 66, 23);
+    backwards([2, 3, 6, 5, 5, 3, 66, 23]);
 
 
     // b)
-    function join(_arr1: number[], _arr2: number[]): number[] {
+    function join(_arr1: number[], _arr2: number[]): void {
         let zusammen: number[] = [];
         for (let i: number = 0; i < _arr1.length; i++) {
             zusammen.push(_arr1[i]);
@@ -129,19 +130,21 @@ namespace aufgabe2_2 {
             zusammen.push(_arr2[i]);
 
         }
-        return zusammen;
+        console.log(zusammen);
+
     }
     console.log(join([4, 6, 8, 1, 5], [3, 9, 1, 3, 1, 8]));
 
 
     // c)
-    function split(_array: number[], _teil1: number, _teil2: number): number[] {
+    function split(_array: number[], _teil1: number, _teil2: number): void {
         let teilt: number[] = [];
 
         for (let i: number = _teil1; i <= _teil2; i++) {
             teilt.push(_array[i]);
         }
-        return teilt;
+        console.log(teilt);
+
     }
     console.log(split([3, 6, 24, 5, 2, 999, 42, 45, 5, 2, 56, 5], 4, 8));
 

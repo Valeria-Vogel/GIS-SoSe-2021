@@ -75,14 +75,14 @@ var aufgabe2_2;
         student.showInfo();
     }
     // 3. a)
-    function backwards(..._arr) {
+    function backwards(_arr) {
         let reversed = [];
         for (let i = _arr.length; i > 0; i++) {
             reversed.push(_arr[i - 1]);
         }
-        return reversed;
+        console.log(reversed);
     }
-    backwards(2, 3, 6, 5, 5, 3, 66, 23);
+    backwards([2, 3, 6, 5, 5, 3, 66, 23]);
     // b)
     function join(_arr1, _arr2) {
         let zusammen = [];
@@ -92,7 +92,7 @@ var aufgabe2_2;
         for (let i = 0; i < _arr2.length; i++) {
             zusammen.push(_arr2[i]);
         }
-        return zusammen;
+        console.log(zusammen);
     }
     console.log(join([4, 6, 8, 1, 5], [3, 9, 1, 3, 1, 8]));
     // c)
@@ -101,7 +101,7 @@ var aufgabe2_2;
         for (let i = _teil1; i <= _teil2; i++) {
             teilt.push(_array[i]);
         }
-        return teilt;
+        console.log(teilt);
     }
     console.log(split([3, 6, 24, 5, 2, 999, 42, 45, 5, 2, 56, 5], 4, 8));
     let canvas = document.getElementById("myCanvas");

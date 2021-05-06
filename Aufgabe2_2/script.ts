@@ -14,10 +14,11 @@ namespace aufgabe2_2 {
     }
 
     //b)
-    isEvan(5);
+    console.log(isEvan(5));
+    
     function isEvan(_zahl: number): boolean {
 
-        if (_zahl == 0 || _zahl % 2)
+        if (_zahl == 0 )
             return true;
 
         if (_zahl == 1)
@@ -106,7 +107,7 @@ namespace aufgabe2_2 {
         student.showInfo();
     }
 
- /*   // 3. a)
+    // 3. a)
     function backwards(_arr: number[]): void {
         let reversed: number[] = [];
         for (let i: number = _arr.length; i > 0; i++) {
@@ -147,7 +148,7 @@ namespace aufgabe2_2 {
 
     }
     console.log(split([3, 6, 24, 5, 2, 999, 42, 45, 5, 2, 56, 5], 4, 8));
-*/
+
 
     let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("myCanvas");
     let context: CanvasRenderingContext2D = canvas.getContext("2d");

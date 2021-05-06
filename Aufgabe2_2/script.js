@@ -13,9 +13,9 @@ var aufgabe2_2;
         console.log(min);
     }
     //b)
-    isEvan(5);
+    console.log(isEvan(5));
     function isEvan(_zahl) {
-        if (_zahl == 0 || _zahl % 2)
+        if (_zahl == 0)
             return true;
         if (_zahl == 1)
             return false;
@@ -74,48 +74,36 @@ var aufgabe2_2;
     for (let student of studentArr) {
         student.showInfo();
     }
-    /*   // 3. a)
-       function backwards(_arr: number[]): void {
-           let reversed: number[] = [];
-           for (let i: number = _arr.length; i > 0; i++) {
-               reversed.push(_arr[i - 1]);
-   
-           }
-   
-           console.log(reversed);
-   
-       }
-       backwards([2, 3, 6, 5, 5, 3, 66, 23]);
-   
-   
-       // b)
-       function join(_arr1: number[], _arr2: number[]): void {
-           let zusammen: number[] = [];
-           for (let i: number = 0; i < _arr1.length; i++) {
-               zusammen.push(_arr1[i]);
-           }
-           for (let i: number = 0; i < _arr2.length; i++) {
-               zusammen.push(_arr2[i]);
-   
-           }
-           console.log(zusammen);
-   
-       }
-       console.log(join([4, 6, 8, 1, 5], [3, 9, 1, 3, 1, 8]));
-   
-   
-       // c)
-       function split(_array: number[], _teil1: number, _teil2: number): void {
-           let teilt: number[] = [];
-   
-           for (let i: number = _teil1; i <= _teil2; i++) {
-               teilt.push(_array[i]);
-           }
-           console.log(teilt);
-   
-       }
-       console.log(split([3, 6, 24, 5, 2, 999, 42, 45, 5, 2, 56, 5], 4, 8));
-   */
+    // 3. a)
+    function backwards(_arr) {
+        let reversed = [];
+        for (let i = _arr.length; i > 0; i++) {
+            reversed.push(_arr[i - 1]);
+        }
+        console.log(reversed);
+    }
+    backwards([2, 3, 6, 5, 5, 3, 66, 23]);
+    // b)
+    function join(_arr1, _arr2) {
+        let zusammen = [];
+        for (let i = 0; i < _arr1.length; i++) {
+            zusammen.push(_arr1[i]);
+        }
+        for (let i = 0; i < _arr2.length; i++) {
+            zusammen.push(_arr2[i]);
+        }
+        console.log(zusammen);
+    }
+    console.log(join([4, 6, 8, 1, 5], [3, 9, 1, 3, 1, 8]));
+    // c)
+    function split(_array, _teil1, _teil2) {
+        let teilt = [];
+        for (let i = _teil1; i <= _teil2; i++) {
+            teilt.push(_array[i]);
+        }
+        console.log(teilt);
+    }
+    console.log(split([3, 6, 24, 5, 2, 999, 42, 45, 5, 2, 56, 5], 4, 8));
     let canvas = document.getElementById("myCanvas");
     let context = canvas.getContext("2d");
     context.lineWidth = 5; //Rahmen

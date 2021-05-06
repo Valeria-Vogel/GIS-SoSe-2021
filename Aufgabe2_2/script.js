@@ -249,9 +249,9 @@ var aufgabe2_2;
         return Math.floor(Math.random() * (_max - _min) + _min);
     }
     //d
-    function drawRect(_r) {
-        context.fillStyle = _r.farbe;
-        context.fillRect(_r.posX, _r.posY, _r.breite, _r.hoehe);
+    function drawRect(_rechteck) {
+        context.fillStyle = _rechteck.farbe;
+        context.fillRect(_rechteck.posX, _rechteck.posY, _rechteck.breite, _rechteck.hoehe);
     }
     //e
     let rects = [];

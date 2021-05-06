@@ -331,9 +331,9 @@ namespace aufgabe2_2 {
     }
 
     //d
-    function drawRect(_r: Rechteck): void {
-        context.fillStyle = _r.farbe;
-        context.fillRect(_r.posX, _r.posY, _r.breite, _r.hoehe);
+    function drawRect(_rechteck: Rechteck): void {
+        context.fillStyle = _rechteck.farbe;
+        context.fillRect(_rechteck.posX, _rechteck.posY, _rechteck.breite, _rechteck.hoehe);
     }
 
     //e

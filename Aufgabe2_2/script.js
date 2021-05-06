@@ -60,17 +60,17 @@ var aufgabe2_2;
             console.log(`Nachname: ${this.nachname}, Vorname: ${this.vorname}, Matrikelnummer: ${this.martrikelnummer}, Studiengang: ${this.studiengang}`);
         }
     }
-    let Student1 = new Student("Baum", "Laura", "425782", "MIB");
-    let Student2 = new Student("Winkler", "Dennis", "967334", "OMB");
-    let Student3 = new Student("Fischer", "Vivien", "456834", "MKb");
-    let studentArr = [Student1, Student2];
-    studierendeArr.push(Student3);
+    let studentEins = new Student("Baum", "Laura", "425782", "MIB");
+    let studentZwei = new Student("Winkler", "Dennis", "967334", "OMB");
+    let studentDrei = new Student("Fischer", "Vivien", "456834", "MKb");
+    let studentArr = [studentEins, studentZwei];
+    studierendeArr.push(studentDrei);
     studierendeArr.push(new Student("Schulz", "Marvin", "727394", "MKB"));
     console.log(studentArr[0].nachname);
     console.log(studentArr[1].vorname);
-    console.log(showInfo(Student1));
-    console.log(showInfo(Student2));
-    console.log(showInfo(Student3));
+    console.log(showInfo(studentEins));
+    console.log(showInfo(studentZwei));
+    console.log(showInfo(studentDrei));
     for (let student of studentArr) {
         student.showInfo();
     }

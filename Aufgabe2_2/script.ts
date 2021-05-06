@@ -80,27 +80,27 @@ namespace aufgabe2_2 {
             this.nachname = _nachname;
             this.vorname = _vorname;
             this.martrikelnummer = _matrikelnummer;
-            this.studiengang= _studiengang;
+            this.studiengang = _studiengang;
         }
         showInfo(): void {
             console.log(`Nachname: ${this.nachname}, Vorname: ${this.vorname}, Matrikelnummer: ${this.martrikelnummer}, Studiengang: ${this.studiengang}`);
         }
     }
-    let student_1: Student = new Student ("Baum", "Laura", "425782", "MIB");
-    let student_2: Student = new Student ("Winkler", "Dennis", "967334", "OMB");
-    let student_3: Student = new Student ("Fischer", "Vivien", "456834", "MKb");
+    let Student1: Student = new Student ("Baum", "Laura", "425782", "MIB");
+    let Student2: Student = new Student ("Winkler", "Dennis", "967334", "OMB");
+    let Student3: Student = new Student ("Fischer", "Vivien", "456834", "MKb");
 
-    let studentArr: Student[] = [student_1, student_2];
-    studierendeArr.push(student_3);
+    let studentArr: Student[] = [Student1, Student2];
+    studierendeArr.push(Student3);
     studierendeArr.push(new Student("Schulz", "Marvin", "727394", "MKB"));
 
     console.log(studentArr[0].nachname);
     console.log(studentArr[1].vorname);
     console.log(studentArr[2].martrikelnummer);
 
-    console.log(showInfo(student_1));
-    console.log(showInfo(student_2));
-    console.log(showInfo(student_3));
+    console.log(showInfo(Student1));
+    console.log(showInfo(Student2));
+    console.log(showInfo(Student3));
 
     for (let student of studentArr) {
         student.showInfo();

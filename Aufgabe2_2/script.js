@@ -74,11 +74,11 @@ var aufgabe2_2;
     for (let student of studentArr) {
         student.showInfo();
     }
-    // 3. a)
+    // 2. a)
     function backwards(_arr) {
         let reversed = [];
-        for (let i = _arr.length; i > 0; i++) {
-            reversed.push(_arr[i - 1]);
+        for (let i = 0; i < _arr.length; i++) {
+            reversed.push(_arr[_arr.length - i - 1]);
         }
         return reversed;
     }

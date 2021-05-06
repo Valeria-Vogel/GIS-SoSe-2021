@@ -107,11 +107,11 @@ namespace aufgabe2_2 {
         student.showInfo();
     }
 
-    // 3. a)
+    // 2. a)
     function backwards(_arr: number[]): number[] {
         let reversed: number[] = [];
-        for (let i: number = _arr.length; i > 0; i++) {
-            reversed.push(_arr[i - 1]);
+        for (let i: number = 0; i < _arr.length; i++) {
+            reversed.push(_arr[_arr.length - i - 1]);
 
         }
 

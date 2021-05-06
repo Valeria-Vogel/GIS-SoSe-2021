@@ -13,7 +13,7 @@ var aufgabe2_2;
         console.log(min);
     }
     //b)
-    console.log(isEvan(5));
+    console.log(isEvan(-1));
     function isEvan(_zahl) {
         if (_zahl == 0)
             return true;
@@ -80,9 +80,9 @@ var aufgabe2_2;
         for (let i = _arr.length; i > 0; i++) {
             reversed.push(_arr[i - 1]);
         }
-        console.log(reversed);
+        return reversed;
     }
-    backwards([2, 3, 6, 5, 5, 3, 66, 23]);
+    console.log(backwards([2, 3, 6, 5, 5, 3, 66, 23]));
     // b)
     function join(_arr1, _arr2) {
         let zusammen = [];
@@ -92,7 +92,7 @@ var aufgabe2_2;
         for (let i = 0; i < _arr2.length; i++) {
             zusammen.push(_arr2[i]);
         }
-        console.log(zusammen);
+        return zusammen;
     }
     console.log(join([4, 6, 8, 1, 5], [3, 9, 1, 3, 1, 8]));
     // c)
@@ -101,7 +101,7 @@ var aufgabe2_2;
         for (let i = _teil1; i <= _teil2; i++) {
             teilt.push(_array[i]);
         }
-        console.log(teilt);
+        return teilt;
     }
     console.log(split([3, 6, 24, 5, 2, 999, 42, 45, 5, 2, 56, 5], 4, 8));
     let canvas = document.getElementById("myCanvas");

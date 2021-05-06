@@ -14,11 +14,11 @@ namespace aufgabe2_2 {
     }
 
     //b)
-    console.log(isEvan(5));
-    
+    console.log(isEvan(-1));
+
     function isEvan(_zahl: number): boolean {
 
-        if (_zahl == 0 )
+        if (_zahl == 0)
             return true;
 
         if (_zahl == 1)
@@ -108,21 +108,22 @@ namespace aufgabe2_2 {
     }
 
     // 3. a)
-    function backwards(_arr: number[]): void {
+    function backwards(_arr: number[]): number[] {
         let reversed: number[] = [];
         for (let i: number = _arr.length; i > 0; i++) {
             reversed.push(_arr[i - 1]);
 
         }
 
-        console.log(reversed);
+        return reversed;
 
     }
-    backwards([2, 3, 6, 5, 5, 3, 66, 23]);
+    console.log(backwards([2, 3, 6, 5, 5, 3, 66, 23]));
+
 
 
     // b)
-    function join(_arr1: number[], _arr2: number[]): void {
+    function join(_arr1: number[], _arr2: number[]): number[] {
         let zusammen: number[] = [];
         for (let i: number = 0; i < _arr1.length; i++) {
             zusammen.push(_arr1[i]);
@@ -131,20 +132,20 @@ namespace aufgabe2_2 {
             zusammen.push(_arr2[i]);
 
         }
-        console.log(zusammen);
+        return zusammen;
 
     }
     console.log(join([4, 6, 8, 1, 5], [3, 9, 1, 3, 1, 8]));
 
 
     // c)
-    function split(_array: number[], _teil1: number, _teil2: number): void {
+    function split(_array: number[], _teil1: number, _teil2: number): number[] {
         let teilt: number[] = [];
 
         for (let i: number = _teil1; i <= _teil2; i++) {
             teilt.push(_array[i]);
         }
-        console.log(teilt);
+        return teilt;
 
     }
     console.log(split([3, 6, 24, 5, 2, 999, 42, 45, 5, 2, 56, 5], 4, 8));

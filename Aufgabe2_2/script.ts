@@ -1,7 +1,7 @@
 namespace aufgabe2_2 {
 
     //1. a)
-    min(3, 4, 7, 9, 3, 1, 6, 8, 2);
+    min(33, 48, 17, 39, 32, 46, 18, 32);
     function min(..._eingabe: number[]): void {
         let min: number = Infinity;
         for (let i: number = 0; i < _eingabe.length; i++) {
@@ -14,10 +14,10 @@ namespace aufgabe2_2 {
     }
 
     //b)
-    isEvan(1);
+    isEvan(5);
     function isEvan(_zahl: number): boolean {
 
-        if (_zahl == 0)
+        if (_zahl == 0 || _zahl % 2)
             return true;
 
         if (_zahl == 1)
@@ -106,7 +106,7 @@ namespace aufgabe2_2 {
         student.showInfo();
     }
 
-    // 3. a)
+ /*   // 3. a)
     function backwards(_arr: number[]): void {
         let reversed: number[] = [];
         for (let i: number = _arr.length; i > 0; i++) {
@@ -147,7 +147,7 @@ namespace aufgabe2_2 {
 
     }
     console.log(split([3, 6, 24, 5, 2, 999, 42, 45, 5, 2, 56, 5], 4, 8));
-
+*/
 
     let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("myCanvas");
     let context: CanvasRenderingContext2D = canvas.getContext("2d");

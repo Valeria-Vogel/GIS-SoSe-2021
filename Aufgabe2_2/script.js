@@ -68,7 +68,6 @@ var aufgabe2_2;
     studierendeArr.push(new Student("Schulz", "Marvin", "727394", "MKB"));
     console.log(studentArr[0].nachname);
     console.log(studentArr[1].vorname);
-    console.log(studentArr[2].martrikelnummer);
     console.log(showInfo(Student1));
     console.log(showInfo(Student2));
     console.log(showInfo(Student3));

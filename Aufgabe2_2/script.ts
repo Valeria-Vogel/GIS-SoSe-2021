@@ -96,7 +96,7 @@ namespace aufgabe2_2 {
 
     console.log(studentArr[0].nachname);
     console.log(studentArr[1].vorname);
-    console.log(studentArr[2].martrikelnummer);
+   
 
     console.log(showInfo(Student1));
     console.log(showInfo(Student2));

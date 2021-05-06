@@ -2,31 +2,29 @@
 var aufgabe2_2;
 (function (aufgabe2_2) {
     //1. a)
-    min();
-    function min() {
-        let x = [35, 67, 7, 93, 62, 14];
-        let laenge = x.length;
+    min(3, 4, 7, 9, 3, 1, 6, 8, 2);
+    function min(..._eingabe) {
         let min = Infinity;
-        while (laenge--) {
-            if (Number(x[laenge]) < min) {
-                min = Number(x[laenge]);
+        for (let i = 0; i < _eingabe.length; i++) {
+            if (min > _eingabe[i]) {
+                min = _eingabe[i];
             }
         }
         console.log(min);
     }
     //b)
-    isEvan(75);
-    function isEvan(zahl) {
-        let gerade = true;
-        if (zahl == 0 || zahl % 2 == 0) {
-            console.log(gerade);
-        }
-        else {
-            console.log(!gerade);
-        }
-        if (zahl < 0) {
-            console.log(zahl - 2); // Für jede zahl unter o wird die Zahl - 2 genommen und ausgegeben, somit wäre für "-1" die Ausgabe -3
-        }
+    isEvan(1);
+    function isEvan(_zahl) {
+        if (_zahl == 0)
+            return true;
+        if (_zahl == 1)
+            return false;
+        let ergebnis;
+        if (_zahl < 0)
+            ergebnis = isEvan(_zahl + 2);
+        if (_zahl > 0)
+            ergebnis = isEvan(_zahl - 2);
+        return ergebnis;
     }
     //c) 2.
     let student1 = { nachname: "Müller", vorname: "Max", martrikelnummer: "233445", studiengang: "OMB" };
@@ -36,10 +34,13 @@ var aufgabe2_2;
     console.log(student2.studiengang);
     console.log(student3.nachname);
     //C) 3.
-    let studierende = [student3.nachname, student3.vorname, student3.martrikelnummer, student3.studiengang];
-    let studierender = ["Hoffmann", "Justin", "235623", "MKB"];
-    console.log(studierende);
-    console.log(studierender);
+    let studierendeArr = [student1, student2];
+    studierendeArr.push(student3);
+    studierendeArr.push({ nachname: "Mayer", vorname: "Nikki", martrikelnummer: "817273", studiengang: "OMB" });
+    console.log(studierendeArr[0].nachname);
+    console.log(studierendeArr[1].vorname);
+    console.log(studierendeArr[2].martrikelnummer);
+    console.log(studierendeArr[3].studiengang);
     //c) 4.
     function showInfo(info) {
         console.log(info.nachname);
@@ -47,43 +48,63 @@ var aufgabe2_2;
         console.log(info.martrikelnummer);
         console.log(info.studiengang);
     }
-    console.log(showInfo(student1));
-    console.log(showInfo(student2));
-    console.log(showInfo(student3));
     //c) 5.
-    class StudentenInfos {
-        constructor(_nachname, _vorname, _matrikelnummer) {
+    class Student {
+        constructor(_nachname, _vorname, _matrikelnummer, _studiengang) {
             this.nachname = _nachname;
             this.vorname = _vorname;
             this.martrikelnummer = _matrikelnummer;
+            this.studiengang = _studiengang;
         }
-        showInfo(student) {
-            console.log(student.nachname);
-            console.log(student.vorname);
-            console.log(student.martrikelnummer);
+        showInfo() {
+            console.log(`Nachname: ${this.nachname}, Vorname: ${this.vorname}, Matrikelnummer: ${this.martrikelnummer}, Studiengang: ${this.studiengang}`);
         }
+    }
+    let student_1 = new Student("Baum", "Laura", "425782", "MIB");
+    let student_2 = new Student("Winkler", "Dennis", "967334", "OMB");
+    let student_3 = new Student("Fischer", "Vivien", "456834", "MKb");
+    let studentArr = [student_1, student_2];
+    studierendeArr.push(student_3);
+    studierendeArr.push(new Student("Schulz", "Marvin", "727394", "MKB"));
+    console.log(studentArr[0].nachname);
+    console.log(studentArr[1].vorname);
+    console.log(studentArr[2].martrikelnummer);
+    console.log(showInfo(student_1));
+    console.log(showInfo(student_2));
+    console.log(showInfo(student_3));
+    for (let student of studentArr) {
+        student.showInfo();
     }
     // 3. a)
-    backwards();
-    function backwards() {
-        let arr = [4, 6, 7, 2, 53, 1, 3, 0];
-        console.log(arr.reverse());
+    function backwards(..._arr) {
+        let reversed = [];
+        for (let i = _arr.length; i > 0; i++) {
+            reversed.push(_arr[i - 1]);
+        }
+        return reversed;
     }
+    backwards(2, 3, 6, 5, 5, 3, 66, 23);
     // b)
-    join();
-    function join() {
-        let arr1 = [5, 6, 7];
-        let arr2 = [1, 2, 3];
-        let zusammen = arr1.concat(arr2); //Fügt 2 Arrays zusammen
-        console.log(zusammen);
+    function join(_arr1, _arr2) {
+        let zusammen = [];
+        for (let i = 0; i < _arr1.length; i++) {
+            zusammen.push(_arr1[i]);
+        }
+        for (let i = 0; i < _arr2.length; i++) {
+            zusammen.push(_arr2[i]);
+        }
+        return zusammen;
     }
+    console.log(join([4, 6, 8, 1, 5], [3, 9, 1, 3, 1, 8]));
     // c)
-    split();
-    function split() {
-        let arr = [23, 24, 57, 344, 33, 4, 1, 688, 3, 44, 3]; // gibt die Zahlen in in einem bestimmten Interval aus
-        let teilt = arr.slice(2, 8);
-        console.log(teilt);
+    function split(_array, _teil1, _teil2) {
+        let teilt = [];
+        for (let i = _teil1; i <= _teil2; i++) {
+            teilt.push(_array[i]);
+        }
+        return teilt;
     }
+    console.log(split([3, 6, 24, 5, 2, 999, 42, 45, 5, 2, 56, 5], 4, 8));
     let canvas = document.getElementById("myCanvas");
     let context = canvas.getContext("2d");
     context.lineWidth = 5; //Rahmen
@@ -210,37 +231,36 @@ var aufgabe2_2;
     //c
     createRect();
     function createRect() {
-        let x, y, w, h;
-        let canvas = document.getElementById("myCanvas");
-        let context3 = canvas.getContext("2d");
-        let _x = x;
-        let _y = y;
-        let _w = w;
-        let _h = h;
-        zufall();
-        function zufall() {
-            if (_w + _x > canvas.width || _w - _x < 0) {
-                _w = -_w;
-            }
-            if (_h + _y > canvas.height || _h - _y < 0) {
-                _h = -_h;
-            }
-            _x += _w;
-            _y += _h;
-        }
-        //d
-        drawRect();
-        function drawRect() {
-            context3.beginPath();
-            context3.fillRect(_x, _y, _w, _h);
-        }
-        drawRandom(2);
-        function drawRandom(_a) {
-            let rects = [];
-            for (let v = 0; v < rects.length - 1; v++) {
-                rects[v].drawRect();
-            }
-        }
+        let x = zufall(0, 500);
+        let y = zufall(370, 900);
+        let w = zufall(50, 200);
+        let h = zufall(50, 200);
+        let r = zufall(0, 255);
+        let g = zufall(0, 255);
+        let b = zufall(0, 255);
+        return {
+            breite: w,
+            hoehe: h,
+            posX: x,
+            posY: y,
+            farbe: `rgb(${r}, ${g}, ${b})`
+        };
+    }
+    function zufall(_min, _max) {
+        return Math.floor(Math.random() * (_max - _min) + _min);
+    }
+    //d
+    function drawRect(_r) {
+        context.fillStyle = _r.farbe;
+        context.fillRect(_r.posX, _r.posY, _r.breite, _r.hoehe);
+    }
+    //e
+    let rects = [];
+    for (let i = 0; i < 6; i++) {
+        rects.push(createRect());
+    }
+    for (let rect of rects) {
+        drawRect(rect);
     }
 })(aufgabe2_2 || (aufgabe2_2 = {}));
 //# sourceMappingURL=script.js.map

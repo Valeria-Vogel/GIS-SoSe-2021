@@ -1,55 +1,61 @@
 namespace aufgabe2_2 {
 
     //1. a)
-    min();
-    function min(): void {
-        let x: number[] = [35, 67, 7, 93, 62, 14];
-        let laenge: number = x.length;
+    min(3, 4, 7, 9, 3, 1, 6, 8, 2);
+    function min(..._eingabe: number[]): void {
         let min: number = Infinity;
-        while (laenge--) {
-            if (Number(x[laenge]) < min) {
-                min = Number(x[laenge]);
+        for (let i: number = 0; i < _eingabe.length; i++) {
+            if (min > _eingabe[i]) {
+                min = _eingabe[i];
             }
         }
         console.log(min);
 
     }
+
     //b)
-    isEvan(75);
-    function isEvan(zahl: number): void {
-        let gerade: boolean = true;
+    isEvan(1);
+    function isEvan(_zahl: number): boolean {
 
-        if (zahl == 0 || zahl % 2 == 0) {
-            console.log(gerade);
-        } else {
-            console.log(!gerade);
+        if (_zahl == 0)
+            return true;
 
-        }
-        if (zahl < 0) {
-            console.log(zahl - 2); // Für jede zahl unter o wird die Zahl - 2 genommen und ausgegeben, somit wäre für "-1" die Ausgabe -3
+        if (_zahl == 1)
+            return false;
 
-        }
+        let ergebnis: boolean;
+        if (_zahl < 0)
+            ergebnis = isEvan(_zahl + 2);
+        if (_zahl > 0)
+            ergebnis = isEvan(_zahl - 2);
+        return ergebnis;
     }
+
     //c) 1.
-    interface Student {
+    interface Student1 {
         nachname: string;
         vorname: string;
         martrikelnummer: string;
         studiengang: string;
     }
     //c) 2.
-    let student1: Student = { nachname: "Müller", vorname: "Max", martrikelnummer: "233445", studiengang: "OMB" };
-    let student2: Student = { nachname: "Schmidt", vorname: "Hans", martrikelnummer: "933525", studiengang: "MKB" };
-    let student3: Student = { nachname: "Sommer", vorname: "Lili", martrikelnummer: "431224", studiengang: "MIB" };
+    let student1: Student1 = { nachname: "Müller", vorname: "Max", martrikelnummer: "233445", studiengang: "OMB" };
+    let student2: Student1 = { nachname: "Schmidt", vorname: "Hans", martrikelnummer: "933525", studiengang: "MKB" };
+    let student3: Student1 = { nachname: "Sommer", vorname: "Lili", martrikelnummer: "431224", studiengang: "MIB" };
     console.log(student1.martrikelnummer);
     console.log(student2.studiengang);
     console.log(student3.nachname);
 
     //C) 3.
-    let studierende: string[] = [student3.nachname, student3.vorname, student3.martrikelnummer, student3.studiengang];
-    let studierender: string[] = ["Hoffmann", "Justin", "235623", "MKB"];
-    console.log(studierende);
-    console.log(studierender);
+    let studierendeArr: Student1[] = [student1, student2];
+    studierendeArr.push(student3);
+    studierendeArr.push({ nachname: "Mayer", vorname: "Nikki", martrikelnummer: "817273", studiengang: "OMB" });
+
+    console.log(studierendeArr[0].nachname);
+    console.log(studierendeArr[1].vorname);
+    console.log(studierendeArr[2].martrikelnummer);
+    console.log(studierendeArr[3].studiengang);
+
 
     //c) 4.
 
@@ -60,59 +66,85 @@ namespace aufgabe2_2 {
         console.log(info.martrikelnummer);
         console.log(info.studiengang);
     }
-    console.log(showInfo(student1));
-    console.log(showInfo(student2));
-    console.log(showInfo(student3));
+
 
     //c) 5.
 
-    class StudentenInfos {
+    class Student {
         nachname: string;
         vorname: string;
         martrikelnummer: string;
+        studiengang: string;
 
-        constructor(_nachname: string, _vorname: string, _matrikelnummer: string) {
+        constructor(_nachname: string, _vorname: string, _matrikelnummer: string, _studiengang: string) {
             this.nachname = _nachname;
             this.vorname = _vorname;
             this.martrikelnummer = _matrikelnummer;
+            this.studiengang= _studiengang;
         }
-        showInfo(student: StudentenInfos): void {
-            console.log(student.nachname);
-            console.log(student.vorname);
-            console.log(student.martrikelnummer);
+        showInfo(): void {
+            console.log(`Nachname: ${this.nachname}, Vorname: ${this.vorname}, Matrikelnummer: ${this.martrikelnummer}, Studiengang: ${this.studiengang}`);
         }
     }
+    let student_1: Student = new Student ("Baum", "Laura", "425782", "MIB");
+    let student_2: Student = new Student ("Winkler", "Dennis", "967334", "OMB");
+    let student_3: Student = new Student ("Fischer", "Vivien", "456834", "MKb");
 
+    let studentArr: Student[] = [student_1, student_2];
+    studierendeArr.push(student_3);
+    studierendeArr.push(new Student("Schulz", "Marvin", "727394", "MKB"));
 
+    console.log(studentArr[0].nachname);
+    console.log(studentArr[1].vorname);
+    console.log(studentArr[2].martrikelnummer);
 
+    console.log(showInfo(student_1));
+    console.log(showInfo(student_2));
+    console.log(showInfo(student_3));
 
+    for (let student of studentArr) {
+        student.showInfo();
+      }
 
     // 3. a)
-    backwards();
+    function backwards(..._arr: number[]): number[] {
+        let reversed: number[] = [];
+        for (let i: number = _arr.length; i > 0; i++) {
+            reversed.push(_arr[i - 1]);
 
-    function backwards(): void {
-        let arr: number[] = [4, 6, 7, 2, 53, 1, 3, 0];
-        console.log(arr.reverse());
+        }
+
+        return reversed;
     }
+    backwards(2, 3, 6, 5, 5, 3, 66, 23);
+
 
     // b)
-    join();
-    function join(): void {
-        let arr1: number[] = [5, 6, 7];
-        let arr2: number[] = [1, 2, 3];
+    function join(_arr1: number[], _arr2: number[]): number[] {
+        let zusammen: number[] = [];
+        for (let i: number = 0; i < _arr1.length; i++) {
+            zusammen.push(_arr1[i]);
+        }
+        for (let i: number = 0; i < _arr2.length; i++) {
+            zusammen.push(_arr2[i]);
 
-        let zusammen: number[] = arr1.concat(arr2); //Fügt 2 Arrays zusammen
-        console.log(zusammen);
+        }
+        return zusammen;
     }
+    console.log(join([4, 6, 8, 1, 5], [3, 9, 1, 3, 1, 8]));
+
 
     // c)
-    split();
-    function split(): void {
-        let arr: number[] = [23, 24, 57, 344, 33, 4, 1, 688, 3, 44, 3]; // gibt die Zahlen in in einem bestimmten Interval aus
+    function split(_array: number[], _teil1: number, _teil2: number): number[] {
+        let teilt: number[] = [];
 
-        let teilt: number[] = arr.slice(2, 8);
-        console.log(teilt);
+        for (let i: number = _teil1; i <= _teil2; i++) {
+            teilt.push(_array[i]);
+        }
+        return teilt;
     }
+    console.log(split([3, 6, 24, 5, 2, 999, 42, 45, 5, 2, 56, 5], 4, 8));
+
 
     let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("myCanvas");
     let context: CanvasRenderingContext2D = canvas.getContext("2d");
@@ -262,51 +294,51 @@ namespace aufgabe2_2 {
 
 
     interface Rechteck {
-        [x: string]: any;
-        x: number;
-        y: number;
-        w: number;
-        h: number;
+        posX: number;
+        posY: number;
+        breite: number;
+        hoehe: number;
+        farbe: string;
     }
     //c
     createRect();
-    function createRect(): void {
-        let x: number, y: number, w: number, h: number;
-        let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("myCanvas");
-        let context3: CanvasRenderingContext2D = canvas.getContext("2d");
-        let _x: number = x;
-        let _y: number = y;
-        let _w: number = w;
-        let _h: number = h;
+    function createRect(): Rechteck {
+        let x: number = zufall(0, 500);
+        let y: number = zufall(370, 900);
+        let w: number = zufall(50, 200);
+        let h: number = zufall(50, 200);
 
-        zufall();
-        function zufall(): void {
-            if (_w + _x > canvas.width || _w - _x < 0) {
-                _w = -_w;
-            }
-            if (_h + _y > canvas.height || _h - _y < 0) {
-                _h = -_h;
-            }
-            _x += _w;
-            _y += _h;
+        let r: number = zufall(0, 255);
+        let g: number = zufall(0, 255);
+        let b: number = zufall(0, 255);
 
-
-        }
-
-        //d
-        drawRect();
-        function drawRect(): void {
-            context3.beginPath();
-            context3.fillRect(_x, _y, _w, _h);
-        }
-        drawRandom(2);
-        function drawRandom(_a: number): void {
-            let rects: Rechteck[] = [];
-            for (let v: number = 0; v < rects.length - 1; v++) {
-                rects[v].drawRect();
-            }
-        }
+        return {
+            breite: w,
+            hoehe: h,
+            posX: x,
+            posY: y,
+            farbe: `rgb(${r}, ${g}, ${b})`
+        };
     }
 
+    function zufall(_min: number, _max: number): number {
+        return Math.floor(Math.random() * (_max - _min) + _min);
+    }
+
+    //d
+    function drawRect(_r: Rechteck): void {
+        context.fillStyle = _r.farbe;
+        context.fillRect(_r.posX, _r.posY, _r.breite, _r.hoehe);
+    }
+
+    //e
+    let rects: Rechteck[] = [];
+    for (let i: number = 0; i < 6; i++) {
+        rects.push(createRect());
+    }
+
+    for (let rect of rects) {
+        drawRect(rect);
+    }
 
 }

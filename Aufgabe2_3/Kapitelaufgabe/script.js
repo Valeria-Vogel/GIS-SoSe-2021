@@ -17,11 +17,11 @@ var Aufgabe2_3;
     let girl = document.createElement("button");
     body.appendChild(girl);
     girl.innerHTML = "Mädchen";
-    girl.addEventListener("click", auswahl);
+    girl.addEventListener("click", auswahlM);
     let boy = document.createElement("button"); // weiter taste führt zur nächsten auswahlmöglichkeit
     body.appendChild(boy);
     boy.innerHTML = "Junge";
-    boy.addEventListener("click", auswahl);
+    boy.addEventListener("click", auswahlJ);
     let hair = document.createElement("div");
     body.appendChild(hair);
     hair.innerHTML = "Haare";
@@ -41,12 +41,14 @@ var Aufgabe2_3;
     function weiter() {
         next.style.backgroundColor = "lightgreen";
     }
-    function auswahl() {
+    function auswahlM() {
         if (girl) {
             console.log("Ausahl: Mädchen");
         }
-        else {
-            console.log("Auwahl: Junge");
+    }
+    function auswahlJ() {
+        if (boy) {
+            console.log("Ausahl: Junge");
         }
     }
 })(Aufgabe2_3 || (Aufgabe2_3 = {}));

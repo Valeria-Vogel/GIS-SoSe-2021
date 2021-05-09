@@ -37,12 +37,12 @@ namespace Aufgabe2_3 {
     let girl: HTMLButtonElement = document.createElement("button");
     body.appendChild(girl);
     girl.innerHTML = "Mädchen";
-    girl.addEventListener("click", auswahl);
+    girl.addEventListener("click", auswahlM);
 
     let boy: HTMLButtonElement = document.createElement("button"); // weiter taste führt zur nächsten auswahlmöglichkeit
     body.appendChild(boy);
     boy.innerHTML = "Junge";
-    boy.addEventListener("click", auswahl);
+    boy.addEventListener("click", auswahlJ);
 
     let hair: HTMLElement = document.createElement("div");
     body.appendChild(hair);
@@ -70,13 +70,18 @@ namespace Aufgabe2_3 {
         next.style.backgroundColor = "lightgreen";
     }
 
-    function auswahl(): void {
+    function auswahlM(): void {
         if (girl) {
-            console.log("Ausahl: Mädchen" );
-            } else {
-            console.log("Auwahl: Junge");
-            
+            console.log("Ausahl: Mädchen");
         }
+
     }
+    function auswahlJ(): void {
+        if (boy) {
+            console.log("Ausahl: Junge");
+        }
+
+    }
+
 
 }

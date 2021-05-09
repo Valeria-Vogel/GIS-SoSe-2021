@@ -1,0 +1,46 @@
+body{
+    background-color: bisque;
+    width: 1100px;
+    margin: auto;
+    
+}
+h1{
+    margin: 20px;
+    padding: 20px;
+    position: sticky;
+    text-align: center;
+    font-family: Arial, Helvetica, "sans-serif";
+    font-size: 45px;
+    background-color: goldenrod;
+    text-shadow:5px 5px 6px lightgrey;
+}
+#topic{
+    margin-left: 250px;
+    margin-right: 250px;
+    text-align: center; 
+    padding: 10px;
+    font-size: 25px;
+    background-color: darksalmon;
+}
+#girl{ 
+    float: left;
+   
+}
+
+#boy,#next,#person{
+    float: right;
+}
+
+div{ 
+    text-align: center;
+}
+ul{
+   
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul + li{
+    display: line
+    
+}

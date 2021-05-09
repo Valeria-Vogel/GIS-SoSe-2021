@@ -67,11 +67,11 @@ var aufgabe2_3;
     function ruecksetzen() {
         body.reset();
     }
-    let plusButton = document.createElement("button");
+    let plusButton = document.createElement("button"); // knopf um mehr rechtecke zu erstellen 
     body.appendChild(plusButton);
     plusButton.innerHTML = "Rechteck hinzufügen";
     plusButton.addEventListener("click", rechteck);
-    let zuruecksetzen = document.createElement("button");
+    let zuruecksetzen = document.createElement("button"); // rechtecke/ Seite rücksetzen
     body.appendChild(zuruecksetzen);
     zuruecksetzen.innerHTML = "Seite Rücksetzen";
     zuruecksetzen.addEventListener("click", ruecksetzen);

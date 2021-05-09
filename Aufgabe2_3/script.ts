@@ -2,7 +2,7 @@ namespace aufgabe2_3 {
 
     let body: HTMLElement = document.body;
 
-    function rechteck(): void {
+    function rechteck(): void { // Erzeugt rechteche mit zufälligen werten
 
         for (let i: number = 0; i < 1; i++) {
             let rechteck: HTMLDivElement = document.createElement("div");
@@ -68,16 +68,16 @@ namespace aufgabe2_3 {
     }
 
 
-    function ruecksetzen(): void {
+    function ruecksetzen(): void {      // Soll die erzeugten rechtecke rücksetzen
         body.reset();
     }
 
-    let plusButton: HTMLButtonElement = document.createElement("button");
+    let plusButton: HTMLButtonElement = document.createElement("button");   // knopf um mehr rechtecke zu erstellen 
     body.appendChild(plusButton);
     plusButton.innerHTML = "Rechteck hinzufügen";
     plusButton.addEventListener("click", rechteck);
 
-    let zuruecksetzen: HTMLButtonElement = document.createElement("button");
+    let zuruecksetzen: HTMLButtonElement = document.createElement("button"); // rechtecke/ Seite rücksetzen
     body.appendChild(zuruecksetzen);
     zuruecksetzen.innerHTML = "Seite Rücksetzen";
     zuruecksetzen.addEventListener("click", ruecksetzen);

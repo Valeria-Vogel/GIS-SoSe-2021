@@ -1,2 +1,33 @@
 "use strict";
+var Aufgabe2_3;
+(function (Aufgabe2_3) {
+    let body = document.body;
+    let head = document.createElement("h1");
+    body.appendChild(head);
+    head.innerHTML = "Gestalte deine Person";
+    let topic = document.createElement("p");
+    body.appendChild(topic);
+    head.innerHTML = "Geschlecht";
+    let girl = document.createElement("div");
+    body.appendChild(girl);
+    head.innerHTML = "Mädchen";
+    let boy = document.createElement("div");
+    body.appendChild(boy);
+    head.innerHTML = "Junge";
+    let hair = document.createElement("div");
+    body.appendChild(hair);
+    head.innerHTML = "Haare";
+    let outfit = document.createElement("div");
+    body.appendChild(outfit);
+    head.innerHTML = "Kleidung";
+    let extra = document.createElement("div");
+    body.appendChild(extra);
+    head.innerHTML = "Extras";
+    let next = document.createElement("div");
+    body.appendChild(next);
+    head.innerHTML = "Weiter";
+    let person = document.createElement("div");
+    body.appendChild(person);
+    head.innerHTML = "Zur Person";
+})(Aufgabe2_3 || (Aufgabe2_3 = {}));
 //# sourceMappingURL=script.js.map

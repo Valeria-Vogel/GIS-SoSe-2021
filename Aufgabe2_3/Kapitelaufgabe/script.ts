@@ -1,87 +1,48 @@
 namespace Aufgabe2_3 {
 
-    interface Darstellung {
-        junge: string;
-        mädchen: string;
-        haare: string;
-        frisur: string;
-        outfit: string;
-        extra: string;
-        farbe: string;
-    }
 
-    interface Save {
-        _junge: string;
-        _mädchen: string;
-        _haare: string;
-        _frisur: string;
-        _outfit: string;
-        _extra: string;
-        _farbe: string;
-    }
+    function zusammenbau(_wahl: Beschreibung, _index: number): HTMLDivElement {
+        let div: HTMLDivElement = document.createElement("div");
+        div.classList.add("teil");
 
-    let body: HTMLElement = document.body;
+        let image: HTMLImageElement = document.createElement("img");
+        image.src = _wahl.bild;
+        div.appendChild(image);
 
-    let head: HTMLElement = document.createElement("h1");
-    body.appendChild(head); {
-        head.innerHTML = "Gestalte deine Person";
-        head.style.height = "20 px";
-        head.style.width = " 30 px";
-        head.style.backgroundColor = "green";
-        head.style.color = "white";
-    }
-    let topic: HTMLElement = document.createElement("p");
-    body.appendChild(topic);
-    topic.innerHTML = "Geschlecht";
+        let span: HTMLSpanElement = document.createElement("span");
+        span.innerText = _wahl.was;
+        div.appendChild(span);
 
-    let girl: HTMLButtonElement = document.createElement("button");
-    body.appendChild(girl);
-    girl.innerHTML = "Mädchen";
-    girl.addEventListener("click", auswahlM);
+        let button: HTMLButtonElement = document.createElement("button");
+        button.innerText = "Wählen";
+        button.addEventListener("click", wahlmoeglichkeit);
+        button.addEventListener("click", wahlmoeglichkeit2);
+        button.dataset.index = _index.toString();
 
-    let boy: HTMLButtonElement = document.createElement("button"); // weiter taste führt zur nächsten auswahlmöglichkeit
-    body.appendChild(boy);
-    boy.innerHTML = "Junge";
-    boy.addEventListener("click", auswahlJ);
+        div.appendChild(button);
 
-    let hair: HTMLElement = document.createElement("div");
-    body.appendChild(hair);
-    hair.innerHTML = "Haare";
+        return div;
 
-    let outfit: HTMLElement = document.createElement("div");
-    body.appendChild(outfit);
-    outfit.innerHTML = "Kleidung";
-
-
-    let extra: HTMLElement = document.createElement("div");
-    body.appendChild(extra);
-    extra.innerHTML = "Extras";
-
-    let person: HTMLElement = document.createElement("div");
-    body.appendChild(person);
-    person.innerHTML = "Zur Person";
-
-    let next: HTMLButtonElement = document.createElement("button"); // weiter taste führt zur nächsten auswahlmöglichkeit
-    body.appendChild(next);
-    next.innerHTML = "Weiter";
-    next.addEventListener("click", weiter);
-
-    function weiter(): void {
-        next.style.backgroundColor = "lightgreen";
-    }
-
-    function auswahlM(): void {
-        if (girl) {
-            console.log("Ausahl: Mädchen");
+        function wahlmoeglichkeit(_event: Event): void {
+            console.log("Wahl", _wahl);
         }
-
     }
-    function auswahlJ(): void {
-        if (boy) {
-            console.log("Ausahl: Junge");
+    function wahlmoeglichkeit2(_e: Event): void {
+        let target: HTMLElement = <HTMLElement>_e.currentTarget;
+        let index: number = Number(target.dataset.index);
+
+        console.log("äußere Funktion", wahl.body[index]);
+    }
+
+    function showPossibilities(_wahl: Beschreibung[]): void {
+        let wrapper: HTMLDivElement = <HTMLDivElement>document.getElementById("selectionWrapper");
+        for (let i: number = 0; i < _wahl.length; i++) {
+            let div: HTMLDivElement = zusammenbau(_wahl[i], i);
+            wrapper.appendChild(div);
         }
-
     }
+
+    showPossibilities(wahl.body);
 
 
 }

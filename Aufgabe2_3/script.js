@@ -11,7 +11,6 @@ var aufgabe2_3;
             rechteck.style.margin = (Math.random() * 300).toString() + "px";
             rechteck.classList.add("rect");
             body.appendChild(rechteck);
-            body = rechteck;
         }
         for (let i = 0; i < 1; i++) {
             let rechteck = document.createElement("div");

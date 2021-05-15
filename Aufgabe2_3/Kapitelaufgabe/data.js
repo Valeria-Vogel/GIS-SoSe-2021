@@ -1,21 +1,26 @@
 "use strict";
 var Aufgabe2_3;
 (function (Aufgabe2_3) {
-    let canvas = document.getElementById("myCanvas");
-    let context = canvas.getContext("2d");
-    context.beginPath(); //kopf
-    context.arc(500, 100, 40, 0, 2 * Math.PI, false);
-    context.fillStyle = "peru";
-    context.fill();
-    context.lineWidth = 5;
-    context.strokeStyle = "peru";
-    context.stroke();
-    context.beginPath(); //körper?
-    context.rect(500, 110, 25, 35);
-    context.fillStyle = "peru";
-    context.fill();
-    context.lineWidth = 3;
-    context.strokeStyle = "peru";
-    context.stroke();
+    Aufgabe2_3.wahl = {
+        body: [
+            { bild: "GirlBody.jpg", was: "Mädchen" },
+            { bild: "BoyBody.jpg", was: "Junge" }
+        ],
+        hair: [
+            { bild: "Girl_Body.jpg", was: "Mädchen" },
+            { bild: "Girl_Body.jpg", was: "Mädchen" },
+            { bild: "Girl_Body.jpg", was: "Mädchen" }
+        ],
+        outfit: [
+            { bild: "Girl_Body.jpg", was: "Mädchen" },
+            { bild: "Girl_Body.jpg", was: "Mädchen" },
+            { bild: "Girl_Body.jpg", was: "Mädchen" }
+        ],
+        extra: [
+            { bild: "Girl_Body.jpg", was: "Mädchen" },
+            { bild: "Girl_Body.jpg", was: "Mädchen" },
+            { bild: "Girl_Body.jpg", was: "Mädchen" }
+        ]
+    };
 })(Aufgabe2_3 || (Aufgabe2_3 = {}));
 //# sourceMappingURL=data.js.map

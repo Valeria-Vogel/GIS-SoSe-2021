@@ -1,23 +1,43 @@
 namespace Aufgabe2_3 {
 
-    let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("myCanvas");
-    let context: CanvasRenderingContext2D = canvas.getContext("2d");
+    export interface Beschreibung {
+        bild: string;
+        was: string;
+    }
 
-    context.beginPath();    //kopf
-    context.arc(500, 100, 40, 0, 2 * Math.PI, false);
-    context.fillStyle = "peru";
-    context.fill();
-    context.lineWidth = 5;
-    context.strokeStyle = "peru";
-    context.stroke();
+    export interface Darstellung {
+        body: Beschreibung[];
+        hair: Beschreibung[];
+        outfit: Beschreibung[];
+        extra: Beschreibung[];
+    }
 
-    context.beginPath();    //körper?
-    context.rect(500, 110, 25, 35);
-    context.fillStyle = "peru";
-    context.fill();
-    context.lineWidth = 3;
-    context.strokeStyle = "peru";
-    context.stroke();
+    export interface Auswahl {
+        körper: Beschreibung;
+        haare: Beschreibung;
+        kleidung: Beschreibung;
+        extras: Beschreibung;
+    }
 
-
+    export let wahl: Darstellung = {
+        body: [
+          { bild: "GirlBody.jpg", was: "Mädchen" },
+          { bild: "BoyBody.jpg", was: "Junge" }
+        ],
+        hair: [
+          {bild: "Girl_Body.jpg", was: "Mädchen"  },
+          { bild: "Girl_Body.jpg", was: "Mädchen" },
+          { bild: "Girl_Body.jpg", was: "Mädchen" }
+        ],
+        outfit: [
+          { bild: "Girl_Body.jpg", was: "Mädchen" },
+          { bild: "Girl_Body.jpg", was: "Mädchen" },
+          {  bild: "Girl_Body.jpg", was: "Mädchen"}
+        ],
+        extra: [
+            { bild: "Girl_Body.jpg", was: "Mädchen" },
+            { bild: "Girl_Body.jpg", was: "Mädchen" },
+            { bild: "Girl_Body.jpg", was: "Mädchen"}
+          ]
+      };
 }

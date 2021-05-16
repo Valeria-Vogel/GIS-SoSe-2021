@@ -64,7 +64,6 @@ var aufgabe2_3;
         }
     }
     function ruecksetzen() {
-        body.reset();
     }
     let plusButton = document.createElement("button"); // knopf um mehr rechtecke zu erstellen 
     body.appendChild(plusButton);

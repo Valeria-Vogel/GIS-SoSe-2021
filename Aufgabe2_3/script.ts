@@ -68,7 +68,7 @@ namespace aufgabe2_3 {
 
 
     function ruecksetzen(): void {      // Soll die erzeugten rechtecke rücksetzen
-        body.reset();
+      
     }
 
     let plusButton: HTMLButtonElement = document.createElement("button");   // knopf um mehr rechtecke zu erstellen 

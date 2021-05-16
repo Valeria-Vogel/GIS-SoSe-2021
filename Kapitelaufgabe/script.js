@@ -36,31 +36,11 @@ var Aufgabe2_4;
             wrapper.appendChild(div);
         }
     }
-    //showPossibilities(wahl.body);
+    showPossibilities(Aufgabe2_4.wahl.body);
+    showPossibilities(Aufgabe2_4.wahl.hair);
     function bodyDiv(_auswahl) {
         let div = document.createElement("div");
         div.classList.add("body");
-        let image = document.createElement("img");
-        image.src = _auswahl.bild;
-        div.appendChild(image);
-        let p1 = document.createElement("p");
-        p1.innerText = _auswahl.was;
-        div.appendChild(p1);
-        let button = document.createElement("button");
-        button.innerText = "Wählen";
-        button.addEventListener("click", wahlmoeglichkeit);
-        div.appendChild(button);
-        return div;
-        function wahlmoeglichkeit(_event) {
-            console.log("Wahl", _auswahl);
-            sessionStorage.setItem("image1", _auswahl.bild);
-            sessionStorage.setItem("art", _auswahl.was);
-            location.href = "haare.html";
-        }
-    }
-    function hairDiv(_auswahl) {
-        let div = document.createElement("div");
-        div.classList.add("hair");
         let image = document.createElement("img");
         image.src = _auswahl.bild;
         div.appendChild(image);
@@ -79,39 +59,6 @@ var Aufgabe2_4;
                 location.href = "kleidung.html";
             }
         }
-        if ((document.querySelector("title").getAttribute("id") == "outfit")) {
-            button.addEventListener("click", kleidWahl);
-            div.appendChild(button);
-            function kleidWahl(_event) {
-                console.log("" + _auswahl.was);
-                sessionStorage.setItem("", _auswahl.bild);
-                sessionStorage.setItem("", _auswahl.was);
-                location.href = "extra.html";
-            }
-        }
-        return div;
     }
-    function anzeige(_auswahl) {
-        let anzeige = document.getElementById("auswahlBereich");
-        if (document.querySelector("title").getAttribute("id") == "body") {
-            for (let i = 0; i < _auswahl.body.length; i++) {
-                let div = bodyDiv(_auswahl.body[i]);
-                anzeige.appendChild(div);
-            }
-        }
-        else if (document.querySelector("title").getAttribute("id") == "hair") {
-            for (let i = 0; i < _auswahl.hair.length; i++) {
-                let div = hairDiv(_auswahl.hair[i]);
-                anzeige.appendChild(div);
-            }
-        }
-        else if (document.querySelector("title").getAttribute("id") == "outfit") {
-            for (let i = 0; i < _auswahl.outfit.length; i++) {
-                let div = hairDiv(_auswahl.outfit[i]);
-                anzeige.appendChild(div);
-            }
-        }
-    }
-    anzeige(Aufgabe2_4.wahl);
 })(Aufgabe2_4 || (Aufgabe2_4 = {}));
 //# sourceMappingURL=script.js.map

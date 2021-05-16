@@ -39,13 +39,13 @@ var Aufgabe2_4;
     //showPossibilities(wahl.body);
     function bodyDiv(_auswahl) {
         let div = document.createElement("div");
-        div.classList.add("body");
+        div.classList.add("teil");
         let image = document.createElement("img");
         image.src = _auswahl.bild;
         div.appendChild(image);
-        let p1 = document.createElement("p");
-        p1.innerText = _auswahl.was;
-        div.appendChild(p1);
+        let span = document.createElement("span");
+        span.innerText = _auswahl.was;
+        div.appendChild(span);
         let button = document.createElement("button");
         button.innerText = "Wählen";
         button.addEventListener("click", wahlmoeglichkeit);
@@ -60,7 +60,7 @@ var Aufgabe2_4;
     }
     function hairDiv(_auswahl) {
         let div = document.createElement("div");
-        div.classList.add("hair");
+        div.classList.add("teil");
         let image = document.createElement("img");
         image.src = _auswahl.bild;
         div.appendChild(image);

@@ -51,15 +51,15 @@ namespace Aufgabe2_4 {
     function bodyDiv(_auswahl: Beschreibung): HTMLDivElement {
 
         let div: HTMLDivElement = document.createElement("div");
-        div.classList.add("body");
+        div.classList.add("teil");
 
         let image: HTMLImageElement = document.createElement("img");
         image.src = _auswahl.bild;
         div.appendChild(image);
 
-        let p1: HTMLSpanElement = document.createElement("p");
-        p1.innerText = _auswahl.was;
-        div.appendChild(p1);
+        let span: HTMLSpanElement = document.createElement("span");
+        span.innerText = _auswahl.was;
+        div.appendChild(span);
 
 
         let button: HTMLButtonElement = document.createElement("button");
@@ -80,7 +80,7 @@ namespace Aufgabe2_4 {
     }
     function hairDiv(_auswahl: Beschreibung): HTMLDivElement {
         let div: HTMLDivElement = document.createElement("div");
-        div.classList.add("hair");
+        div.classList.add("teil");
 
         let image: HTMLImageElement = document.createElement("img");
         image.src = _auswahl.bild;

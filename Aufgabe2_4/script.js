@@ -7,36 +7,46 @@ var Aufgabe2_4;
          let auswahl: Darstellung = JSON.parse(auswahlJSON);
          return auswahl;
      }*/
-    function zusammenbau(_wahl, _index) {
-        let div = document.createElement("div");
-        div.classList.add("teil");
-        let image = document.createElement("img");
-        image.src = _wahl.bild;
-        div.appendChild(image);
-        let span = document.createElement("span");
-        span.innerText = _wahl.was;
-        div.appendChild(span);
-        let button = document.createElement("button");
-        button.innerText = "Wählen";
-        button.addEventListener("click", wahlmoeglichkeit);
-        button.dataset.index = _index.toString();
-        div.appendChild(button);
-        return div;
-        function wahlmoeglichkeit(_event) {
-            console.log("Wahl", _wahl);
-            sessionStorage.setItem("image1", _wahl.bild);
-            sessionStorage.setItem("art", _wahl.was);
-            location.href = "haare.html";
-        }
-    }
-    function showPossibilities(_wahl) {
-        let wrapper = document.getElementById("auswahlBereich");
-        for (let i = 0; i < _wahl.length; i++) {
-            let div = zusammenbau(_wahl[i], i);
-            wrapper.appendChild(div);
-        }
-    }
-    //showPossibilities(wahl.body);
+    /* function zusammenbau(_wahl: Beschreibung, _index: number): HTMLDivElement {
+         let div: HTMLDivElement = document.createElement("div");
+         div.classList.add("teil");
+ 
+         let image: HTMLImageElement = document.createElement("img");
+         image.src = _wahl.bild;
+         div.appendChild(image);
+ 
+         let span: HTMLSpanElement = document.createElement("span");
+         span.innerText = _wahl.was;
+         div.appendChild(span);
+ 
+         let button: HTMLButtonElement = document.createElement("button");
+         button.innerText = "Wählen";
+         button.addEventListener("click", wahlmoeglichkeit);
+         button.dataset.index = _index.toString();
+ 
+         div.appendChild(button);
+ 
+         return div;
+ 
+ 
+         function wahlmoeglichkeit(_event: Event): void {
+             console.log("Wahl", _wahl);
+             sessionStorage.setItem("image1", _wahl.bild);
+             sessionStorage.setItem("art", _wahl.was);
+             location.href = "haare.html";
+         }
+ 
+     }
+ 
+ 
+     /*function showPossibilities(_wahl: Beschreibung[]): void {
+         let wrapper: HTMLDivElement = <HTMLDivElement>document.getElementById("auswahlBereich");
+         for (let i: number = 0; i < _wahl.length; i++) {
+             let div: HTMLDivElement = zusammenbau(_wahl[i], i);
+             wrapper.appendChild(div);
+         }
+     }
+     showPossibilities(wahl.body);*/
     function bodyDiv(_auswahl) {
         let div = document.createElement("div");
         div.classList.add("teil");
@@ -50,11 +60,12 @@ var Aufgabe2_4;
         button.innerText = "Wählen";
         button.addEventListener("click", wahlmoeglichkeit);
         div.appendChild(button);
+        console.log("click", _auswahl);
         return div;
         function wahlmoeglichkeit(_event) {
             console.log("Wahl", _auswahl);
-            sessionStorage.setItem("image1", _auswahl.bild);
-            sessionStorage.setItem("art", _auswahl.was);
+            sessionStorage.setItem("bild", _auswahl.bild);
+            sessionStorage.setItem("was", _auswahl.was);
             location.href = "haare.html";
         }
     }
@@ -64,9 +75,9 @@ var Aufgabe2_4;
         let image = document.createElement("img");
         image.src = _auswahl.bild;
         div.appendChild(image);
-        let p = document.createElement("p");
-        p.innerText = _auswahl.was;
-        div.appendChild(p);
+        let span = document.createElement("span");
+        span.innerText = _auswahl.was;
+        div.appendChild(span);
         let button = document.createElement("button");
         button.innerText = "Wählen";
         if ((document.querySelector("title").getAttribute("id") == "hair")) {
@@ -74,8 +85,8 @@ var Aufgabe2_4;
             div.appendChild(button);
             function auswahlSegel(_event) {
                 console.log(_auswahl.was);
-                sessionStorage.setItem("", _auswahl.bild);
-                sessionStorage.setItem("", _auswahl.was);
+                sessionStorage.setItem("bild", _auswahl.bild);
+                sessionStorage.setItem("was", _auswahl.was);
                 location.href = "kleidung.html";
             }
         }
@@ -89,6 +100,7 @@ var Aufgabe2_4;
                 location.href = "extra.html";
             }
         }
+        console.log("click", _auswahl);
         return div;
     }
     function anzeige(_auswahl) {

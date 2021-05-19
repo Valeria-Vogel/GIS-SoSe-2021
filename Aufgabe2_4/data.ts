@@ -30,7 +30,7 @@ export let auswahlJSON: string =
       "body": [
           {
               "bildID": "girlBody",
-              "bild": "./img/person.png", 
+              "bild": "./img/GirlBody.jpg", 
               "was": "Mädchen"
           },
           {   
@@ -71,7 +71,7 @@ export let auswahlJSON: string =
             "bildID": "?",
             "bild": "?", 
            "was": "?"
-          },
+          }
       ],
       "extra": [
         {
@@ -88,7 +88,7 @@ export let auswahlJSON: string =
           "bildID": "?",
           "bild": "?", 
          "was": "?"
-        },
+        }
     ]
   }
   `;

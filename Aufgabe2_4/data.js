@@ -30,7 +30,7 @@ var Aufgabe2_4;
       "body": [
           {
               "bildID": "girlBody",
-              "bild": "./img/person.png", 
+              "bild": "./img/GirlBody.jpg", 
               "was": "Mädchen"
           },
           {   
@@ -71,7 +71,7 @@ var Aufgabe2_4;
             "bildID": "?",
             "bild": "?", 
            "was": "?"
-          },
+          }
       ],
       "extra": [
         {
@@ -88,7 +88,7 @@ var Aufgabe2_4;
           "bildID": "?",
           "bild": "?", 
          "was": "?"
-        },
+        }
     ]
   }
   `;

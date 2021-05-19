@@ -1,6 +1,5 @@
 namespace Aufgabe2_4 {
-
-  export let wahl: Darstellung = {
+  /*export let wahl: Darstellung = {
     body: [
       { bildId: "GirlBody", bild: "./img/GirlBody.jpg", was: "Mädchen" },
       { bildId: "GirlBody", bild: "./img/BoyBody.jpg", was: "Junge" }
@@ -11,32 +10,32 @@ namespace Aufgabe2_4 {
       { bildId: "GirlHair3", bild: "./img/GirlHair3.jpg", was: "Haare 3" }
       /*{ bildId: "BoyHair1", bild: "./img/BoyHaare1.jpg", was: "Haare 1" },
       { bildId: "BoyHair2", bild: "./img/BoyHaare2.jpg", was: "Haare 2" },
-      { bildId: "BoyHair3", bild: "./img/BoyHaare3.jpg", was: "Haare 3" }*/
-    ],
-    outfit: [
-      { bildId: "GirlOutfit1", bild: "./img/GirlOutfit1.jpg", was: "Outfit 1" },
-      { bildId: "GirlOutfit2", bild: "?", was: "Outfit 2" },
-      { bildId: "GirlOutfit3", bild: "?", was: "Outfit3" }
-    ],
+      { bildId: "BoyHair3", bild: "./img/BoyHaare3.jpg", was: "Haare 3" }
+    ],*/
+ /* outfit: [
+    { bildId: "GirlOutfit1", bild: "./img/GirlOutfit1.jpg", was: "Outfit 1" },
+    { bildId: "GirlOutfit2", bild: "./img/GirlOutfit2.jpg", was: "Outfit 2" },
+    { bildId: "GirlOutfit3", bild: "?", was: "Outfit3" }
+  ],
     extra: [
-      { bildId: "?", bild: "?", was: "?" },
-      { bildId: "?", bild: "?", was: "?" },
-      { bildId: "?", bild: "?", was: "?" }
+      { bildId: "extra1", bild: "?", was: "Extra 1" },
+      { bildId: "extra2", bild: "?", was: "Extra 2" },
+      { bildId: "extra3", bild: "?", was: "Extra 3" }
     ]
-  };
+};*/
 
-  export let auswahlJSON: string =
-    `
-  (
+export let auswahlJSON: string =
+  `
+  {
       "body": [
           {
               "bildID": "girlBody",
-              "bild": "./img/GirlBody.jpg", 
+              "bild": "./img/person.png", 
               "was": "Mädchen"
           },
           {   
               "bildId": "boyBody",
-              "bild": "./img/BoyBody.jpg", 
+              "bild": "img/BoyBody.jpg", 
               "was": "Junge"
           }
       ],
@@ -52,9 +51,9 @@ namespace Aufgabe2_4 {
             "was": "Haare 2"
           },
           {
-            "bildID": "g_hair3",
-            "bild": "./img/GirlHair3.jpg", 
-            "was": "Haare 3"
+            "bildID":"g_hair3",
+            "bild":"./img/GirlHair3.jpg", 
+            "was":"Haare 3"
           }
       ],
       "outfit": [
@@ -73,7 +72,7 @@ namespace Aufgabe2_4 {
             "bild": "?", 
            "was": "?"
           },
-      ]
+      ],
       "extra": [
         {
             "bildID": "?",
@@ -91,9 +90,9 @@ namespace Aufgabe2_4 {
          "was": "?"
         },
     ]
-  )
-  `
-    ;
-  // export let auswahl: Beschreibung = JSON.parse(auswahlJSON);*/
+  }
+  `;
+
+
 }
 

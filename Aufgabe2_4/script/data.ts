@@ -27,12 +27,14 @@ namespace Aufgabe2_4 {
 export let auswahlJSON: string =
   `
   {
-      "body": [
+      "body_g": [
           {
               "bildID": "girlBody",
               "bild": "./img/GirlBody.jpg", 
               "was": "Mädchen"
-          },
+          }
+        ],
+        "body_b": [   
           {   
               "bildId": "boyBody",
               "bild": "img/BoyBody.jpg", 
@@ -56,6 +58,24 @@ export let auswahlJSON: string =
             "was":"Haare 3"
           }
       ],
+      "hair2": [
+        {
+          "bildID": "b_hair1",
+          "bild": "./img/BoyHaare1.jpg", 
+          "was": "Haare 1"
+        },
+        {
+          "bildID": "b_hair2",
+          "bild": "./img/BoyHaare2.jpg", 
+          "was": "Haare 2"
+        },
+        {
+          "bildID":"b_hair3",
+          "bild":"./img/BoyHaare3.jpg", 
+          "was":"Haare 3"
+        }
+    ],
+
       "outfit": [
           {
               "bildID": "GirlOutfit1",
@@ -73,23 +93,24 @@ export let auswahlJSON: string =
            "was": "Outfit 3"
           }
       ],
-      "extra": [
+      "outfit2": [
         {
-            "bildID": "?",
-            "bild": "?", 
-            "was": "?"
+            "bildID": "BoyOutfit1",
+            "bild": "./img/BoyOutfit1.jpg", 
+            "was": "Outfit 1"
         },
         {
-          "bildID": "?",
-          "bild": "?", 
-          "was": "?"
+          "bildID": "BoyOutfit2",
+          "bild": "./img/BoyOutfit2.jpg", 
+          "was": "Outfit 2"
         },
         {
-          "bildID": "?",
-          "bild": "?", 
-         "was": "?"
+          "bildID": "BoyOutfit3",
+          "bild": "./img/BoyOutfit3.jpg", 
+         "was": "Outfit 3"
         }
     ]
+      
   }
   `;
 

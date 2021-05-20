@@ -1,5 +1,5 @@
 body{
-    background-image: url("./img/BG.jpg");
+    background-image: url("./img/bg1.jpg");
     width: 1100px;
     margin: auto;
     
@@ -20,8 +20,11 @@ h2{
    
     text-align: center;
 	font-size: 30px;
-	color: lightgoldenrodyellow;
-	text-shadow: 5px 5px 6px black
+	color: lightcyan;
+	text-shadow: 3px 2px 3px black;
+	background-color: rgb(165, 204, 181);
+	margin-left: 200px;
+	margin-right: 200px;
 }
 
 #auswahlBereich {
@@ -35,7 +38,7 @@ h2{
 	margin: 15px;
 	box-shadow: 10px 10px 5px 0px darkslategray;
 	border: 1px solid rgb(43, 87, 41);
-	background-color: rgb(55, 116, 40);
+	background-color: rgb(113, 155, 103);
 }
 
 .teil span {
@@ -56,4 +59,14 @@ h2{
 .teil image {
     width: 300px;
     height: 500px;
+}
+
+#schonAusgewaehlt {
+	display: flex;
+	justify-content: center;
+}
+
+#schonAusgewählt img {
+	width: 75px;
+	margin: 10px;
 }

@@ -6,9 +6,9 @@ var Aufgabe2_4;
     if (storedSelection) {
         personAuswahl = JSON.parse(storedSelection);
     }
-    let wrapper = document.getElementById("resultDisplay");
+    let wrapper = document.getElementById("ergebnisZeigen");
     if (personAuswahl.body_g) {
-        wrapper.appendChild(createImage(personAuswahl.body_g.bild));
+        wrapper.appendChild(createImage("./img/femenine.png"));
     }
     else {
         wrapper.appendChild(createImage("./img/sex.png"));

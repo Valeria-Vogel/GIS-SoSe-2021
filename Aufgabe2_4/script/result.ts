@@ -5,10 +5,10 @@ namespace Aufgabe2_4 {
       personAuswahl = JSON.parse(storedSelection);
     }
   
-    let wrapper: HTMLDivElement = <HTMLDivElement>document.getElementById("resultDisplay");
+    let wrapper: HTMLDivElement = <HTMLDivElement>document.getElementById("ergebnisZeigen");
   
     if (personAuswahl.body_g) {
-      wrapper.appendChild(createImage(personAuswahl.body_g.bild));
+      wrapper.appendChild(createImage("./img/femenine.png"));
     } else {
       wrapper.appendChild(createImage("./img/sex.png"));
     }

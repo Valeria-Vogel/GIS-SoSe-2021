@@ -66,7 +66,7 @@ h2{
 	justify-content: center;
 }
 
-#schonAusgewählt img {
+selectionPreview{
 	width: 75px;
 	margin: 10px;
 }

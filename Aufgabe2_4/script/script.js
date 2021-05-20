@@ -95,11 +95,11 @@ var Aufgabe2_4;
             currentPart = "Body";
             currentParts = wahl.body;
             break;
-        case "Alien Generator - Torso":
+        case "Haare":
             currentPart = "Hair";
             currentParts = wahl.hair;
             break;
-        case "Alien Generator - Legs":
+        case "Kleidung":
             currentPart = "Outfit";
             currentParts = wahl.outfit;
             break;

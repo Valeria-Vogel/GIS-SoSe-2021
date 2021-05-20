@@ -1,75 +1,78 @@
 namespace Aufgabe2_4 {
   /*export let wahl: Darstellung = {
     body: [
-      { bildId: "GirlBody", bild: "./img/GirlBody.jpg", was: "Mädchen" },
-      { bildId: "GirlBody", bild: "./img/BoyBody.jpg", was: "Junge" }
+      { isGirlBody: true, bildId: "GirlBody", bild: "./img/GirlBody.jpg", was: "Mädchen" },
+      { isGirlBody: false, bildId: "GirlBody", bild: "./img/BoyBody.jpg", was: "Junge" }
     ],
     hair: [
-      { bildId: "GirlHair1", bild: "./img/GirlHair1.jpg", was: "Haare 1" },
-      { bildId: "GirlHair2", bild: "./img/GirlHair2.jpg", was: "Haare 2" },
-      { bildId: "GirlHair3", bild: "./img/GirlHair3.jpg", was: "Haare 3" }
-      /*{ bildId: "BoyHair1", bild: "./img/BoyHaare1.jpg", was: "Haare 1" },
-      { bildId: "BoyHair2", bild: "./img/BoyHaare2.jpg", was: "Haare 2" },
-      { bildId: "BoyHair3", bild: "./img/BoyHaare3.jpg", was: "Haare 3" }
-    ],*/
- /* outfit: [
-    { bildId: "GirlOutfit1", bild: "./img/GirlOutfit1.jpg", was: "Outfit 1" },
-    { bildId: "GirlOutfit2", bild: "./img/GirlOutfit2.jpg", was: "Outfit 2" },
-    { bildId: "GirlOutfit3", bild: "?", was: "Outfit3" }
-  ],
-    extra: [
-      { bildId: "extra1", bild: "?", was: "Extra 1" },
-      { bildId: "extra2", bild: "?", was: "Extra 2" },
-      { bildId: "extra3", bild: "?", was: "Extra 3" }
+      { isGirlBody: true, bildId: "GirlHair1", bild: "./img/GirlHair1.jpg", was: "Haare 1" },
+      { isGirlBody: true, bildId: "GirlHair2", bild: "./img/GirlHair2.jpg", was: "Haare 2" },
+      { isGirlBody: true, bildId: "GirlHair3", bild: "./img/GirlHair3.jpg", was: "Haare 3" },
+      { isGirlBody: false, bildId: "BoyHair1", bild: "./img/BoyHaare1.jpg", was: "Haare 1" },
+      { isGirlBody: false, bildId: "BoyHair2", bild: "./img/BoyHaare2.jpg", was: "Haare 2" },
+      { isGirlBody: false, bildId: "BoyHair3", bild: "./img/BoyHaare3.jpg", was: "Haare 3" }
+    ],
+    outfit: [
+      { isGirlBody: true, bildId: "GirlOutfit1", bild: "./img/GirlOutfit1.jpg", was: "Outfit 1" },
+      { isGirlBody: true, bildId: "GirlOutfit2", bild: "./img/GirlOutfit2.jpg", was: "Outfit 2" },
+      { isGirlBody: true, bildId: "GirlOutfit3", bild: "./img/GirlOutfit3.jpg", was: "Outfit3" },
+      { isGirlBody: false, bildId: "BoyOutfit1", bild: "./img/BoyOutfit1.jpg", was: "Outfit 1" },
+      { isGirlBody: false, bildId: "BoyOutfit2", bild: "./img/BoyOutfit2.jpg", was: "Outfit 2" },
+      { isGirlBody: false, bildId: "BoyOutfit3", bild: "./img/BoyOutfit3.jpg", was: "Outfit3" }
     ]
-};*/
+  };
+*/
 
-export let auswahlJSON: string =
-  `
+  export let auswahlJSON: string =
+    `
   {
-      "body_g": [
+      "body": [
           {
+              "isGirlBody": "true",
               "bildID": "girlBody",
               "bild": "./img/GirlBody.jpg", 
               "was": "Mädchen"
-          }
-        ],
-        "body_b": [   
+          } ,
           {   
+              "isGirlBody": "false",
               "bildId": "boyBody",
               "bild": "img/BoyBody.jpg", 
               "was": "Junge"
           }
-      ],
+        ],
       "hair": [
           {
+            "isGirlBody": "true",
             "bildID": "g_hair1",
             "bild": "./img/GirlHair1.jpg", 
             "was": "Haare 1"
           },
           {
+            "isGirlBody": "true",
             "bildID": "g_hair2",
             "bild": "./img/GirlHair2.jpg", 
             "was": "Haare 2"
           },
           {
+            "isGirlBody": "true",
             "bildID":"g_hair3",
             "bild":"./img/GirlHair3.jpg", 
             "was":"Haare 3"
-          }
-      ],
-      "hair2": [
-        {
+          },
+           {
+            "isGirlBody": "false",
           "bildID": "b_hair1",
           "bild": "./img/BoyHaare1.jpg", 
           "was": "Haare 1"
         },
         {
+          "isGirlBody": "false",
           "bildID": "b_hair2",
           "bild": "./img/BoyHaare2.jpg", 
           "was": "Haare 2"
         },
         {
+          "isGirlBody": "false",
           "bildID":"b_hair3",
           "bild":"./img/BoyHaare3.jpg", 
           "was":"Haare 3"
@@ -78,33 +81,38 @@ export let auswahlJSON: string =
 
       "outfit": [
           {
+            "isGirlBody": "true",
               "bildID": "GirlOutfit1",
               "bild": "./img/GirlOutfit1.jpg", 
               "was": "Outfit 1"
           },
           {
+            
+            "isGirlBody": "true",
             "bildID": "GirlOutfit2",
             "bild": "./img/GirlOutfit2.jpg", 
             "was": "Outfit 2"
           },
           {
+            "isGirlBody": "true",
             "bildID": "GirlOutfit3",
             "bild": "./img/GirlOutfit3.jpg", 
            "was": "Outfit 3"
-          }
-      ],
-      "outfit2": [
+          },
         {
+          "isGirlBody": "false",
             "bildID": "BoyOutfit1",
             "bild": "./img/BoyOutfit1.jpg", 
             "was": "Outfit 1"
         },
         {
+          "isGirlBody": "false",
           "bildID": "BoyOutfit2",
           "bild": "./img/BoyOutfit2.jpg", 
           "was": "Outfit 2"
         },
         {
+          "isGirlBody": "false",
           "bildID": "BoyOutfit3",
           "bild": "./img/BoyOutfit3.jpg", 
          "was": "Outfit 3"

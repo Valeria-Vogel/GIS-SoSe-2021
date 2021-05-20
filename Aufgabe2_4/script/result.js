@@ -7,7 +7,7 @@ var Aufgabe2_4;
         personAuswahl = JSON.parse(storedSelection);
     }
     let wrapper = document.getElementById("ergebnisZeigen");
-    if (personAuswahl.body_g) {
+    if (personAuswahl.body) {
         wrapper.appendChild(createImage("./img/femenine.png"));
     }
     else {

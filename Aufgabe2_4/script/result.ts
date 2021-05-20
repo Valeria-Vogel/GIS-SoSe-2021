@@ -7,7 +7,7 @@ namespace Aufgabe2_4 {
   
     let wrapper: HTMLDivElement = <HTMLDivElement>document.getElementById("ergebnisZeigen");
   
-    if (personAuswahl.body_g) {
+    if (personAuswahl.body) {
       wrapper.appendChild(createImage("./img/femenine.png"));
     } else {
       wrapper.appendChild(createImage("./img/sex.png"));

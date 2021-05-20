@@ -12,7 +12,7 @@ namespace Aufgabe2_4 {
     }
 
 
-    let currentParts: Beschreibung[] = [];
+  /*  let currentParts: Beschreibung[] = [];
     let currentPart: string = "";
 
     switch (document.title) {
@@ -91,7 +91,7 @@ namespace Aufgabe2_4 {
             let div: HTMLDivElement = bodyDiv(_parts[i]);
             wrapper.appendChild(div);
         }
-    }
+    }*/
 
 
     // Aufgabe 2
@@ -99,17 +99,17 @@ namespace Aufgabe2_4 {
     let selectionPreview: HTMLElement = <HTMLElement>document.getElementById("schonAusgewaehlt");
 
     if (personAuswahl.body_g) {
-        selectionPreview.appendChild(createImage("./img/femenine.png"));
+        selectionPreview.appendChild(createImage(localStorage.getItem( personAuswahl.body_g.bild)));
     } else {
         selectionPreview.appendChild(createImage("./img/sex.png"));
     }
     if (personAuswahl.hair) {
-        selectionPreview.appendChild(createImage(personAuswahl.hair.bild));
+        selectionPreview.appendChild(createImage(localStorage.getItem(personAuswahl.hair.bild)));
     } else {
         selectionPreview.appendChild(createImage("./img/woman-hair.png"));
     }
     if (personAuswahl.outfit) {
-        selectionPreview.appendChild(createImage(personAuswahl.outfit.bild));
+        selectionPreview.appendChild(createImage(localStorage.getItem(personAuswahl.outfit.bild)));
     } else {
         selectionPreview.appendChild(createImage("./img/male-clothes.png"));
     }
@@ -146,8 +146,7 @@ namespace Aufgabe2_4 {
             
             if (wahl.body_b) {
                 
-                localStorage.setItem("bild", _auswahl.bild);
-                localStorage.setItem("was", _auswahl.was);
+                localStorage.setItem("body_g", _auswahl.bild);
                 location.href = "haare.html";
                 
                 console.log(localStorage);
@@ -158,8 +157,7 @@ namespace Aufgabe2_4 {
                 div.appendChild(button);
                 function haarWahl(_event: Event): void {
                     console.log(_auswahl.was);
-                    localStorage.setItem("bild", _auswahl.bild);
-                    localStorage.setItem("was", _auswahl.was);
+                    localStorage.setItem("hair", _auswahl.bild);
                     location.href = "kleidung.html";
                     
                     console.log(localStorage);
@@ -170,8 +168,7 @@ namespace Aufgabe2_4 {
                 button.addEventListener("click", kleidWahl);
                 div.appendChild(button);
                 function kleidWahl(_event: Event): void {
-                    localStorage.setItem("bild", _auswahl.bild);
-                    localStorage.setItem("was", _auswahl.was);
+                    localStorage.setItem("outfit", _auswahl.bild);
                     location.href = "ergebnis.html";
                     
                     console.log(localStorage);

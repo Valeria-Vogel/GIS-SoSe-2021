@@ -9,7 +9,6 @@ namespace Aufgabe2_4 {
 
     export interface Darstellung {
         body_g: Beschreibung[];
-        body_b: Beschreibung[];
         hair: Beschreibung[];
         hair2: Beschreibung[];
         outfit: Beschreibung[];
@@ -21,7 +20,7 @@ namespace Aufgabe2_4 {
         outfit?: Beschreibung;
     }
     export interface Selection2 {
-        body_b?: Beschreibung;
+        body?: Beschreibung;
         hair2?: Beschreibung;
         outfit2?: Beschreibung;
         

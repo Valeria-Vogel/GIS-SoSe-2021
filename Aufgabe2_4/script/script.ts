@@ -14,7 +14,6 @@ namespace Aufgabe2_4 {
 
   /*  let currentParts: Beschreibung[] = [];
     let currentPart: string = "";
-
     switch (document.title) {
         case "Alien Generator - Head":
             currentPart = "Body";
@@ -28,37 +27,25 @@ namespace Aufgabe2_4 {
             currentPart = "Outfit";
             currentParts = wahl.outfit;
             break;
-
         default:
             break;
     }
-
     showPossibilities(currentParts);
-
     function bodyDiv(_auswahl: Beschreibung): HTMLDivElement {
-
         let div: HTMLDivElement = document.createElement("div");
         div.classList.add("teil");
-
         let image: HTMLImageElement = document.createElement("img");
         image.src = _auswahl.bild;
         div.appendChild(image);
-
         let span: HTMLSpanElement = document.createElement("span");
         span.innerText = _auswahl.was;
         div.appendChild(span);
-
-
         let button: HTMLButtonElement = document.createElement("button");
         button.innerText = "Wählen";
         button.addEventListener("click", wahlmoeglichkeit);
-
         div.appendChild(button);
-
         return div;
-
         function wahlmoeglichkeit(_event: Event): void {
-
             switch (currentPart) {
                 case "body_g":
                     personAuswahl.body_g = _auswahl;
@@ -71,7 +58,6 @@ namespace Aufgabe2_4 {
                     break;
             }
             localStorage.setItem("selection", JSON.stringify(personAuswahl));
-
             switch (currentPart) {
                 case "body_g":
                     window.location.assign("./index.html");

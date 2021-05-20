@@ -58,19 +58,19 @@ var Aufgabe2_4;
       ],
       "outfit": [
           {
-              "bildID": "?",
-              "bild": "?", 
-              "was": "?"
+              "bildID": "GirlOutfit1",
+              "bild": "./img/GirlOutfit1.jpg", 
+              "was": "Outfit 1"
           },
           {
-            "bildID": "?",
-            "bild": "?", 
-            "was": "?"
+            "bildID": "GirlOutfit2",
+            "bild": "./img/GirlOutfit2.jpg", 
+            "was": "Outfit 2"
           },
           {
-            "bildID": "?",
-            "bild": "?", 
-           "was": "?"
+            "bildID": "GirlOutfit3",
+            "bild": "./img/GirlOutfit3.jpg", 
+           "was": "Outfit 3"
           }
       ],
       "extra": [

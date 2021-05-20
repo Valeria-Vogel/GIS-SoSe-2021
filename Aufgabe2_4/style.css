@@ -1,13 +1,17 @@
 body{
-    background-color: seagreen;
+    background-image: url("./img/BG.jpg");
     width: 1100px;
     margin: auto;
     
 }
 h1{
 	text-align: center;
-	background-color: darkgreen;
+	color: lightgoldenrodyellow;
+	font-size: 50px;
+	background-image: url("./img/B_G.jpg" );
 	padding: 20px;
+	text-shadow: 10px 5px 6px black;
+	box-shadow: 15px 10px 20px 0px lightslategray;
 	
 }
 
@@ -15,6 +19,9 @@ h1{
 h2{
    
     text-align: center;
+	font-size: 30px;
+	color: lightgoldenrodyellow;
+	text-shadow: 5px 5px 6px black
 }
 
 #auswahlBereich {

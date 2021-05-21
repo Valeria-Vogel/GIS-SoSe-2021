@@ -45,37 +45,37 @@ namespace Aufgabe2_4 {
             "isGirlBody": "true",
             "bildID": "g_hair1",
             "bild": "./img/GirlHair1.jpg", 
-            "was": "Haare 1"
+            "was": "Mädchen Haare 1"
           },
           {
             "isGirlBody": "true",
             "bildID": "g_hair2",
             "bild": "./img/GirlHair2.jpg", 
-            "was": "Haare 2"
+            "was": "Mädchen Haare 2"
           },
           {
             "isGirlBody": "true",
             "bildID":"g_hair3",
             "bild":"./img/GirlHair3.jpg", 
-            "was":"Haare 3"
+            "was":"Mädchen Haare 3"
           },
            {
             "isGirlBody": "false",
           "bildID": "b_hair1",
           "bild": "./img/BoyHaare1.jpg", 
-          "was": "Haare 1"
+          "was": "Junge Haare 1"
         },
         {
           "isGirlBody": "false",
           "bildID": "b_hair2",
           "bild": "./img/BoyHaare2.jpg", 
-          "was": "Haare 2"
+          "was": "Junge Haare 2"
         },
         {
           "isGirlBody": "false",
           "bildID":"b_hair3",
           "bild":"./img/BoyHaare3.jpg", 
-          "was":"Haare 3"
+          "was":"Junge Haare 3"
         }
     ],
 
@@ -84,38 +84,38 @@ namespace Aufgabe2_4 {
             "isGirlBody": "true",
               "bildID": "GirlOutfit1",
               "bild": "./img/GirlOutfit1.jpg", 
-              "was": "Outfit 1"
+              "was": "Mädchen Outfit 1"
           },
           {
             
             "isGirlBody": "true",
             "bildID": "GirlOutfit2",
             "bild": "./img/GirlOutfit2.jpg", 
-            "was": "Outfit 2"
+            "was": "Mädchen Outfit 2"
           },
           {
             "isGirlBody": "true",
             "bildID": "GirlOutfit3",
             "bild": "./img/GirlOutfit3.jpg", 
-           "was": "Outfit 3"
+           "was": "Mädchen Outfit 3"
           },
         {
           "isGirlBody": "false",
             "bildID": "BoyOutfit1",
             "bild": "./img/BoyOutfit1.jpg", 
-            "was": "Outfit 1"
+            "was": "Junge Outfit 1"
         },
         {
           "isGirlBody": "false",
           "bildID": "BoyOutfit2",
           "bild": "./img/BoyOutfit2.jpg", 
-          "was": "Outfit 2"
+          "was": "Junge Outfit 2"
         },
         {
           "isGirlBody": "false",
           "bildID": "BoyOutfit3",
           "bild": "./img/BoyOutfit3.jpg", 
-         "was": "Outfit 3"
+         "was": "Junge Outfit 3"
         }
     ]
       

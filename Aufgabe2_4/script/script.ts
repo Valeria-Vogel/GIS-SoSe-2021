@@ -6,202 +6,237 @@ namespace Aufgabe2_4 {
     }
 
 
+    /* let personAuswahl: Selection = {};
+     let storedSelection: string = localStorage.getItem("personAuswahl");
+     if (storedSelection) {
+         personAuswahl = JSON.parse(storedSelection);
+     }
+ 
+     function bodyDiv(_auswahl: Beschreibung): HTMLDivElement {
+ 
+         let div: HTMLDivElement = document.createElement("div");
+         div.classList.add("teil");
+ 
+         let image: HTMLImageElement = document.createElement("img");
+         image.src = _auswahl.bild;
+         div.appendChild(image);
+ 
+         let span: HTMLSpanElement = document.createElement("span");
+         span.innerText = _auswahl.was;
+         div.appendChild(span);
+ 
+ 
+         let button: HTMLButtonElement = document.createElement("button");
+         button.innerText = "Wählen";
+         button.addEventListener("click", wahlmoeglichkeit);
+ 
+         div.appendChild(button);
+ 
+         return div;
+ 
+ 
+         function wahlmoeglichkeit(_event: Event): void {
+ 
+             // localStorage.setItem("bild", _auswahl.bild);
+             location.href = "haare.html";
+ 
+             console.log(localStorage);
+         }
+     }
+     function hairDiv(_auswahl: Beschreibung): HTMLDivElement {
+         let div: HTMLDivElement = document.createElement("div");
+         div.classList.add("teil");
+ 
+         let image: HTMLImageElement = document.createElement("img");
+         image.src = _auswahl.bild;
+         div.appendChild(image);
+ 
+         let span: HTMLSpanElement = document.createElement("span");
+         span.innerText = _auswahl.was;
+         div.appendChild(span);
+ 
+         let button: HTMLButtonElement = document.createElement("button");
+         button.innerText = "Wählen";
+ 
+         if ((document.querySelector("title").getAttribute("id") == "hair")) {
+             button.addEventListener("click", haarWahl);
+             div.appendChild(button);
+             function haarWahl(_event: Event): void {
+ 
+                 //  localStorage.setItem("bild", _auswahl.bild);
+ 
+                 location.href = "kleidung.html";
+ 
+ 
+ 
+                 console.log(localStorage);
+ 
+             }
+         }
+         if ((document.querySelector("title").getAttribute("id") == "outfit")) {
+             button.addEventListener("click", kleidWahl);
+             div.appendChild(button);
+             function kleidWahl(_event: Event): void {
+ 
+                 // localStorage.setItem("bild", _auswahl.bild);
+                 location.href = "ergebnis.html";
+ 
+                 console.log(localStorage);
+             }
+         }
+ 
+         return div;
+     }
+     function anzeige(_auswahl: Darstellung): void {
+         let anzeige: HTMLDivElement = <HTMLDivElement>document.getElementById("auswahlBereich");
+         if (document.querySelector("title").getAttribute("id") == "body") {
+             for (let i: number = 0; i < _auswahl.body.length; i++) {
+                 let div: HTMLDivElement = bodyDiv(_auswahl.body[i]);
+                 anzeige.appendChild(div);
+             }
+         }
+         else if (document.querySelector("title").getAttribute("id") == "hair") {
+             for (let i: number = 0; i < _auswahl.hair.length; i++) {
+                 let div: HTMLDivElement = hairDiv(_auswahl.hair[i]);
+                 anzeige.appendChild(div);
+             }
+         }
+         else if (document.querySelector("title").getAttribute("id") == "outfit") {
+             for (let i: number = 0; i < _auswahl.outfit.length; i++) {
+                 let div: HTMLDivElement = hairDiv(_auswahl.outfit[i]);
+                 anzeige.appendChild(div);
+             }
+         }
+     }
+     anzeige(wahl);
+ 
+     let button: HTMLButtonElement = document.createElement("button");
+     button.innerText = "Nochmal";
+     button.addEventListener("click", restart);
+ 
+     function restart(): void {
+         localStorage.clear();
+         location.href = "./index.html";
+     }
+     
+     
+     */
 
 
 
-    function bodyDiv(_auswahl: Beschreibung): HTMLDivElement {
 
-        let div: HTMLDivElement = document.createElement("div");
-        div.classList.add("teil");
+    let previousElement: HTMLElement = document.getElementById("auswahlBereich");
+    let h4: HTMLElement = document.createElement("h4");
+    h4.style.margin = "10px";
+    document.body.appendChild(h4);
 
-        let image: HTMLImageElement = document.createElement("img");
-        image.src = _auswahl.bild;
-        div.appendChild(image);
+    function openNextSite(): void {
 
-        let span: HTMLSpanElement = document.createElement("span");
-        span.innerText = _auswahl.was;
-        div.appendChild(span);
+        if (window.location.href.includes("index.html")) {
+            window.open("haare.html", "_self");
+        }
+        if (window.location.href.includes("haare.html")) {
+            window.open("kleidung.html", "_self");
+        }
+        if (window.location.href.includes("kleidung.html")) {
+            window.open("ergebnis.html", "_self");
+        }
+        if (window.location.href.includes("ergebnis.html")) {
+            window.open("index.html", "_self");
 
+        }
 
-        let button: HTMLButtonElement = document.createElement("button");
-        button.innerText = "Wählen";
-        button.addEventListener("click", wahlmoeglichkeit);
+    }
 
-        div.appendChild(button);
+    function waehlen(): Beschreibung[] {
+        let art: Beschreibung[] = wahl.body;
 
-        return div;
+        if (window.location.href.includes("haare.html"))
+            art = wahl.hair;
 
+        if (window.location.href.includes("kleidung.html"))
+            art = wahl.outfit;
 
-        function wahlmoeglichkeit(_event: Event): void {
-            localStorage.setItem("was", _auswahl.was);
-            //if (localStorage == _auswahl. ) {
-            location.href = "haare.html";
-            //}
-            console.log("click", localStorage);
+        return art;
+    }
+
+    function speichern(_bild: string): void {
+
+        if (window.location.href.includes("index.html")) {
+            localStorage.setItem("body", _bild);
+        }
+        if (window.location.href.includes("haare.html")) {
+            localStorage.setItem("hair", _bild);
+        }
+        if (window.location.href.includes("kleidung.html")) {
+            localStorage.setItem("outfit", _bild);
         }
     }
-    function hairDiv(_auswahl: Beschreibung): HTMLDivElement {
-        let div: HTMLDivElement = document.createElement("div");
-        div.classList.add("teil");
+    function aktuell(): void {
 
-        let image: HTMLImageElement = document.createElement("img");
-        image.src = _auswahl.bild;
-        div.appendChild(image);
+      
+        if (window.location.href.includes("haare.html")) {
+            let aktuelldiv: HTMLElement = document.getElementById("schonAusgewaehlt");
+            aktuelldiv.classList.add("teil");
 
-        let span: HTMLSpanElement = document.createElement("span");
-        span.innerText = _auswahl.was;
-        div.appendChild(span);
+            let img: HTMLElement = document.createElement("img");
+            img.classList.add("teil");
 
-        let button: HTMLButtonElement = document.createElement("button");
-        button.innerText = "Wählen";
+            img.setAttribute("src", localStorage.getItem("body"));
 
-        if ((document.querySelector("title").getAttribute("id") == "hair")) {
-            button.addEventListener("click", haarWahl);
-            div.appendChild(button);
-            function haarWahl(_event: Event): void {
-                console.log(_auswahl.was);
-                localStorage.setItem("was", _auswahl.was);
-                location.href = "kleidung.html";
-
-                console.log("click", localStorage);
-
-            }
-        }
-        if ((document.querySelector("title").getAttribute("id") == "outfit")) {
-            button.addEventListener("click", kleidWahl);
-            div.appendChild(button);
-            function kleidWahl(_event: Event): void {
-                console.log("" + _auswahl.was);
-                localStorage.setItem("", _auswahl.was);
-                location.href = "ergebnis.html";
-
-                console.log("click ", localStorage);
-            }
+            aktuelldiv.appendChild(img);
         }
 
-        return div;
-    }
-    function anzeige(_auswahl: Darstellung): void {
-        let anzeige: HTMLDivElement = <HTMLDivElement>document.getElementById("auswahlBereich");
-        if (document.querySelector("title").getAttribute("id") == "body") {
-            for (let i: number = 0; i < _auswahl.body.length; i++) {
-                let div: HTMLDivElement = bodyDiv(_auswahl.body[i]);
-                anzeige.appendChild(div);
-            }
-        }
-        else if (document.querySelector("title").getAttribute("id") == "hair") {
-            for (let i: number = 0; i < _auswahl.hair.length; i++) {
-                let div: HTMLDivElement = hairDiv(_auswahl.hair[i]);
-                anzeige.appendChild(div);
-            }
-        }
-        else if (document.querySelector("title").getAttribute("id") == "outfit") {
-            for (let i: number = 0; i < _auswahl.outfit.length; i++) {
-                let div: HTMLDivElement = hairDiv(_auswahl.outfit[i]);
-                anzeige.appendChild(div);
-            }
-        }
-    }
+ 
+        if (window.location.href.includes("kleidung.html")) {
+            let aktuelldiv: HTMLElement = document.getElementById("schonAusgewaehlt");
+            aktuelldiv.classList.add("teil");
 
-    anzeige(wahl);
-    let personAuswahl: Selection = {};
-    let storedSelection: string = localStorage.getItem("selection");
-    if (storedSelection) {
-        personAuswahl = JSON.parse(storedSelection);
-    }
+            let img: HTMLElement = document.createElement("img");
+            img.classList.add("teil");
 
+            img.setAttribute("src", localStorage.getItem("body"));
+            img.setAttribute("src", localStorage.getItem("hair"));
 
-    let currentParts: Beschreibung[] = [];
-    let currentPart: string = "";
-    switch (document.title) {
-        case "Geschlecht":
-            currentPart = "Body";
-            currentParts = wahl.body;
-            break;
-        case "Haare":
-            currentPart = "Hair";
-            currentParts = wahl.hair;
-            break;
-        case "Kleidung":
-            currentPart = "Outfit";
-            currentParts = wahl.outfit;
-            break;
-        default:
-            break;
-    }
-    showPossibilities(currentParts);
-    function bodyDiv1(_auswahl: Beschreibung): HTMLDivElement {
-        let div: HTMLDivElement = document.createElement("div");
-        div.classList.add("teil");
-        let image: HTMLImageElement = document.createElement("img");
-        image.src = _auswahl.bild;
-        div.appendChild(image);
-        let span: HTMLSpanElement = document.createElement("span");
-        span.innerText = _auswahl.was;
-        div.appendChild(span);
-        let button: HTMLButtonElement = document.createElement("button");
-        button.innerText = "Wählen";
-        button.addEventListener("click", wahlmoeglichkeit);
-        div.appendChild(button);
-        return div;
-        function wahlmoeglichkeit(_event: Event): void {
-            switch (currentPart) {
-                case "body_g":
-                    personAuswahl.body = _auswahl;
-                    break;
-                case "hair":
-                    personAuswahl.hair = _auswahl;
-                    break;
-                case "outfit":
-                    personAuswahl.outfit = _auswahl;
-                    break;
-            }
-            localStorage.setItem("selection", JSON.stringify(personAuswahl));
-            switch (currentPart) {
-                case "body":
-                    window.location.assign("./index.html");
-                    break;
-                case "hair":
-                    window.location.assign("./hair.html");
-                    break;
-                case "outfit":
-                    window.location.assign("./outfit.html");
-                    break;
-            }
+            aktuelldiv.appendChild(img);
+        }
+        if (window.location.href.includes("ergebnis.html")) {
+            let aktuelldiv: HTMLElement = document.getElementById("schonAusgewaehlt");
+            aktuelldiv.classList.add("teil");
+
+            let img: HTMLElement = document.createElement("img");
+            img.classList.add("teil");
+
+            img.setAttribute("src", localStorage.getItem("body"));
+            img.setAttribute("src", localStorage.getItem("hair"));
+            img.setAttribute("src", localStorage.getItem("outfit"));
+
+            aktuelldiv.appendChild(img);
+
         }
     }
-    function showPossibilities(_parts: Beschreibung[]): void {
-        let wrapper: HTMLDivElement = <HTMLDivElement>document.getElementById("auswahlBereich");
-        for (let i: number = 0; i < _parts.length; i++) {
-            let div: HTMLDivElement = bodyDiv1(_parts[i]);
-            wrapper.appendChild(div);
+    aktuell();
+
+
+
+    function auswaehlen(): void {
+        const gewaehltes: Beschreibung[] = waehlen();
+        for (let i: number = 0; i < gewaehltes.length; i++) {
+
+            let img: HTMLElement = document.createElement("img");
+            img.classList.add("teil");
+            img.setAttribute("src", gewaehltes[i].bild);
+
+
+            img.addEventListener("click", function (): void { speichern(gewaehltes[i].bild); });
+            img.addEventListener("click", openNextSite);
+
+
+            img.id = gewaehltes[i].bildId; 
+            previousElement.appendChild(img);
+
         }
     }
+    auswaehlen();
 
-
-    // Aufgabe 2
-
-    let selectionPreview: HTMLElement = <HTMLElement>document.getElementById("schonAusgewaehlt");
-
-    if (personAuswahl.body) {
-        selectionPreview.appendChild(createImage(localStorage.getItem(personAuswahl.body.bild)));
-    } else {
-        selectionPreview.appendChild(createImage("./img/sex.png"));
-    }
-    if (personAuswahl.hair) {
-        selectionPreview.appendChild(createImage(localStorage.getItem(personAuswahl.hair.bild)));
-    } else {
-        selectionPreview.appendChild(createImage("./img/woman-hair.png"));
-    }
-    if (personAuswahl.outfit) {
-        selectionPreview.appendChild(createImage(localStorage.getItem(personAuswahl.outfit.bild)));
-    } else {
-        selectionPreview.appendChild(createImage("./img/male-clothes.png"));
-    }
-
-    function createImage(_src: string): HTMLImageElement {
-        let img: HTMLImageElement = document.createElement("img");
-        img.src = _src;
-        return img;
-    }
 }

@@ -1,14 +1,13 @@
 "use strict";
 var Aufgabe2_5;
 (function (Aufgabe2_5) {
-    let wahl;
     async function communicate(_url) {
         let response = await fetch(_url);
         console.log("Response", response);
-        wahl = await response.json();
+        let wahl = await response.json();
         console.log(wahl);
     }
-    communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgane2_5/index.html");
+    communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgane2_5/script/data.json");
     let previousElement = document.getElementById("auswahlBereich");
     let h4 = document.createElement("h4");
     h4.style.margin = "10px";

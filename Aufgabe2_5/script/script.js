@@ -26,7 +26,13 @@ var Aufgabe2_5;
             window.open("ergebnis.html", "_self");
         }
         if (window.location.href.includes("ergebnis.html")) {
-            window.open("index.html", "_self");
+            let button = document.createElement("button");
+            button.innerText = "Wählen";
+            button.addEventListener("click", wahlmoeglichkeit);
+            function wahlmoeglichkeit(_event) {
+                location.href = "index.html";
+                window.open("index.html", "_self");
+            }
         }
     }
     function waehlen() {
@@ -57,16 +63,16 @@ var Aufgabe2_5;
             img.setAttribute("src", localStorage.getItem("body"));
             aktuelldiv.appendChild(img);
         }
-        if (window.location.href.includes("kleidung.html")) {
-            let aktuelldiv = document.getElementById("schonAusgewaehlt");
-            aktuelldiv.classList.add("teil");
-            for (let i = 0; i < 2; i++) {
-                let img = document.createElement("img");
-                img.classList.add("teil");
-                img.setAttribute("src", localStorage.getItem(i.toString()));
-                //img.setAttribute("src", localStorage.getItem("hair"));
-                aktuelldiv.appendChild(img);
-            }
+    }
+    if (window.location.href.includes("kleidung.html")) {
+        let aktuelldiv = document.getElementById("schonAusgewaehlt");
+        aktuelldiv.classList.add("teil");
+        for (let i = 0; i < 2; i++) {
+            let img = document.createElement("img");
+            img.classList.add("teil");
+            img.setAttribute("src", localStorage.getItem(i.toString()));
+            //img.setAttribute("src", localStorage.getItem("hair"));
+            aktuelldiv.appendChild(img);
         }
         if (window.location.href.includes("ergebnis.html")) {
             /* let query: URLSearchParams = new URLSearchParams(<any>browserCacheData);
@@ -74,27 +80,29 @@ var Aufgabe2_5;
              await fetch("https://gis-communication.herokuapp.com");*/
             let aktuelldiv = document.getElementById("schonAusgewaehlt");
             aktuelldiv.classList.add("teil");
-            let img = document.createElement("img");
-            img.classList.add("teil");
-            img.setAttribute("src", localStorage.getItem("body"));
-            img.setAttribute("src", localStorage.getItem("hair"));
-            img.setAttribute("src", localStorage.getItem("outfit"));
-            aktuelldiv.appendChild(img);
+            for (let i = 0; i < 3; i++) {
+                let img = document.createElement("img");
+                img.classList.add("teil");
+                img.setAttribute("src", localStorage.getItem(i.toString()));
+                //img.setAttribute("src", localStorage.getItem("hair"));
+                // img.setAttribute("src", localStorage.getItem("outfit"));
+                aktuelldiv.appendChild(img);
+            }
         }
-    }
-    aktuell();
-    function auswaehlen() {
-        let gewaehltes = waehlen();
-        for (let i = 0; i < gewaehltes.length; i++) {
-            let img = document.createElement("img");
-            img.classList.add("teil");
-            img.setAttribute("src", gewaehltes[i].bild);
-            img.addEventListener("click", function () { speichern(gewaehltes[i].bild); });
-            img.addEventListener("click", openNextSite);
-            img.id = gewaehltes[i].bildId;
-            previousElement.appendChild(img);
+        aktuell();
+        function auswaehlen() {
+            let gewaehltes = waehlen();
+            for (let i = 0; i < gewaehltes.length; i++) {
+                let img = document.createElement("img");
+                img.classList.add("teil");
+                img.setAttribute("src", gewaehltes[i].bild);
+                img.addEventListener("click", function () { speichern(gewaehltes[i].bild); });
+                img.addEventListener("click", openNextSite);
+                img.id = gewaehltes[i].bildId;
+                previousElement.appendChild(img);
+            }
         }
+        auswaehlen();
     }
-    auswaehlen();
 })(Aufgabe2_5 || (Aufgabe2_5 = {}));
 //# sourceMappingURL=script.js.map

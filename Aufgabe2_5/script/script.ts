@@ -8,10 +8,11 @@ namespace Aufgabe2_5 {
         console.log("Response", response);
         wahl = await response.json();
         console.log(wahl.body);
-        
+        console.log(wahl.hair);
+        console.log(wahl.outfit);
     }
 
-    communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgabe2_5/script/data.js");
+    communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgabe2_5/script/data.JSON");
 
 
 
@@ -93,6 +94,11 @@ namespace Aufgabe2_5 {
             }
         }
         if (window.location.href.includes("ergebnis.html")) {
+            
+           /* let query: URLSearchParams = new URLSearchParams(<any>browserCacheData);
+            url = url + "?" + query.toString();
+            await fetch("https://gis-communication.herokuapp.com");*/
+
             let aktuelldiv: HTMLElement = document.getElementById("schonAusgewaehlt");
             aktuelldiv.classList.add("teil");
 
@@ -112,7 +118,7 @@ namespace Aufgabe2_5 {
 
 
     function auswaehlen(): void {
-        const gewaehltes: Beschreibung[] = waehlen();
+        let gewaehltes: Beschreibung[] = waehlen();
         for (let i: number = 0; i < gewaehltes.length; i++) {
 
             let img: HTMLElement = document.createElement("img");

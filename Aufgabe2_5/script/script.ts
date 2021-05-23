@@ -1,15 +1,12 @@
 namespace Aufgabe2_5 {
     let wahl: Darstellung;
-    createObj();
-    function createObj(): void {
-        wahl = JSON.parse(auswahlJSON);
-    }
-  communicate();
+
+    communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgabe2_5/index.html");
     async function communicate(_url: RequestInfo): Promise<void> {
         let response: Response = await fetch(_url);
         console.log("Response", response);
-        let serverReply: data.JSON = await response.json();
-        console.log(serverReply.body);
+        let wahl: Darstellung = await response.json();
+        console.log(wahl.body);
     }
 
     let previousElement: HTMLElement = document.getElementById("auswahlBereich");

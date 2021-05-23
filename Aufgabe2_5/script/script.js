@@ -2,16 +2,12 @@
 var Aufgabe2_5;
 (function (Aufgabe2_5) {
     let wahl;
-    createObj();
-    function createObj() {
-        wahl = JSON.parse(auswahlJSON);
-    }
-    communicate();
+    communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgabe2_5/index.html");
     async function communicate(_url) {
         let response = await fetch(_url);
         console.log("Response", response);
-        let serverReply = await response.json();
-        console.log(serverReply.body);
+        let wahl = await response.json();
+        console.log(wahl.body);
     }
     let previousElement = document.getElementById("auswahlBereich");
     let h4 = document.createElement("h4");

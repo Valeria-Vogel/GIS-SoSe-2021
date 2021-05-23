@@ -1,5 +1,6 @@
 namespace Aufgabe2_5 {
 
+    let body1: HTMLElement = document.body;
     let wahl: Darstellung;
 
     async function communicate(_url: RequestInfo): Promise<void> {
@@ -13,6 +14,8 @@ namespace Aufgabe2_5 {
     }
 
     communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgabe2_5/script/data.JSON");
+
+    
 
 
 
@@ -36,30 +39,30 @@ namespace Aufgabe2_5 {
             let button: HTMLButtonElement = document.createElement("button");
             button.innerText = "Wählen";
             button.addEventListener("click", wahlmoeglichkeit);
-    
-    
+
+
             function wahlmoeglichkeit(_event: Event): void {
-    
+
                 location.href = "index.html";
                 window.open("index.html", "_self");
-            }  
-          
+            }
+
 
         }
 
     }
 
     function waehlen(): Beschreibung[] {
-          let auswahl: Beschreibung[] = wahl.body;
-  
-          if (window.location.href.includes("haare.html"))
-              auswahl = wahl.hair;
-  
-          if (window.location.href.includes("kleidung.html"))
-              auswahl = wahl.outfit;
-  
-          return auswahl;
-      }
+        let auswahl: Beschreibung[] = wahl.body;
+
+        if (window.location.href.includes("haare.html"))
+            auswahl = wahl.hair;
+
+        if (window.location.href.includes("kleidung.html"))
+            auswahl = wahl.outfit;
+
+        return auswahl;
+    }
 
     function speichern(_bild: string): void {
 
@@ -103,16 +106,11 @@ namespace Aufgabe2_5 {
 
             img.setAttribute("src", localStorage.getItem(i.toString()));
             //img.setAttribute("src", localStorage.getItem("hair"));
-            
+
             aktuelldiv.appendChild(img);
         }
 
         if (window.location.href.includes("ergebnis.html")) {
-
-            /* let query: URLSearchParams = new URLSearchParams(<any>browserCacheData);
-             url = url + "?" + query.toString();
-             await fetch("https://gis-communication.herokuapp.com");*/
-
 
             let aktuelldiv: HTMLElement = document.getElementById("schonAusgewaehlt");
             aktuelldiv.classList.add("teil");
@@ -124,7 +122,7 @@ namespace Aufgabe2_5 {
                 img.setAttribute("src", localStorage.getItem(i.toString()));
                 //img.setAttribute("src", localStorage.getItem("hair"));
                 // img.setAttribute("src", localStorage.getItem("outfit"));
-                
+
                 aktuelldiv.appendChild(img);
             }
 
@@ -132,6 +130,29 @@ namespace Aufgabe2_5 {
         }
         aktuell();
 
+        async function dataMes(_url: RequestInfo): Promise<void> {
+            let locArray: string[] = JSON.parse(localStorage.getItem("body"));
+           
+            let query: URLSearchParams = new URLSearchParams(<any> locArray);
+            _url = _url + "?" + query.toString();
+            await fetch(_url);
+           
+            let response: Response = await fetch(_url);
+            let serverResponse: ServerResponse = await response.json();
+            console.log("Response", response);
+    
+            let serverMessage: HTMLParagraphElement = document.createElement("p");
+            serverMessage.setAttribute("style", "position: absoulute; margin: 0; top: 0");
+            if (serverResponse.error == undefined) {
+                serverMessage.innerText = "Servernachricht: " + serverResponse.message;
+            } else {
+                serverMessage.innerText = "Error: " + serverResponse.error;
+            }
+            body1.appendChild(serverMessage);
+    
+        }
+    
+        dataMes("https://gis-communication.herokuapp.com");
 
 
         function auswaehlen(): void {

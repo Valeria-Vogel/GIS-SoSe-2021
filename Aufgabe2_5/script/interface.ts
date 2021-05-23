@@ -19,4 +19,8 @@ namespace Aufgabe2_5 {
         outfit?: Beschreibung;
     }
 
+    export interface ServerResponse {
+        error: string;
+        message: string;
+    }
 }

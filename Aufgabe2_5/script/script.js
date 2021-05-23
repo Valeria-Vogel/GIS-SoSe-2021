@@ -1,7 +1,6 @@
 "use strict";
 var Aufgabe2_5;
 (function (Aufgabe2_5) {
-    let body1 = document.body;
     let wahl;
     async function communicate(_url) {
         let response = await fetch(_url);
@@ -12,6 +11,24 @@ var Aufgabe2_5;
         console.log(wahl.outfit);
     }
     communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgabe2_5/script/data.JSON");
+    async function dataMes(_url) {
+        let locArray = JSON.parse(localStorage.getItem("body"));
+        let query = new URLSearchParams(locArray);
+        _url = _url + "?" + query.toString();
+        await fetch(_url);
+        let response = await fetch(_url);
+        let serverResponse = await response.json();
+        console.log("Response", response);
+        let serverMessage = document.createElement("p");
+        serverMessage.setAttribute("style", "position: absoulute; margin: 0; top: 0");
+        if (serverResponse.error == undefined) {
+            serverMessage.innerText = "Servernachricht: " + serverResponse.message;
+        }
+        else {
+            serverMessage.innerText = "Error: " + serverResponse.error;
+        }
+    }
+    dataMes("https://gis-communication.herokuapp.com");
     let previousElement = document.getElementById("auswahlBereich");
     let h4 = document.createElement("h4");
     h4.style.margin = "10px";
@@ -88,25 +105,6 @@ var Aufgabe2_5;
             }
         }
         aktuell();
-        async function dataMes(_url) {
-            let locArray = JSON.parse(localStorage.getItem("body"));
-            let query = new URLSearchParams(locArray);
-            _url = _url + "?" + query.toString();
-            await fetch(_url);
-            let response = await fetch(_url);
-            let serverResponse = await response.json();
-            console.log("Response", response);
-            let serverMessage = document.createElement("p");
-            serverMessage.setAttribute("style", "position: absoulute; margin: 0; top: 0");
-            if (serverResponse.error == undefined) {
-                serverMessage.innerText = "Servernachricht: " + serverResponse.message;
-            }
-            else {
-                serverMessage.innerText = "Error: " + serverResponse.error;
-            }
-            body1.appendChild(serverMessage);
-        }
-        dataMes("https://gis-communication.herokuapp.com");
         function auswaehlen() {
             let gewaehltes = waehlen();
             for (let i = 0; i < gewaehltes.length; i++) {

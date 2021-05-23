@@ -77,8 +77,7 @@ var Aufgabe2_5;
           "bild":"./img/BoyHaare3.jpg", 
           "was":"Junge Haare 3"
         }
-    ],
-
+      ],
       "outfit": [
           {
             "isGirlBody": "true",

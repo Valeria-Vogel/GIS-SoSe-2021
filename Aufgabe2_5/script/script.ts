@@ -1,15 +1,18 @@
 namespace Aufgabe2_5 {
-   
+
+    let wahl: Darstellung;
 
     async function communicate(_url: RequestInfo): Promise<void> {
 
         let response: Response = await fetch(_url);
         console.log("Response", response);
-        let wahl: Darstellung = await response.json();
-        console.log(wahl);
+        wahl = await response.json();
+        console.log(wahl.body);
+        
     }
 
-    communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgane2_5/script/data.json");
+    communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgabe2_5/script/data.js");
+
 
 
     let previousElement: HTMLElement = document.getElementById("auswahlBereich");
@@ -80,13 +83,13 @@ namespace Aufgabe2_5 {
             aktuelldiv.classList.add("teil");
 
             for (let i: number = 0; i < 2; i++) {
-            let img: HTMLElement = document.createElement("img");
-            img.classList.add("teil");
-            
-            img.setAttribute("src", localStorage.getItem(i.toString()));
-            //img.setAttribute("src", localStorage.getItem("hair"));
+                let img: HTMLElement = document.createElement("img");
+                img.classList.add("teil");
 
-            aktuelldiv.appendChild(img);
+                img.setAttribute("src", localStorage.getItem(i.toString()));
+                //img.setAttribute("src", localStorage.getItem("hair"));
+
+                aktuelldiv.appendChild(img);
             }
         }
         if (window.location.href.includes("ergebnis.html")) {

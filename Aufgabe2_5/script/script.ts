@@ -1,13 +1,16 @@
 namespace Aufgabe2_5 {
     let wahl: Darstellung;
 
-    communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgabe2_5/index.html");
     async function communicate(_url: RequestInfo): Promise<void> {
+
         let response: Response = await fetch(_url);
         console.log("Response", response);
-        let wahl: Darstellung = await response.json();
-        console.log(wahl.body);
+        wahl = await response.json();
+        console.log(wahl);
     }
+
+    communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgane2_5/index.html");
+
 
     let previousElement: HTMLElement = document.getElementById("auswahlBereich");
     let h4: HTMLElement = document.createElement("h4");
@@ -33,15 +36,15 @@ namespace Aufgabe2_5 {
     }
 
     function waehlen(): Beschreibung[] {
-        let art: Beschreibung[] = wahl.body;
+        let auswahl: Beschreibung[] = wahl.body;
 
         if (window.location.href.includes("haare.html"))
-            art = wahl.hair;
+            auswahl = wahl.hair;
 
         if (window.location.href.includes("kleidung.html"))
-            art = wahl.outfit;
+            auswahl = wahl.outfit;
 
-        return art;
+        return auswahl;
     }
 
     function speichern(_bild: string): void {
@@ -76,13 +79,15 @@ namespace Aufgabe2_5 {
             let aktuelldiv: HTMLElement = document.getElementById("schonAusgewaehlt");
             aktuelldiv.classList.add("teil");
 
+            for (let i: number = 0; i < 2; i++) {
             let img: HTMLElement = document.createElement("img");
             img.classList.add("teil");
-
-            img.setAttribute("src", localStorage.getItem("body"));
-            img.setAttribute("src", localStorage.getItem("hair"));
+            
+            img.setAttribute("src", localStorage.getItem(i.toString()));
+            //img.setAttribute("src", localStorage.getItem("hair"));
 
             aktuelldiv.appendChild(img);
+            }
         }
         if (window.location.href.includes("ergebnis.html")) {
             let aktuelldiv: HTMLElement = document.getElementById("schonAusgewaehlt");

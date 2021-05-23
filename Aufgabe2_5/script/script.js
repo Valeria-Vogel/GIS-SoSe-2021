@@ -2,13 +2,13 @@
 var Aufgabe2_5;
 (function (Aufgabe2_5) {
     let wahl;
-    communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgabe2_5/index.html");
     async function communicate(_url) {
         let response = await fetch(_url);
         console.log("Response", response);
-        let wahl = await response.json();
-        console.log(wahl.body);
+        wahl = await response.json();
+        console.log(wahl);
     }
+    communicate("https://valeria-vogel.github.io/GIS-SoSe-2021/Aufgane2_5/index.html");
     let previousElement = document.getElementById("auswahlBereich");
     let h4 = document.createElement("h4");
     h4.style.margin = "10px";
@@ -28,12 +28,12 @@ var Aufgabe2_5;
         }
     }
     function waehlen() {
-        let art = wahl.body;
+        let auswahl = wahl.body;
         if (window.location.href.includes("haare.html"))
-            art = wahl.hair;
+            auswahl = wahl.hair;
         if (window.location.href.includes("kleidung.html"))
-            art = wahl.outfit;
-        return art;
+            auswahl = wahl.outfit;
+        return auswahl;
     }
     function speichern(_bild) {
         if (window.location.href.includes("index.html")) {
@@ -58,11 +58,13 @@ var Aufgabe2_5;
         if (window.location.href.includes("kleidung.html")) {
             let aktuelldiv = document.getElementById("schonAusgewaehlt");
             aktuelldiv.classList.add("teil");
-            let img = document.createElement("img");
-            img.classList.add("teil");
-            img.setAttribute("src", localStorage.getItem("body"));
-            img.setAttribute("src", localStorage.getItem("hair"));
-            aktuelldiv.appendChild(img);
+            for (let i = 0; i < 2; i++) {
+                let img = document.createElement("img");
+                img.classList.add("teil");
+                img.setAttribute("src", localStorage.getItem(i.toString()));
+                //img.setAttribute("src", localStorage.getItem("hair"));
+                aktuelldiv.appendChild(img);
+            }
         }
         if (window.location.href.includes("ergebnis.html")) {
             let aktuelldiv = document.getElementById("schonAusgewaehlt");

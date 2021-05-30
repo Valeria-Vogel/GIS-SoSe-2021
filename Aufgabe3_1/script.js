@@ -1,8 +1,8 @@
 "use strict";
 var Aufgabe3_1;
 (function (Aufgabe3_1) {
-    let submitBtn = document.getElementById("Button");
-    submitBtn.addEventListener("click", click);
+    let btn = document.getElementById("Button");
+    btn.addEventListener("click", click);
     async function click() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2021heroku.herokuapp.com/";

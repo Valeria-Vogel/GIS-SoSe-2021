@@ -1,6 +1,6 @@
 namespace Aufgabe3_1 {
 
-    let btn: HTMLButtonElement = <HTMLButtonElement> document.getElementById("Button");
+    let btn: HTMLButtonElement = <HTMLButtonElement> document.getElementById("submit");
     btn.addEventListener("click", click);
     
     async function click(): Promise<void> {

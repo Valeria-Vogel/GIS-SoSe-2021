@@ -1,7 +1,7 @@
 "use strict";
 var Aufgabe3_1;
 (function (Aufgabe3_1) {
-    let btn = document.getElementById("Button");
+    let btn = document.getElementById("submit");
     btn.addEventListener("click", click);
     async function click() {
         let formData = new FormData(document.forms[0]);

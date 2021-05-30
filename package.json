@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgabe3_1/Server/Server.js"
+    "start": "node Aufgabe3_1/Server/server.js"
   },
   "repository": {
     "type": "git",

@@ -5,18 +5,18 @@ namespace Aufgabe3_1 {
     
     async function click(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gissose2021heroku.herokuapp.com/";
+        let url: string = "https://gis-example.herokuapp.com";
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "?" + query.toString();  
         let response: Response = await fetch(url, { method: "get"});
         let responseText: string = await response.text();
-        showResponse(responseText);
         console.log(responseText);     
     }
-
-    function showResponse(response: string): void {
+    
+    //showResponse(responseText);
+   /* function showResponse(response: string): void {
         let responseDiv: HTMLDivElement = <HTMLDivElement> document.getElementById("response");
         responseDiv.innerHTML = "Serverantwort: " + response;
-    }
+    }*/
 }

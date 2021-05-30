@@ -1,23 +1,6 @@
 namespace Aufgabe3_1 {
-    document.getElementById("Button").addEventListener("click", handelButtonClick);
 
-    function handelButtonClick(): void {
-        response("https://gissose2021heroku.herokuapp.com");
-        console.log("Es läuft!");
-    }
-    async function response(_url: RequestInfo): Promise<void> {
-        let formData: FormData = new FormData(document.forms[0]);
-        // tslint:disable-next-line: no-any
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-        _url = _url + "?" + query.toString();
-        let serverResponse: Response = await fetch(_url);
-        let responseString: string = await serverResponse.text();
-        sessionStorage.setItem("answer", responseString);
-
-    }
-    console.log(sessionStorage.getItem("answer"));
-
-    /* let submitBtn: HTMLButtonElement = <HTMLButtonElement> document.getElementById("Button");
+    let submitBtn: HTMLButtonElement = <HTMLButtonElement> document.getElementById("Button");
     submitBtn.addEventListener("click", click);
     
     async function click(): Promise<void> {
@@ -35,5 +18,5 @@ namespace Aufgabe3_1 {
     function showResponse(response: string): void {
         let responseDiv: HTMLDivElement = <HTMLDivElement> document.getElementById("response");
         responseDiv.innerHTML = "Serverantwort: " + response;
-    }*/
+    }
 }

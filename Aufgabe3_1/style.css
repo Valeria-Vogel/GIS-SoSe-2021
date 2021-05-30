@@ -1,0 +1,106 @@
+body {
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0;
+    background-image: url(image.jpg);
+   
+}
+
+body p {
+    line-height: 5px;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    text-align: right;
+    list-style: none;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+li {
+    color: white;
+    text-align: center;
+    display: inline-table;
+    width: 90px;
+    padding: 5px;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    word-spacing: 1cm;
+    border-radius: 2px;
+    font-weight: bolder;
+    background-color: rgba(78, 75, 75, 0.397);
+
+}
+
+li:hover {
+    background-color: rgba(173, 41, 206, 0.514);
+}
+
+
+.aktuell{
+    background-color: thistle;
+    color: black;
+    border-radius: 2px;
+}
+
+.formular {
+    margin: auto;
+    width: 800px;
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
+
+.formular h1 {
+    color: white;
+    text-transform: uppercase;
+}
+
+.formular input[type="text"],
+.formular input[type="password"] {
+    font-family: sans-serif;
+    color: black;
+    background: white;
+    display: block;
+    margin: 20px auto;
+    border: 1px solid grey;
+    padding: 10px 10px;
+    width: 300px;
+}
+
+.formular input[type="text"]:focus,
+.formular input[type="password"]:focus{
+    padding: 10px 14px;
+    border: 2px solid lavender;
+}
+
+.formular textarea {
+    font-family: sans-serif;
+    color: black;
+    background: white;
+    display: block;
+    margin: 20px auto;
+    border: 1px solid grey;
+    padding: 10px;
+    outline: none;
+    transition: 250ms;
+    height: 200px;
+    width: 600px;
+    resize: none;
+}
+
+.formular textarea:focus {
+    border: 2px solid lavender;
+    width: 610px;
+}
+
+.formular input[type="submit"]:hover {
+    background-color: blue;
+    border: 1px solid white;
+}

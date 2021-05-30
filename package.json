@@ -1,0 +1,26 @@
+{
+  "name": "2-semeser",
+  "version": "1.0.0",
+  "description": "Package.JSON",
+  "main": "index.js",
+  "dependencies": {
+    "@types/node": "^15.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Relativer/Pfad/Zu/Datei.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Valeria-Vogel/GIS-SoSe-2021.git"
+  },
+  "keywords": [
+    "gis"
+  ],
+  "author": "vogel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Valeria-Vogel/GIS-SoSe-2021/issues"
+  },
+  "homepage": "https://github.com/Valeria-Vogel/GIS-SoSe-2021#readme"
+}

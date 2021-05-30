@@ -1,9 +1,9 @@
 namespace Aufgabe3_1 {
 
     let btn: HTMLButtonElement = <HTMLButtonElement> document.getElementById("submit");
-    btn.addEventListener("click", click);
+    btn.addEventListener("click", betaetigen);
     
-    async function click(): Promise<void> {
+    async function betaetigen(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let url: string = "https://gissose2021heroku.herokuapp.com/";
         // tslint:disable-next-line: no-any
@@ -13,10 +13,4 @@ namespace Aufgabe3_1 {
         let responseText: string = await response.text();
         console.log(responseText);     
     }
-    
-    //showResponse(responseText);
-   /* function showResponse(response: string): void {
-        let responseDiv: HTMLDivElement = <HTMLDivElement> document.getElementById("response");
-        responseDiv.innerHTML = "Serverantwort: " + response;
-    }*/
 }

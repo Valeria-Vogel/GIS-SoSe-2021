@@ -2,8 +2,8 @@
 var Aufgabe3_1;
 (function (Aufgabe3_1) {
     let btn = document.getElementById("submit");
-    btn.addEventListener("click", click);
-    async function click() {
+    btn.addEventListener("click", betaetigen);
+    async function betaetigen() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2021heroku.herokuapp.com/";
         // tslint:disable-next-line: no-any
@@ -13,10 +13,5 @@ var Aufgabe3_1;
         let responseText = await response.text();
         console.log(responseText);
     }
-    //showResponse(responseText);
-    /* function showResponse(response: string): void {
-         let responseDiv: HTMLDivElement = <HTMLDivElement> document.getElementById("response");
-         responseDiv.innerHTML = "Serverantwort: " + response;
-     }*/
 })(Aufgabe3_1 || (Aufgabe3_1 = {}));
 //# sourceMappingURL=script.js.map

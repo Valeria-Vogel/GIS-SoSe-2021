@@ -1,6 +1,5 @@
 namespace Aufgabe3_1 {
     
-    let formData: FormData;
     let url: string = "index.html";
     let type: string = "";
     

@@ -1,6 +1,6 @@
 namespace Aufgabe3_1 {
     
-    let url: string = "index.html";
+    let url: string = "http://localhost:8100/";
     let type: string = "";
 
     let btn: HTMLButtonElement = <HTMLButtonElement> document.getElementById("submit");
@@ -40,5 +40,6 @@ namespace Aufgabe3_1 {
             let getText: DocumentFragment = document.createRange().createContextualFragment(responseText);
             responseDIV.appendChild(getText);
         }
+        url = "http://localhost:8100/";
     }
 }

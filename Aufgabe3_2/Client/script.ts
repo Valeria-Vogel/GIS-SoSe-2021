@@ -2,11 +2,14 @@ namespace Aufgabe3_1 {
     
     let url: string = "index.html";
     let type: string = "";
-    
+
+    let btn: HTMLButtonElement = <HTMLButtonElement> document.getElementById("submit");
     let htmlSubmit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("htmlsubmit");
     let jsonSubmit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("jsonsubmit");
     let responseDIV: HTMLDivElement = <HTMLDivElement>document.getElementById("responseDIV");
     
+    btn.addEventListener("click", betaetigen);
+
     jsonSubmit.addEventListener("click", function(): void {
         type = "/json";
         betaetigen();
@@ -17,16 +20,10 @@ namespace Aufgabe3_1 {
         betaetigen();
     });
 
-    //let url: string = "index.html";
-
-    let btn: HTMLButtonElement = <HTMLButtonElement> document.getElementById("submit");
-    btn.addEventListener("click", betaetigen);
-    
     async function betaetigen(): Promise<void> {
 
         let formData: FormData = new FormData(document.forms[0]);
-
-       // let url: string = "https://gissose2021heroku.herokuapp.com/";
+        //let url: string = "https://gissose2021heroku.herokuapp.com/";
 
        //tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
@@ -40,8 +37,8 @@ namespace Aufgabe3_1 {
             console.log(responseJSON);
         } else if (type == "/html") {
             responseDIV.innerHTML = "";
-            let frag: DocumentFragment = document.createRange().createContextualFragment(responseText);
-            responseDIV.appendChild(frag);
+            let getText: DocumentFragment = document.createRange().createContextualFragment(responseText);
+            responseDIV.appendChild(getText);
         }
     }
 }

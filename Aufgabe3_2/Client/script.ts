@@ -5,14 +5,15 @@ namespace Aufgabe3_1 {
     
     let htmlSubmit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("htmlsubmit");
     let jsonSubmit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("jsonsubmit");
+    let responseDIV: HTMLDivElement = <HTMLDivElement>document.getElementById("responseDIV");
     
     jsonSubmit.addEventListener("click", function(): void {
-        type = "json";
+        type = "/json";
         betaetigen();
     });
 
     htmlSubmit.addEventListener("click", function(): void {
-        type = "html";
+        type = "/html";
         betaetigen();
     });
 
@@ -33,5 +34,14 @@ namespace Aufgabe3_1 {
         let response: Response = await fetch(url += "?" + query.toString());
         let responseText: string = await response.text();
         alert(responseText);     
+
+        if (type == "/json") {
+            let responseJSON: JSON = JSON.parse(responseText);
+            console.log(responseJSON);
+        } else if (type == "/html") {
+            responseDIV.innerHTML = "";
+            let frag: DocumentFragment = document.createRange().createContextualFragment(responseText);
+            responseDIV.appendChild(frag);
+        }
     }
 }

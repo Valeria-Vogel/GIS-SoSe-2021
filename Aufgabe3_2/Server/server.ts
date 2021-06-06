@@ -26,7 +26,6 @@ export namespace Aufgabe3_1 {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
             for (let key in url.query) {
                 console.log(key + ": " + url.query[key] );
-            
             }  
             let jsonString: string = JSON.stringify(url.query);
             _response.write(jsonString);

@@ -1,21 +1,26 @@
 namespace Aufgabe3_1 {
+
     
     //let url: string = "http://localhost:8100/";
+    //let url: string = "https://gissose2021heroku.herokuapp.com/";
+    let url: string = "";
     let type: string = "";
 
-    let btn: HTMLButtonElement = <HTMLButtonElement> document.getElementById("submit");
+    let btn: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
     let htmlSubmit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("htmlsubmit");
     let jsonSubmit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("jsonsubmit");
     let responseDIV: HTMLDivElement = <HTMLDivElement>document.getElementById("responseDIV");
-    
+
     btn.addEventListener("click", betaetigen);
 
-    jsonSubmit.addEventListener("click", function(): void {
+    jsonSubmit.addEventListener("click", function (): void {
+        url = "index.json";
         type = "/json";
         betaetigen();
     });
 
-    htmlSubmit.addEventListener("click", function(): void {
+    htmlSubmit.addEventListener("click", function (): void {
+        url = "index.html";
         type = "/html";
         betaetigen();
     });
@@ -23,14 +28,13 @@ namespace Aufgabe3_1 {
     async function betaetigen(): Promise<void> {
 
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gissose2021heroku.herokuapp.com/";
 
-       //tslint:disable-next-line: no-any
+        //tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 
         let response: Response = await fetch(url += "?" + query.toString());
         let responseText: string = await response.text();
-        alert(responseText);     
+        alert(responseText);
 
         if (type == "/json") {
             let responseJSON: JSON = JSON.parse(responseText);
@@ -41,5 +45,6 @@ namespace Aufgabe3_1 {
             responseDIV.appendChild(getText);
         }
         url = "https://gissose2021heroku.herokuapp.com/";
+        //url = "http://localhost:8100/";
     }
 }

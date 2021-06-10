@@ -2,6 +2,8 @@
 var Aufgabe3_1;
 (function (Aufgabe3_1) {
     //let url: string = "http://localhost:8100/";
+    //let url: string = "https://gissose2021heroku.herokuapp.com/";
+    let url = "";
     let type = "";
     let btn = document.getElementById("submit");
     let htmlSubmit = document.getElementById("htmlsubmit");
@@ -9,16 +11,17 @@ var Aufgabe3_1;
     let responseDIV = document.getElementById("responseDIV");
     btn.addEventListener("click", betaetigen);
     jsonSubmit.addEventListener("click", function () {
+        url = "index.json";
         type = "/json";
         betaetigen();
     });
     htmlSubmit.addEventListener("click", function () {
+        url = "index.html";
         type = "/html";
         betaetigen();
     });
     async function betaetigen() {
         let formData = new FormData(document.forms[0]);
-        let url = "https://gissose2021heroku.herokuapp.com/";
         //tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         let response = await fetch(url += "?" + query.toString());
@@ -34,6 +37,7 @@ var Aufgabe3_1;
             responseDIV.appendChild(getText);
         }
         url = "https://gissose2021heroku.herokuapp.com/";
+        //url = "http://localhost:8100/";
     }
 })(Aufgabe3_1 || (Aufgabe3_1 = {}));
 //# sourceMappingURL=script.js.map

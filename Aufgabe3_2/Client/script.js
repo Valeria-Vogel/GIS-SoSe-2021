@@ -27,8 +27,9 @@ var Aufgabe3_1;
         let response = await fetch(url += "?" + query.toString());
         let responseText = await response.text();
         alert(responseText);
+        let jsonString;
         if (type == "/json") {
-            let responseJSON = JSON.parse(responseText);
+            let responseJSON = JSON.parse(jsonString);
             console.log(responseJSON);
         }
         else if (type == "/html") {

@@ -35,9 +35,10 @@ namespace Aufgabe3_1 {
         let response: Response = await fetch(url += "?" + query.toString());
         let responseText: string = await response.text();
         alert(responseText);
+        let jsonString: string;
 
         if (type == "/json") {
-            let responseJSON: JSON = JSON.parse(responseText);
+            let responseJSON: JSON = JSON.parse(jsonString);
             console.log(responseJSON);
         } else if (type == "/html") {
             responseDIV.innerHTML = "";

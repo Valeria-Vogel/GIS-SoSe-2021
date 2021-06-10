@@ -32,6 +32,9 @@ var Aufgabe3_1;
                 _response.write(jsonString);
             }
             _response.end();
+            console.log("http://" + _request.headers.host + _request.url);
+            let u = new URL(_request.url, "http://" + _request.headers.host);
+            console.log(u);
         }
     }
 })(Aufgabe3_1 = exports.Aufgabe3_1 || (exports.Aufgabe3_1 = {}));

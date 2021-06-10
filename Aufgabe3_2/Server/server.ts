@@ -37,6 +37,10 @@ export namespace Aufgabe3_1 {
                 _response.write(jsonString);
             }
             _response.end();
+
+            console.log( "http://" + _request.headers.host + _request.url);
+            let u: URL = new URL(_request.url, "http://" + _request.headers.host);
+            console.log(u);
         }
     }
 }

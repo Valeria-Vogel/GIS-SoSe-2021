@@ -14,7 +14,7 @@ namespace Aufgabe3_1 {
     btn.addEventListener("click", betaetigen);
 
     jsonSubmit.addEventListener("click", function (): void {
-        url = "index.json";
+        url = "./json";
         type = "/json";
         betaetigen();
     });

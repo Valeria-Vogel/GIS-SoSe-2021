@@ -11,7 +11,7 @@ var Aufgabe3_1;
     let responseDIV = document.getElementById("responseDIV");
     btn.addEventListener("click", betaetigen);
     jsonSubmit.addEventListener("click", function () {
-        url = "index.json";
+        url = "./json";
         type = "/json";
         betaetigen();
     });

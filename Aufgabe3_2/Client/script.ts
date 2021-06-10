@@ -1,6 +1,6 @@
 namespace Aufgabe3_1 {
     
-    let url: string = "http://localhost:8100/";
+    //let url: string = "http://localhost:8100/";
     let type: string = "";
 
     let btn: HTMLButtonElement = <HTMLButtonElement> document.getElementById("submit");
@@ -23,7 +23,7 @@ namespace Aufgabe3_1 {
     async function betaetigen(): Promise<void> {
 
         let formData: FormData = new FormData(document.forms[0]);
-        //let url: string = "https://gissose2021heroku.herokuapp.com/";
+        let url: string = "https://gissose2021heroku.herokuapp.com/";
 
        //tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
@@ -40,6 +40,6 @@ namespace Aufgabe3_1 {
             let getText: DocumentFragment = document.createRange().createContextualFragment(responseText);
             responseDIV.appendChild(getText);
         }
-        url = "http://localhost:8100/";
+        url = "https://gissose2021heroku.herokuapp.com/";
     }
 }

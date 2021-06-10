@@ -9,17 +9,16 @@ var Aufgabe3_1;
     let jsonSubmit = document.getElementById("jsonsubmit");
     let responseDIV = document.getElementById("responseDIV");
     jsonSubmit.addEventListener("click", function () {
-        //url = "./json";
         type = "/json";
         betaetigen();
     });
     htmlSubmit.addEventListener("click", function () {
-        //url = "index.html";
         type = "/html";
         betaetigen();
     });
     async function betaetigen() {
         let formData = new FormData(document.forms[0]);
+        url += type;
         //tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         let response = await fetch(url += "?" + query.toString());

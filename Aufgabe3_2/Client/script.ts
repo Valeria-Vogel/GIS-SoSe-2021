@@ -12,13 +12,11 @@ namespace Aufgabe3_1 {
 
 
     jsonSubmit.addEventListener("click", function (): void {
-        //url = "./json";
         type = "/json";
         betaetigen();
     });
 
     htmlSubmit.addEventListener("click", function (): void {
-        //url = "index.html";
         type = "/html";
         betaetigen();
     });
@@ -26,7 +24,8 @@ namespace Aufgabe3_1 {
     async function betaetigen(): Promise<void> {
 
         let formData: FormData = new FormData(document.forms[0]);
-
+        url += type;
+        
         //tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 

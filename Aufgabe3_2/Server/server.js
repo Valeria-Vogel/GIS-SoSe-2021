@@ -18,29 +18,23 @@ var Aufgabe3_1;
     }
     function handleRequest(_request, _response) {
         console.log("I hear voices!");
-        _response.setHeader("Access-Control-Allow-Origin", "*");
+        _response.setHeader("content-type", "text/html; charset=utf-8"); //Header wird erstellt
+        _response.setHeader("Access-Control-Allow-Origin", "*"); //jeder hat access
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            let path = url.pathname;
-            if (path == "/html") {
+            if (url.pathname == "/html") {
                 _response.setHeader("content-type", "text/html; charset=utf-8");
                 for (let key in url.query) {
-                    _response.write("<p>" + key + ":" + url.query[key] + "</p>");
+                    _response.write("<p>" + key + ": " + url.query[key] + "<p>");
                 }
             }
-            if (path == "/json") {
+            if (url.pathname == "/json") {
                 _response.setHeader("content-type", "application/json");
-                let sendObject = JSON.stringify(url.query);
-                console.log(sendObject);
-                _response.write(sendObject);
+                let jsonString = JSON.stringify(url.query);
+                _response.write(jsonString);
             }
         }
         _response.end();
-        /* console.log( "http://" + _request.headers.host + _request.url);
-        let jsonString: string = JSON.stringify(url.query);
-        _response.write(jsonString);
-        let u: URL = new URL(_request.url, "http://" + _request.headers.host);
-        console.log(u);*/
     }
 })(Aufgabe3_1 = exports.Aufgabe3_1 || (exports.Aufgabe3_1 = {}));
 //# sourceMappingURL=server.js.map

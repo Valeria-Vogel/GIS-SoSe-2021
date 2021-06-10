@@ -34,10 +34,10 @@ namespace Aufgabe3_1 {
         let responseText: string = await response.text();
         alert(responseText);
         
-        let jsonString: string;
+
 
         if (type == "/json") {
-            let responseJSON: JSON = JSON.parse(jsonString);
+            let responseJSON: JSON = JSON.parse(responseText);
             console.log(responseJSON);
         } else if (type == "/html") {
             responseDIV.innerHTML = responseText;

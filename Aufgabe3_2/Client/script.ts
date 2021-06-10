@@ -2,8 +2,8 @@ namespace Aufgabe3_1 {
 
     
     //let url: string = "http://localhost:8100/";
-    //let url: string = "https://gissose2021heroku.herokuapp.com/";
-    let url: string = "";
+    let url: string = "https://gissose2021heroku.herokuapp.com";
+    //let url: string = "";
     let type: string = "";
 
     let htmlSubmit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("htmlsubmit");
@@ -12,13 +12,13 @@ namespace Aufgabe3_1 {
 
 
     jsonSubmit.addEventListener("click", function (): void {
-        url = "./json";
+        //url = "./json";
         type = "/json";
         betaetigen();
     });
 
     htmlSubmit.addEventListener("click", function (): void {
-        url = "index.html";
+        //url = "index.html";
         type = "/html";
         betaetigen();
     });
@@ -33,17 +33,16 @@ namespace Aufgabe3_1 {
         let response: Response = await fetch(url += "?" + query.toString());
         let responseText: string = await response.text();
         alert(responseText);
+        
         let jsonString: string;
 
         if (type == "/json") {
             let responseJSON: JSON = JSON.parse(jsonString);
             console.log(responseJSON);
         } else if (type == "/html") {
-            responseDIV.innerHTML = "";
-            let getText: DocumentFragment = document.createRange().createContextualFragment(responseText);
-            responseDIV.appendChild(getText);
+            responseDIV.innerHTML = responseText;
         }
-        //url = "https://gissose2021heroku.herokuapp.com/";
+        url = "https://gissose2021heroku.herokuapp.com";
         //url = "http://localhost:8100/";
     }
 }

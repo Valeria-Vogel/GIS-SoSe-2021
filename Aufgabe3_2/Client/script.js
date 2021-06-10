@@ -2,19 +2,19 @@
 var Aufgabe3_1;
 (function (Aufgabe3_1) {
     //let url: string = "http://localhost:8100/";
-    //let url: string = "https://gissose2021heroku.herokuapp.com/";
-    let url = "";
+    let url = "https://gissose2021heroku.herokuapp.com";
+    //let url: string = "";
     let type = "";
     let htmlSubmit = document.getElementById("htmlsubmit");
     let jsonSubmit = document.getElementById("jsonsubmit");
     let responseDIV = document.getElementById("responseDIV");
     jsonSubmit.addEventListener("click", function () {
-        url = "./json";
+        //url = "./json";
         type = "/json";
         betaetigen();
     });
     htmlSubmit.addEventListener("click", function () {
-        url = "index.html";
+        //url = "index.html";
         type = "/html";
         betaetigen();
     });
@@ -31,11 +31,9 @@ var Aufgabe3_1;
             console.log(responseJSON);
         }
         else if (type == "/html") {
-            responseDIV.innerHTML = "";
-            let getText = document.createRange().createContextualFragment(responseText);
-            responseDIV.appendChild(getText);
+            responseDIV.innerHTML = responseText;
         }
-        //url = "https://gissose2021heroku.herokuapp.com/";
+        url = "https://gissose2021heroku.herokuapp.com";
         //url = "http://localhost:8100/";
     }
 })(Aufgabe3_1 || (Aufgabe3_1 = {}));

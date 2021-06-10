@@ -5,11 +5,9 @@ var Aufgabe3_1;
     //let url: string = "https://gissose2021heroku.herokuapp.com/";
     let url = "";
     let type = "";
-    let btn = document.getElementById("submit");
     let htmlSubmit = document.getElementById("htmlsubmit");
     let jsonSubmit = document.getElementById("jsonsubmit");
     let responseDIV = document.getElementById("responseDIV");
-    btn.addEventListener("click", betaetigen);
     jsonSubmit.addEventListener("click", function () {
         url = "./json";
         type = "/json";

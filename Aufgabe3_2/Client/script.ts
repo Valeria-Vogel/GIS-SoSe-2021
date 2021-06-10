@@ -6,12 +6,10 @@ namespace Aufgabe3_1 {
     let url: string = "";
     let type: string = "";
 
-    let btn: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
     let htmlSubmit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("htmlsubmit");
     let jsonSubmit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("jsonsubmit");
     let responseDIV: HTMLDivElement = <HTMLDivElement>document.getElementById("responseDIV");
 
-    btn.addEventListener("click", betaetigen);
 
     jsonSubmit.addEventListener("click", function (): void {
         url = "./json";

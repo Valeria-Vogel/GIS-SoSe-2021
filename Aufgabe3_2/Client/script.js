@@ -37,7 +37,7 @@ var Aufgabe3_1;
             let getText = document.createRange().createContextualFragment(responseText);
             responseDIV.appendChild(getText);
         }
-        url = "https://gissose2021heroku.herokuapp.com/";
+        //url = "https://gissose2021heroku.herokuapp.com/";
         //url = "http://localhost:8100/";
     }
 })(Aufgabe3_1 || (Aufgabe3_1 = {}));

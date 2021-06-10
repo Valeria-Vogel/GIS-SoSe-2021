@@ -45,7 +45,7 @@ namespace Aufgabe3_1 {
             let getText: DocumentFragment = document.createRange().createContextualFragment(responseText);
             responseDIV.appendChild(getText);
         }
-        url = "https://gissose2021heroku.herokuapp.com/";
+        //url = "https://gissose2021heroku.herokuapp.com/";
         //url = "http://localhost:8100/";
     }
 }

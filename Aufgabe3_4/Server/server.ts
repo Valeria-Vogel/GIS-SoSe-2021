@@ -6,9 +6,11 @@ import * as Mongo from "mongodb";
 
 import { ParsedUrlQuery } from "querystring";
 
-
-
 export namespace Aufgabe3_4 {
+
+    let mongoClient: Mongo.MongoClient;
+    let collection: Mongo.Collection;
+
 
     export interface Feedback {
         name: string;
@@ -22,6 +24,7 @@ export namespace Aufgabe3_4 {
         console.log("Starting server");
         //DB Connection
         console.log("Connecting to DB...");
+
         await connectToDB("mongodb+srv://new-user1:<password>@gis-2021.qpo9f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 
         let port: number = Number(process.env.PORT);
@@ -56,8 +59,6 @@ export namespace Aufgabe3_4 {
         _response.end();
 
     }
-    let mongoClient: Mongo.MongoClient;
-    let collection: Mongo.Collection;
 
     async function connectToDB(_url: string): Promise<void> {
         mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });

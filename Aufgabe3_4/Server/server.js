@@ -6,6 +6,8 @@ const Url = require("url");
 const Mongo = require("mongodb");
 var Aufgabe3_4;
 (function (Aufgabe3_4) {
+    let mongoClient;
+    let collection;
     startServer();
     async function startServer() {
         console.log("Starting server");
@@ -35,8 +37,6 @@ var Aufgabe3_4;
         }
         _response.end();
     }
-    let mongoClient;
-    let collection;
     async function connectToDB(_url) {
         mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
         await mongoClient.connect();

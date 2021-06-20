@@ -3,15 +3,8 @@ namespace Aufgabe3_4 {
     let btn: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
     btn.addEventListener("click", insert);
     let btn2: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
-    btn2.addEventListener("click", findAll);
+    btn2.addEventListener("click", insert);
 
-    export interface Feedback {
-        _id: string;
-        name: string;
-        firstname: string;
-        registration: number;
-        message: string;
-    }
 
     //let serverURL: string = "http://localhost:8100";
     let url: string = "https://gissose2021heroku.herokuapp.com";
@@ -34,13 +27,6 @@ namespace Aufgabe3_4 {
         
     }
 
-
-    async function findAll(_e: Event): Promise<void> {
-
-        let out: HTMLDivElement = <HTMLDivElement>document.getElementById("output")!;
-        out.innerHTML = "";
-
-    }
 }
 
 

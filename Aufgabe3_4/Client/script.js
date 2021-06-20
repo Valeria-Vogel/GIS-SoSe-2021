@@ -4,7 +4,7 @@ var Aufgabe3_4;
     let btn = document.getElementById("submit");
     btn.addEventListener("click", insert);
     let btn2 = document.getElementById("submit");
-    btn2.addEventListener("click", findAll);
+    btn2.addEventListener("click", insert);
     //let serverURL: string = "http://localhost:8100";
     let url = "https://gissose2021heroku.herokuapp.com";
     let type;
@@ -20,10 +20,6 @@ var Aufgabe3_4;
             let responseJSON = JSON.parse(responseText);
             console.log(responseJSON);
         }
-    }
-    async function findAll(_e) {
-        let out = document.getElementById("output");
-        out.innerHTML = "";
     }
 })(Aufgabe3_4 || (Aufgabe3_4 = {}));
 //# sourceMappingURL=script.js.map

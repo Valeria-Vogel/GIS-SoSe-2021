@@ -4,11 +4,13 @@
   "description": "Package.JSON",
   "main": "index.js",
   "dependencies": {
-    "@types/node": "^15.6.1"
+    "@types/mongodb": "^3.6.18",
+    "@types/node": "^15.6.1",
+    "mongodb": "^3.6.9"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgabe3_2/Server/server.js"
+    "start": "node Aufgabe3_4/Server/server.js"
   },
   "repository": {
     "type": "git",

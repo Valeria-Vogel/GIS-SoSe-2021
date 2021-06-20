@@ -1,0 +1,54 @@
+body{
+    background-image: url("RBBG.png"); 
+}
+
+h1{
+    text-align: center;
+    font-size: 55px;
+	color: darkblue;
+	text-shadow: 5px 3px 3px lemonchiffon;
+}
+
+.formular {
+    margin: auto;
+    width: 800px;
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
+
+.formular input[type="text"] {
+    font-family: sans-serif;
+    color: black;
+    background: white;
+    display: inline-table;
+    margin: 10px auto;
+    border: 1px solid grey;
+    padding: 10px 10px;
+    width: 300px;
+}
+
+.formular textarea {
+    font-family: sans-serif;
+    color: black;
+    background: white;
+    display: block;
+    margin: 20px auto;
+    border: 1px solid grey;
+    padding: 10px;
+    outline: none;
+    transition: 250ms;
+    height: 100px;
+    width: 600px;
+    resize: none;
+}
+
+#submit{
+  padding: 5px 50px;  
+  font-size: 15px;
+  margin: 10px;
+}
+#feedback{
+    padding: 5px 60px;  
+    font-size: 15px;
+    margin: 10px;  
+}

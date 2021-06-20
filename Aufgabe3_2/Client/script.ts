@@ -31,7 +31,7 @@ namespace Aufgabe3_1 {
 
         let response: Response = await fetch(url += "?" + query.toString());
         let responseText: string = await response.text();
-        alert(responseText);
+        alert(responseText); //kann auskommentiert werden
         
 
 

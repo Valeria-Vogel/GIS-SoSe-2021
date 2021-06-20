@@ -23,7 +23,7 @@ var Aufgabe3_1;
         let query = new URLSearchParams(formData);
         let response = await fetch(url += "?" + query.toString());
         let responseText = await response.text();
-        alert(responseText);
+        alert(responseText); //kann auskommentiert werden
         if (type == "/json") {
             let responseJSON = JSON.parse(responseText);
             console.log(responseJSON);

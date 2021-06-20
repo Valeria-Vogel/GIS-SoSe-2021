@@ -50,14 +50,14 @@ var Aufgabe3_4;
         collection = mongoClient.db("Test").collection("Students");
         console.log("Database connection", collection != undefined);
     }
-    async function findAll() {
-        console.log("findAll");
-        let cursor = await collection.find();
-        return await cursor.toArray();
-    }
-    Aufgabe3_4.findAll = findAll;
-    // tslint:disable-next-line: no-any
-    /* export async function insert(_fb: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
+    /*  export async function findAll(): Promise<Feedback[]> {
+         console.log("findAll");
+         let cursor: Mongo.Cursor<Feedback> = await collection.find();
+         return await cursor.toArray();
+     }
+ 
+     // tslint:disable-next-line: no-any
+    export async function insert(_fb: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
          console.log("insert " + _fb.name + "'s feedback.");
          return await collection.insertOne(_fb);
      }*/

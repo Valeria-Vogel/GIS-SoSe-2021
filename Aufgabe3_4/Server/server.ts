@@ -72,14 +72,14 @@ export namespace Aufgabe3_4 {
         console.log("Database connection", collection != undefined);
     }
 
-    export async function findAll(): Promise<Feedback[]> {
+   /*  export async function findAll(): Promise<Feedback[]> {
         console.log("findAll");
         let cursor: Mongo.Cursor<Feedback> = await collection.find();
         return await cursor.toArray();
     }
 
     // tslint:disable-next-line: no-any
-   /* export async function insert(_fb: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
+   export async function insert(_fb: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
         console.log("insert " + _fb.name + "'s feedback.");
         return await collection.insertOne(_fb);
     }*/

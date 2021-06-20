@@ -20,8 +20,8 @@ namespace Aufgabe3_4 {
         let response: Response = await fetch(url += "?" + query.toString());
         let responseText: string = await response.text();
 
-        /*  console.log(await response.json());
-         console.log(responseText); }*/
+        /*  console.log(await response.json());*/
+        console.log(responseText); 
 
         if (type == "/send") {
             let responseJSON: JSON = JSON.parse(responseText);

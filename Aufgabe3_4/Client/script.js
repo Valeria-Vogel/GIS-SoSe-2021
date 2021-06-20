@@ -14,8 +14,8 @@ var Aufgabe3_4;
         let query = new URLSearchParams(formData);
         let response = await fetch(url += "?" + query.toString());
         let responseText = await response.text();
-        /*  console.log(await response.json());
-         console.log(responseText); }*/
+        /*  console.log(await response.json());*/
+        console.log(responseText);
         if (type == "/send") {
             let responseJSON = JSON.parse(responseText);
             console.log(responseJSON);

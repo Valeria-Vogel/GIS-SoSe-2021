@@ -60,7 +60,7 @@ var Aufgabe3_4;
             document.getElementById("response").innerHTML += JSON.stringify(responseJSON) + "\n\n";
             console.log("Data Received.\nURL: " + url);
         }
-        url = "https://gissose2021heroku.herokuapp.com";
+        //url = "https://gissose2021heroku.herokuapp.com";
     }
 })(Aufgabe3_4 || (Aufgabe3_4 = {}));
 //# sourceMappingURL=script.js.map

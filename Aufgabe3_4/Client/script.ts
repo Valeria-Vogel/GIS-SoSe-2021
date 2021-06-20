@@ -7,7 +7,7 @@ namespace Aufgabe3_4 {
      async function klicken(): Promise<void> {
          console.log("erfolgt");
  
-     }*/
+     }
     export interface Feedback {
         _id: string;
         name: string;
@@ -19,13 +19,10 @@ namespace Aufgabe3_4 {
     //let serverURL: string = "http://localhost:8100";
     let serverURL: string = "https://gissose2021heroku.herokuapp.com";
 
-    init();
+    document.getElementById("submit")?.addEventListener("click", insert);
+    document.getElementById("feedback")?.addEventListener("click", findAll);
 
-    function init(): void {
-        document.getElementById("submit")?.addEventListener("click", insert);
-        document.getElementById("feedback")?.addEventListener("click", findAll);
 
-    }
 
     async function insert(_e: Event): Promise<void> {
 
@@ -54,6 +51,48 @@ namespace Aufgabe3_4 {
         let feedbackDiv: HTMLDivElement = document.createElement("div");
         feedbackDiv.classList.add("one-feedback");
         feedbackDiv.setAttribute("_id", _f._id);
+    }*/
+    
+    //let url: string = "http://localhost:8100/";
+    let url: string = "https://gissose2021heroku.herokuapp.com";
+    //let url: string = "";
+    let type: string = "";
+
+    let htmlSubmit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
+    let jsonSubmit: HTMLButtonElement = <HTMLButtonElement>document.getElementById("feedback");
+
+
+
+    jsonSubmit.addEventListener("click", function (): void {
+        type = "/json";
+        betaetigen();
+    });
+
+    htmlSubmit.addEventListener("click", function (): void {
+        type = "/html";
+        betaetigen();
+    });
+
+    async function betaetigen(): Promise<void> {
+
+        let formData: FormData = new FormData(document.forms[0]);
+        url += type;
+        
+        //tslint:disable-next-line: no-any
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+
+        let response: Response = await fetch(url += "?" + query.toString());
+        let responseText: string = await response.text();
+        alert(responseText); //kann auskommentiert werden
+        
+
+
+        if (type == "/json") {
+            let responseJSON: JSON = JSON.parse(responseText);
+            console.log(responseJSON);
+        }
+        url = "https://gissose2021heroku.herokuapp.com";
+        //url = "http://localhost:8100/";
     }
 
 }

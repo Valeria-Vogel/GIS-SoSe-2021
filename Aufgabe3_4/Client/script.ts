@@ -55,18 +55,8 @@ namespace Aufgabe3_4 {
         let feedbackDiv: HTMLDivElement = document.createElement("div");
         feedbackDiv.classList.add("one-feedback");
         feedbackDiv.setAttribute("_id", _f._id);
-
-
-
-
-        let nameSpan: HTMLSpanElement = document.createElement("span");
-        nameSpan.classList.add("feedback-name");
-        nameSpan.innerText = _f.lastname;
-
-
-        let feedbackQuote: HTMLQuoteElement = document.createElement("q");
-        feedbackQuote.innerText = _f.message;
     }
+
 }
 
 

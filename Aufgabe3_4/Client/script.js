@@ -30,11 +30,6 @@ var Aufgabe3_4;
         let feedbackDiv = document.createElement("div");
         feedbackDiv.classList.add("one-feedback");
         feedbackDiv.setAttribute("_id", _f._id);
-        let nameSpan = document.createElement("span");
-        nameSpan.classList.add("feedback-name");
-        nameSpan.innerText = _f.lastname;
-        let feedbackQuote = document.createElement("q");
-        feedbackQuote.innerText = _f.message;
     }
 })(Aufgabe3_4 || (Aufgabe3_4 = {}));
 //# sourceMappingURL=script.js.map

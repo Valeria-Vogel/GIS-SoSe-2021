@@ -12,24 +12,27 @@ namespace Aufgabe3_4 {
 
     async function insert(_e: Event): Promise<void> {
 
-
         let formData: FormData = new FormData(document.forms[0]);
+
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
+
         let response: Response = await fetch(url += "?" + query.toString());
         let responseText: string = await response.text();
-        console.log(await response.json());
-        console.log(responseText);
-        /*if (type == "/send") {
+
+        /*  console.log(await response.json());
+         console.log(responseText); }*/
+
+        if (type == "/send") {
             let responseJSON: JSON = JSON.parse(responseText);
             console.log(responseJSON);
-        }*/
-        
+
+
+        }
+
     }
 
 }
-
-
 
 
 

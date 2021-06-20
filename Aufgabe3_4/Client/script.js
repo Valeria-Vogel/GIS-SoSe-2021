@@ -60,13 +60,6 @@ var Aufgabe3_4;
             document.getElementById("response").innerHTML += JSON.stringify(responseJSON) + "\n\n";
             console.log("Data Received.\nURL: " + url);
         }
-        else {
-            url += "/del" + "?" + query.toString();
-            let response = await fetch(url);
-            let responseString = await response.text();
-            console.log("Entry " + s.registration + " deleted.\nURL: " + url);
-            document.getElementById("response").innerHTML += responseString + "\n\n";
-        }
         url = "https://gissose2021heroku.herokuapp.com";
     }
 })(Aufgabe3_4 || (Aufgabe3_4 = {}));

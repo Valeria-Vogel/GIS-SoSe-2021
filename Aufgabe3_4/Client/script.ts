@@ -21,9 +21,7 @@ namespace Aufgabe3_4 {
     document.getElementById("feedback").addEventListener("click", receiveData);
     
     function sendData(): void {
-
         insert(0);
-    
     }
 
     function receiveData(): void {
@@ -73,13 +71,7 @@ namespace Aufgabe3_4 {
             let responseJSON: Student = await response.json();
             document.getElementById("response").innerHTML += JSON.stringify(responseJSON) + "\n\n";
             console.log("Data Received.\nURL: " + url);
-        } else {
-            url += "/del" + "?" + query.toString();
-            let response: Response = await fetch(url);
-            let responseString: string = await response.text();
-            console.log("Entry " + s.registration + " deleted.\nURL: " + url);
-            document.getElementById("response").innerHTML += responseString + "\n\n";
-        }
+        } 
         url = "https://gissose2021heroku.herokuapp.com";
     }
 }

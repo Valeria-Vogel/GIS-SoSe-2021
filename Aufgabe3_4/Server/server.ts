@@ -4,7 +4,7 @@ import * as Url from "url";
 
 import * as Mongo from "mongodb";
 
-//import { ParsedUrlQuery } from "querystring";
+import { ParsedUrlQuery } from "querystring";
 
 export namespace Aufgabe3_4 {
 

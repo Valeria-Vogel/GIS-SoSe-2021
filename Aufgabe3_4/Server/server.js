@@ -4,7 +4,6 @@ exports.Aufgabe3_4 = void 0;
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
-//import { ParsedUrlQuery } from "querystring";
 var Aufgabe3_4;
 (function (Aufgabe3_4) {
     let mongoClient;

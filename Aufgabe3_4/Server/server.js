@@ -29,11 +29,6 @@ var Aufgabe3_4;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            if (url.pathname == "/html") {
-                for (let key in url.query) {
-                    _response.write(key + ": " + url.query[key] + "<br>");
-                }
-            }
             if (url.pathname == "/json") {
                 let jsonString = JSON.stringify(url.query);
                 _response.write(jsonString);

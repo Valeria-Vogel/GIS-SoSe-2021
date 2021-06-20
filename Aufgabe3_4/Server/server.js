@@ -11,7 +11,7 @@ var Aufgabe3_4;
         console.log("Starting server");
         //DB Connection
         console.log("Connecting to DB...");
-        await Aufgabe3_4.connectToDB("mongodb+srv://user:fBag3TZ4wiw6yRiq@cluster0-omyol.mongodb.net/dbname?retryWrites=true&w=majority");
+        await connectToDB("mongodb+srv://new-user1:<password>@gis-2021.qpo9f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
         let port = Number(process.env.PORT);
         if (!port)
             port = 8100;

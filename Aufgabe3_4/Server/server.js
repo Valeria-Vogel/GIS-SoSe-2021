@@ -57,14 +57,14 @@ var Aufgabe3_4;
         let students = await connectToDB();
         let output = "";
         if (f.registration + "" == "NaN") {
-            output = "Hast dich wohl vertippt. Macht nichts, try again! :3";
+            output = "";
         }
         else if (await students.countDocuments({ "Matrikelnummer": f.registration }) != 0) {
-            output = "Student*in mit dieser Matrikelnummer existiert bereits, du Knecht!!";
+            output = "Eintrag";
         }
         else {
             students.insertOne(f);
-            output = "Feedback von '" + f.name + "' (" + f.registration + ") " + "hinzugefügt.";
+            output = "Feedback:";
         }
         return output;
     }

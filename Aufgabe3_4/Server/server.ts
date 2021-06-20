@@ -1,10 +1,11 @@
 import * as Http from "http";
-
 import * as Url from "url";
-
 import * as Mongo from "mongodb";
 
 export namespace Aufgabe3_4 {
+
+    let f: Feedback;
+    let _mongoUrl: string = "mongodb+srv://new-user1:pilz123@gis-2021.qpo9f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
     export interface Feedback {
         _id: string;
@@ -20,11 +21,12 @@ export namespace Aufgabe3_4 {
         //DB Connection
         console.log("Connecting to DB...");
 
-        await connectToDB("mongodb+srv://new-user1:pilz123@gis-2021.qpo9f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+        await connectToDB();
 
         let port: number = Number(process.env.PORT);
         if (!port)
             port = 8100;
+
         let server: Http.Server = Http.createServer();
         server.addListener("request", handleRequest);
         server.addListener("listening", handleListen);
@@ -37,7 +39,7 @@ export namespace Aufgabe3_4 {
     }
 
 
-    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
         console.log("I hear voices!");
 
         _response.setHeader("content-type", "text/html; charset=utf-8");
@@ -45,25 +47,54 @@ export namespace Aufgabe3_4 {
 
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-            if (url.pathname == "/json") {
-                let jsonString: string = JSON.stringify(url.query);
-                _response.write(jsonString);
+            if (url.pathname == "/send") {
+                let response: string = await submitText(f);
+                _response.write(response + "\n");
+            }
+            if (url.pathname == "/receive") {
+                let response: Feedback[] = await giveFeedback();
+                _response.write(JSON.stringify(response));
             }
             _response.end();
-
-
         }
+
     }
 
-    async function connectToDB(_url: string): Promise<void> {
-        let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
+
+    async function connectToDB(): Promise<Mongo.Collection> {
+        let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
         await mongoClient.connect();
         let collection: Mongo.Collection = mongoClient.db("Test").collection("Students");
-        console.log("Database connection", collection != undefined);
+        /*console.log("Database connection", collection != undefined);
         console.log("findAll");
         let cursor: Mongo.Cursor<Feedback> = await collection.find();
         await cursor.toArray();
-       
+*/
+        return collection;
     }
+
+    async function submitText(f: Feedback): Promise<string> {
+        let students: Mongo.Collection = await connectToDB();
+        let output: string = "";
+
+        if (f.registration + "" == "NaN") {
+            output = "Hast dich wohl vertippt. Macht nichts, try again! :3";
+        }
+        else if (await students.countDocuments({ "Matrikelnummer": f.registration }) != 0) {
+            output = "Student*in mit dieser Matrikelnummer existiert bereits, du Knecht!!";
+        }
+        else {
+            students.insertOne(f);
+            output = "Feedback von '" + f.name + "' (" + f.registration + ") " + "hinzugefügt.";
+        }
+        return output;
+    }
+    async function giveFeedback(): Promise<Feedback[]> {
+        let students: Mongo.Collection = await connectToDB();
+        let cursor: Mongo.Cursor = students.find();
+        let result: Feedback[] = await cursor.toArray();
+        return result;
+    }
+
 
 }

@@ -66,7 +66,7 @@ namespace Aufgabe3_4 {
             let responseString: string = await response.text();
             console.log("Data Sent", s);
             console.log("URL:", url);
-            document.getElementById("response").innerHTML += responseString + "\n\n";
+            document.getElementById("output").innerHTML += responseString + "\n\n";
         } else if (type == 1) {
             url += "/receive" + "?" + query.toString();
             let response: Response = await fetch(url);

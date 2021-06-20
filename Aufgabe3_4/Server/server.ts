@@ -20,7 +20,7 @@ export namespace Aufgabe3_4 {
         //DB Connection
         console.log("Connecting to DB...");
 
-        await connectToDB("mongodb+srv://new-user1:<password>@gis-2021.qpo9f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+        await connectToDB("mongodb+srv://new-user1:pilz123@gis-2021.qpo9f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 
         let port: number = Number(process.env.PORT);
         if (!port)

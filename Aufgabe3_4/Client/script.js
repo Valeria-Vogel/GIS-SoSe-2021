@@ -1,8 +1,8 @@
 "use strict";
 var Aufgabe3_4;
 (function (Aufgabe3_4) {
-    let serverURL = "http://localhost:8100";
-    //let serverURL: string = "https://gis-example.herokuapp.com";
+    //let serverURL: string = "http://localhost:8100";
+    let serverURL = "https://gissose2021heroku.herokuapp.com";
     init();
     function init() {
         document.getElementById("submit")?.addEventListener("click", insert);
@@ -10,10 +10,6 @@ var Aufgabe3_4;
     }
     async function insert(_e) {
         let hiddenRatingInput = document.getElementById("rating-input");
-        if (!document.forms[0].checkValidity() || parseInt(hiddenRatingInput.value) < 0) {
-            _e.preventDefault();
-            return;
-        }
         let fd = new FormData(document.forms[0]);
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(fd);
@@ -34,12 +30,11 @@ var Aufgabe3_4;
         let feedbackDiv = document.createElement("div");
         feedbackDiv.classList.add("one-feedback");
         feedbackDiv.setAttribute("_id", _f._id);
+        let nameSpan = document.createElement("span");
+        nameSpan.classList.add("feedback-name");
+        nameSpan.innerText = _f.lastname;
+        let feedbackQuote = document.createElement("q");
+        feedbackQuote.innerText = _f.message;
     }
-    let _f;
-    let nameSpan = document.createElement("span");
-    nameSpan.classList.add("feedback-name");
-    nameSpan.innerText = _f.lastname;
-    let feedbackQuote = document.createElement("q");
-    feedbackQuote.innerText = _f.message;
 })(Aufgabe3_4 || (Aufgabe3_4 = {}));
 //# sourceMappingURL=script.js.map

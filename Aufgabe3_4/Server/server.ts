@@ -63,30 +63,31 @@ export namespace Aufgabe3_4 {
 
 
         }
-
-        async function connectToDB(_url: string): Promise<void> {
-            mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
-            await mongoClient.connect();
-            collection = mongoClient.db("Test").collection("Students");
-            console.log("Database connection", collection != undefined);
-        }
-
-        export async function findAll(): Promise<Feedback[]> {
-            console.log("findAll");
-            let cursor: Mongo.Cursor<Feedback> = await collection.find();
-            return await cursor.toArray();
-        }
-
-        // tslint:disable-next-line: no-any
-        export async function insert(_fb: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
-            console.log("insert " + _fb.name + "'s feedback.");
-            return await collection.insertOne(_fb);
-        }
-
-        export async function removeOne(_query: ParsedUrlQuery): Promise<Mongo.DeleteWriteOpResultObject> {
-            let id: string = <string>_query["id"];
-            let objID: Mongo.ObjectId = new Mongo.ObjectId(id);
-            console.log("remove", id);
-            return await collection.deleteOne({ "_id": objID });
-        }
     }
+
+    async function connectToDB(_url: string): Promise<void> {
+        mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoClient.connect();
+        collection = mongoClient.db("Test").collection("Students");
+        console.log("Database connection", collection != undefined);
+    }
+
+    export async function findAll(): Promise<Feedback[]> {
+        console.log("findAll");
+        let cursor: Mongo.Cursor<Feedback> = await collection.find();
+        return await cursor.toArray();
+    }
+
+    // tslint:disable-next-line: no-any
+    export async function insert(_fb: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
+        console.log("insert " + _fb.name + "'s feedback.");
+        return await collection.insertOne(_fb);
+    }
+
+    export async function removeOne(_query: ParsedUrlQuery): Promise<Mongo.DeleteWriteOpResultObject> {
+        let id: string = <string>_query["id"];
+        let objID: Mongo.ObjectId = new Mongo.ObjectId(id);
+        console.log("remove", id);
+        return await collection.deleteOne({ "_id": objID });
+    }
+}

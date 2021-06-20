@@ -42,31 +42,31 @@ var Aufgabe3_4;
             }
             _response.end();
         }
-        async function connectToDB(_url) {
-            mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
-            await mongoClient.connect();
-            collection = mongoClient.db("Test").collection("Students");
-            console.log("Database connection", collection != undefined);
-        }
-        async function findAll() {
-            console.log("findAll");
-            let cursor = await collection.find();
-            return await cursor.toArray();
-        }
-        Aufgabe3_4.findAll = findAll;
-        // tslint:disable-next-line: no-any
-        async function insert(_fb) {
-            console.log("insert " + _fb.name + "'s feedback.");
-            return await collection.insertOne(_fb);
-        }
-        Aufgabe3_4.insert = insert;
-        async function removeOne(_query) {
-            let id = _query["id"];
-            let objID = new Mongo.ObjectId(id);
-            console.log("remove", id);
-            return await collection.deleteOne({ "_id": objID });
-        }
-        Aufgabe3_4.removeOne = removeOne;
     }
+    async function connectToDB(_url) {
+        mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoClient.connect();
+        collection = mongoClient.db("Test").collection("Students");
+        console.log("Database connection", collection != undefined);
+    }
+    async function findAll() {
+        console.log("findAll");
+        let cursor = await collection.find();
+        return await cursor.toArray();
+    }
+    Aufgabe3_4.findAll = findAll;
+    // tslint:disable-next-line: no-any
+    async function insert(_fb) {
+        console.log("insert " + _fb.name + "'s feedback.");
+        return await collection.insertOne(_fb);
+    }
+    Aufgabe3_4.insert = insert;
+    async function removeOne(_query) {
+        let id = _query["id"];
+        let objID = new Mongo.ObjectId(id);
+        console.log("remove", id);
+        return await collection.deleteOne({ "_id": objID });
+    }
+    Aufgabe3_4.removeOne = removeOne;
 })(Aufgabe3_4 = exports.Aufgabe3_4 || (exports.Aufgabe3_4 = {}));
 //# sourceMappingURL=server.js.map

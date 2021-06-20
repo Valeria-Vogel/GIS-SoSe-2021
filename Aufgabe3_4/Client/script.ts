@@ -18,12 +18,12 @@ namespace Aufgabe3_4 {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         let response: Response = await fetch(url += "?" + query.toString());
         let responseText: string = await response.text();
-       // console.log(await response.json());
+        console.log(await response.json());
         console.log(responseText);
-        if (type == "/send") {
+        /*if (type == "/send") {
             let responseJSON: JSON = JSON.parse(responseText);
             console.log(responseJSON);
-        }
+        }*/
         
     }
 

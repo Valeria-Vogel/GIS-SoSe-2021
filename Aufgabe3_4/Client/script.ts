@@ -1,12 +1,14 @@
 namespace Aufgabe3_4 {
-
-    let s: Student;
+    
+    let url: string = "https://gissose2021heroku.herokuapp.com";
+/*
     let btn: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
     btn.addEventListener("click", insert);
     let btn2: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
     btn2.addEventListener("click", insert);
 
-
+*/
+    let s: Student;
     interface Student {
         _id: string;
         name: string;
@@ -14,8 +16,21 @@ namespace Aufgabe3_4 {
         registration: number;
         message: string;
     }
+
+    document.getElementById("send").addEventListener("click", sendData);
+    document.getElementById("receive").addEventListener("click", receiveData);
+    
+    function sendData(): void {
+
+        insert(0);
+    
+    }
+
+    function receiveData(): void {
+        insert(1);
+    }
+    
     //let serverURL: string = "http://localhost:8100";
-    let url: string = "https://gissose2021heroku.herokuapp.com";
     //let type: string;
 
     /* async function insert(_e: Event): Promise<void> {

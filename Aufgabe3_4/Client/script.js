@@ -1,13 +1,24 @@
 "use strict";
 var Aufgabe3_4;
 (function (Aufgabe3_4) {
-    let s;
-    let btn = document.getElementById("submit");
-    btn.addEventListener("click", insert);
-    let btn2 = document.getElementById("submit");
-    btn2.addEventListener("click", insert);
-    //let serverURL: string = "http://localhost:8100";
     let url = "https://gissose2021heroku.herokuapp.com";
+    /*
+        let btn: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
+        btn.addEventListener("click", insert);
+        let btn2: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
+        btn2.addEventListener("click", insert);
+    
+    */
+    let s;
+    document.getElementById("send").addEventListener("click", sendData);
+    document.getElementById("receive").addEventListener("click", receiveData);
+    function sendData() {
+        insert(0);
+    }
+    function receiveData() {
+        insert(1);
+    }
+    //let serverURL: string = "http://localhost:8100";
     //let type: string;
     /* async function insert(_e: Event): Promise<void> {
  

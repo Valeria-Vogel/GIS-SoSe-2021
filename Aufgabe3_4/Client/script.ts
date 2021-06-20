@@ -10,7 +10,7 @@ namespace Aufgabe3_4 {
      }*/
     export interface Feedback {
         _id: string;
-        lastname: string;
+        name: string;
         firstname: string;
         registration: number;
         message: string;

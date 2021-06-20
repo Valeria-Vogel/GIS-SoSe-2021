@@ -10,7 +10,7 @@ import { ParsedUrlQuery } from "querystring";
 export namespace Aufgabe3_4 {
 
     export interface Feedback {
-        lastname: string;
+        name: string;
         firstname: string;
         registration: number;
         message: string;

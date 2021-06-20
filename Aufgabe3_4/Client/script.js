@@ -1,6 +1,7 @@
 "use strict";
 var Aufgabe3_4;
 (function (Aufgabe3_4) {
+    let s;
     let btn = document.getElementById("submit");
     btn.addEventListener("click", insert);
     let btn2 = document.getElementById("submit");
@@ -52,7 +53,7 @@ var Aufgabe3_4;
             url += "/del" + "?" + query.toString();
             let response = await fetch(url);
             let responseString = await response.text();
-            console.log("Entry " + s.matrikel + " deleted.\nURL: " + url);
+            console.log("Entry " + s.registration + " deleted.\nURL: " + url);
             document.getElementById("response").innerHTML += responseString + "\n\n";
         }
         url = "https://gissose2021heroku.herokuapp.com";

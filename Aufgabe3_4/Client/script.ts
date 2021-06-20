@@ -1,11 +1,19 @@
 namespace Aufgabe3_4 {
 
+    let s: Student;
     let btn: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
     btn.addEventListener("click", insert);
     let btn2: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
     btn2.addEventListener("click", insert);
 
 
+    interface Student {
+        _id: string;
+        name: string;
+        firstname: string;
+        registration: number;
+        message: string;
+    }
     //let serverURL: string = "http://localhost:8100";
     let url: string = "https://gissose2021heroku.herokuapp.com";
     //let type: string;
@@ -54,7 +62,7 @@ namespace Aufgabe3_4 {
             url += "/del" + "?" + query.toString();
             let response: Response = await fetch(url);
             let responseString: string = await response.text();
-            console.log("Entry " + s.matrikel + " deleted.\nURL: " + url);
+            console.log("Entry " + s.registration + " deleted.\nURL: " + url);
             document.getElementById("response").innerHTML += responseString + "\n\n";
         }
         url = "https://gissose2021heroku.herokuapp.com";

@@ -9,13 +9,11 @@ var Aufgabe3_4;
         document.getElementById("feedback")?.addEventListener("click", findAll);
     }
     async function insert(_e) {
-        let hiddenRatingInput = document.getElementById("rating-input");
         let fd = new FormData(document.forms[0]);
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(fd);
         let response = await fetch(serverURL + "/insert?" + query);
         console.log(await response.json());
-        hiddenRatingInput.value = "-1";
     }
     async function findAll(_e) {
         let response = await fetch(serverURL + "/read");

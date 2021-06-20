@@ -28,7 +28,6 @@ namespace Aufgabe3_4 {
     }
 
     async function insert(_e: Event): Promise<void> {
-        let hiddenRatingInput: HTMLInputElement = <HTMLInputElement>document.getElementById("rating-input");
 
 
         let fd: FormData = new FormData(document.forms[0]);
@@ -36,7 +35,7 @@ namespace Aufgabe3_4 {
         let query: URLSearchParams = new URLSearchParams(<any>fd);
         let response: Response = await fetch(serverURL + "/insert?" + query);
         console.log(await response.json());
-        hiddenRatingInput.value = "-1";
+
     }
 
     async function findAll(_e: Event): Promise<void> {

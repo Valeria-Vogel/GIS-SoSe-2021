@@ -10,8 +10,8 @@ var Aufgabe3_4;
     
     */
     let s;
-    document.getElementById("send").addEventListener("click", sendData);
-    document.getElementById("receive").addEventListener("click", receiveData);
+    document.getElementById("submit").addEventListener("click", sendData);
+    document.getElementById("feedback").addEventListener("click", receiveData);
     function sendData() {
         insert(0);
     }

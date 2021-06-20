@@ -7,6 +7,7 @@ import * as Mongo from "mongodb";
 import { ParsedUrlQuery } from "querystring";
 
 
+
 export namespace Aufgabe3_4 {
 
     export interface Feedback {
@@ -14,7 +15,7 @@ export namespace Aufgabe3_4 {
         firstname: string;
         registration: number;
         message: string;
-      }
+    }
 
     startServer();
     async function startServer(): Promise<void> {
@@ -58,16 +59,16 @@ export namespace Aufgabe3_4 {
     let mongoClient: Mongo.MongoClient;
     let collection: Mongo.Collection;
 
-    export async function connectToDB(_url: string): Promise<void> {
+    async function connectToDB(_url: string): Promise<void> {
         mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
         await mongoClient.connect();
-        collection = mongoClient.db("dbname").collection("collname");
+        collection = mongoClient.db("Test").collection("Students");
         console.log("Database connection", collection != undefined);
     }
 
-    export async function findAll(): Promise<Aufgabe3_4.Feedback[]> {
+    export async function findAll(): Promise<Feedback[]> {
         console.log("findAll");
-        let cursor: Mongo.Cursor<Aufgabe3_4.Feedback> = await collection.find();
+        let cursor: Mongo.Cursor<Feedback> = await collection.find();
         return await cursor.toArray();
     }
 

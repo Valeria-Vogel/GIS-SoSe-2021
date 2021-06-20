@@ -40,10 +40,9 @@ var Aufgabe3_4;
     async function connectToDB(_url) {
         mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
         await mongoClient.connect();
-        collection = mongoClient.db("dbname").collection("collname");
+        collection = mongoClient.db("Test").collection("Students");
         console.log("Database connection", collection != undefined);
     }
-    Aufgabe3_4.connectToDB = connectToDB;
     async function findAll() {
         console.log("findAll");
         let cursor = await collection.find();

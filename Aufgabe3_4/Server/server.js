@@ -4,6 +4,7 @@ exports.Aufgabe3_4 = void 0;
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
+//import { ParsedUrlQuery } from "querystring";
 var Aufgabe3_4;
 (function (Aufgabe3_4) {
     let mongoClient;
@@ -56,17 +57,9 @@ var Aufgabe3_4;
     }
     Aufgabe3_4.findAll = findAll;
     // tslint:disable-next-line: no-any
-    async function insert(_fb) {
-        console.log("insert " + _fb.name + "'s feedback.");
-        return await collection.insertOne(_fb);
-    }
-    Aufgabe3_4.insert = insert;
-    async function removeOne(_query) {
-        let id = _query["id"];
-        let objID = new Mongo.ObjectId(id);
-        console.log("remove", id);
-        return await collection.deleteOne({ "_id": objID });
-    }
-    Aufgabe3_4.removeOne = removeOne;
+    /* export async function insert(_fb: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
+         console.log("insert " + _fb.name + "'s feedback.");
+         return await collection.insertOne(_fb);
+     }*/
 })(Aufgabe3_4 = exports.Aufgabe3_4 || (exports.Aufgabe3_4 = {}));
 //# sourceMappingURL=server.js.map

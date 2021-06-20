@@ -4,7 +4,7 @@ import * as Url from "url";
 
 import * as Mongo from "mongodb";
 
-import { ParsedUrlQuery } from "querystring";
+//import { ParsedUrlQuery } from "querystring";
 
 export namespace Aufgabe3_4 {
 
@@ -79,15 +79,10 @@ export namespace Aufgabe3_4 {
     }
 
     // tslint:disable-next-line: no-any
-    export async function insert(_fb: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
+   /* export async function insert(_fb: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
         console.log("insert " + _fb.name + "'s feedback.");
         return await collection.insertOne(_fb);
-    }
+    }*/
 
-    export async function removeOne(_query: ParsedUrlQuery): Promise<Mongo.DeleteWriteOpResultObject> {
-        let id: string = <string>_query["id"];
-        let objID: Mongo.ObjectId = new Mongo.ObjectId(id);
-        console.log("remove", id);
-        return await collection.deleteOne({ "_id": objID });
-    }
+  
 }

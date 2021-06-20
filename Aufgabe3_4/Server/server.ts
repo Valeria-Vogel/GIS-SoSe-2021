@@ -45,44 +45,48 @@ export namespace Aufgabe3_4 {
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log("I hear voices!");
 
-        _response.setHeader("content-type", "text/html; charset=utf-8"); //Header wird erstellt
-        _response.setHeader("Access-Control-Allow-Origin", "*"); //jeder hat access
+        _response.setHeader("content-type", "text/html; charset=utf-8");
+        _response.setHeader("Access-Control-Allow-Origin", "*");
+
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+            if (url.pathname == "/html") {
+                for (let key in url.query) {
+                    _response.write(key + ": " + url.query[key] + "<br>");
+                }
+            }
+            if (url.pathname == "/json") {
+                let jsonString: string = JSON.stringify(url.query);
+                _response.write(jsonString);
+            }
+            _response.end();
 
-
-            _response.setHeader("content-type", "application/json");
-            let jsonString: string = JSON.stringify(url.query);
-            _response.write(jsonString);
 
         }
-        _response.end();
 
-    }
+        async function connectToDB(_url: string): Promise<void> {
+            mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
+            await mongoClient.connect();
+            collection = mongoClient.db("Test").collection("Students");
+            console.log("Database connection", collection != undefined);
+        }
 
-    async function connectToDB(_url: string): Promise<void> {
-        mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
-        await mongoClient.connect();
-        collection = mongoClient.db("Test").collection("Students");
-        console.log("Database connection", collection != undefined);
-    }
+        export async function findAll(): Promise<Feedback[]> {
+            console.log("findAll");
+            let cursor: Mongo.Cursor<Feedback> = await collection.find();
+            return await cursor.toArray();
+        }
 
-    export async function findAll(): Promise<Feedback[]> {
-        console.log("findAll");
-        let cursor: Mongo.Cursor<Feedback> = await collection.find();
-        return await cursor.toArray();
-    }
+        // tslint:disable-next-line: no-any
+        export async function insert(_fb: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
+            console.log("insert " + _fb.name + "'s feedback.");
+            return await collection.insertOne(_fb);
+        }
 
-    // tslint:disable-next-line: no-any
-    export async function insert(_fb: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
-        console.log("insert " + _fb.name + "'s feedback.");
-        return await collection.insertOne(_fb);
+        export async function removeOne(_query: ParsedUrlQuery): Promise<Mongo.DeleteWriteOpResultObject> {
+            let id: string = <string>_query["id"];
+            let objID: Mongo.ObjectId = new Mongo.ObjectId(id);
+            console.log("remove", id);
+            return await collection.deleteOne({ "_id": objID });
+        }
     }
-
-    export async function removeOne(_query: ParsedUrlQuery): Promise<Mongo.DeleteWriteOpResultObject> {
-        let id: string = <string>_query["id"];
-        let objID: Mongo.ObjectId = new Mongo.ObjectId(id);
-        console.log("remove", id);
-        return await collection.deleteOne({ "_id": objID });
-    }
-}

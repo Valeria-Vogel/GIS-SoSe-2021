@@ -1,0 +1,159 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    
+    background-image: url("./img/Hintergrund.jpg");
+}
+header {
+    background: url("./img/wp.jpg" ) 0.1px ;
+    margin-top: 0px;
+}
+h1 {
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: rgb(84, 4, 83) 1px 1px 5px ;
+    padding: 0px;
+    margin: 0cm;
+}
+h3{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    text-shadow: rgb(148, 119, 148) 1px 1px 5px ;
+}
+#unterschrift {
+    margin: 0px;
+    padding-bottom: 10px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 35px;
+    text-shadow: rgb(84, 4, 83) 1px 1px 2.5px ;
+}
+
+#Navigation > ul {
+    text-align: right;
+    list-style: none;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+   
+}
+#button > ul {
+    text-align: center;
+    list-style: none;
+    padding: 50px;
+    font-family: "Times New Roman", Times, serif;
+    margin-left: 500px;
+
+   
+}
+
+li {
+    color: white;
+    text-align: center;
+    display: inline-table;
+    width: 140px;
+    padding: 5px;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    word-spacing: 1cm;
+    border-radius: 2px;
+    font-weight: bolder;
+    background-color: rgba(78, 75, 75, 0.397);
+    
+}
+li > a {
+    text-decoration: none;
+}
+
+li:hover {
+    background-color: rgba(173, 41, 206, 0.514);
+}
+
+
+.aktuell{
+    background-color: thistle ;
+    color: black;
+    border-radius: 2px;
+}
+
+#Navigation{
+    position: sticky;
+    top: 0px;
+    height: 1.5cm;
+    z-index: 30;
+    display: line;
+}
+#button{
+    text-align: center;
+    display: block;
+}
+#button > ul > li {
+    color: white;
+    text-align: center;
+    display: block;
+    width: 400px;
+    padding: 30px;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    word-spacing: 1cm;
+    border-radius: 2px;
+    font-weight: bolder;
+    background-color: rgba(137, 98, 145, 0.397);
+    list-style: none;
+}
+
+.formular input[type="text"],
+.formular input[type="password"] {
+    font-family: sans-serif;
+    color: black;
+    background: white;
+    display: inline;
+    margin: 20px auto;
+    border: 1px solid grey;
+    padding: 10px 10px;
+    width: 250px;
+
+   
+}
+
+.formular input[type="text"]:focus,
+.formular input[type="password"]:focus{
+    padding: 10px 10px;
+    border: 2px solid lavender;
+}
+#zutaten{
+    display: line;
+}
+
+.formular textarea {
+    font-family: sans-serif;
+    color: black;
+    background: white;
+    display: block;
+    margin: 20px auto;
+    border: 1px solid grey;
+    padding: 10px;
+    outline: none;
+    transition: 250ms;
+    height: 200px;
+    width: 600px;
+    resize: none;
+}
+
+.formular textarea:focus {
+    border: 2px solid lavender;
+    width: 610px;
+}
+
+.formular input[type="fertig"]:hover {
+    background-color: blue;
+    border: 1px solid white;
+}
+
+.Bild {
+    width: 350px;
+    height: 300px;
+    display: inline;
+    padding: 50px;
+}

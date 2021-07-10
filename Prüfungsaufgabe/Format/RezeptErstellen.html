@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <script src="./Client/script.js" defer></script>
+    <title>NeuesRezept</title>
+</head>
+
+<body>
+    <header>
+        <h1>M O Z I P T</h1>
+        <div id="unterschrift">
+            <p>Rezepte-Sammlung</p>
+        </div>
+    </header>
+    <main>
+        <nav id="Navigation">
+            <ul>
+                <li><a href="./Home.html">Home</a></li>
+                <li class="aktuell"><a href="./MeineRezepte.html">MeineRezepte</a></li>
+                <li><a href="./Login.html">Login</a></li>
+            </ul>
+        </nav>
+
+        <h3>
+            Neues Rezept
+        </h3>
+        <form class="formular">
+            <div>
+                <p>
+                    Name des Gerichtes:
+                </p>
+                <input type="text" name="zutaten" placeholder="Name">
+               <div><input type="image" name="Bild" placeholder="Bild des Gerichtes"></div> 
+            </div>
+            <div id="zutaten">
+                <p>Zutaten:</p>
+                <input type="text" name="zutaten" placeholder="">
+
+                <input type="number" name="wieViel" placeholder="">
+                <p>in Gramm</p>
+
+                <div>
+                    <button type="button" id="hizufugen">+ Zutat</button>
+                </div>
+            </div>
+            <div>
+                <p>Zubereitung:</p>
+                <textarea name="message" placeholder="Schritte..."></textarea>
+
+            </div>
+            <div>
+                <button type="button" id="fertig">Fertig!</button>
+            </div>
+
+        </form>
+
+
+    </main>
+
+</body>
+
+</html>

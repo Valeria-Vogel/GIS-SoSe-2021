@@ -1,30 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Prüfung = void 0;
-/*export namespace Prüfung {
-  console.log("Starting server");
-   let port: number = Number(process.env.PORT);   //Informationen zur Port-Umgebung
-   if (!port)
-       port = 8100;
-
-   let server: Http.Server = Http.createServer(); //erstellt Server
-   server.addListener("request", handleRequest);  //sendet anfrage an handleRequest
-   server.addListener("listening", handleListen); //hört dem Ablauf des Programms zu/ schaut über die Eingabe im Formular
-   server.listen(port);
-
-   function handleListen(): void {
-       console.log("Listening");   // gibt bei zuhören "Listening" aus
-   }
-
-
-   function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-       console.log("I hear voices!"); // gibt I hear voices aus, nach dem Formular überprüft wurde
-       _response.setHeader("content-type", "text/html; charset=utf-8");    //Headertyp wird gesetzt
-       _response.setHeader("Access-Control-Allow-Origin", "*");    //sämtliche Funktionalitäten werden dem Header hinzugefügt
-       _response.write(_request.url);  //Der request wird in url ausgegeben
-       _response.end();
-   }
-}*/
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
@@ -34,9 +10,9 @@ var Prüfung;
     let _mongoUrl = "mongodb+srv://new-user1:pilz123@gis-2021.qpo9f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
     startServer();
     async function startServer() {
-        console.log("Starting server");
+        console.log("Server wird gestartet");
         //DB Connection
-        console.log("Connecting to DB...");
+        console.log("Datenbank wird verbunden...");
         await connectToDB();
         let port = Number(process.env.PORT);
         if (!port)
@@ -47,10 +23,10 @@ var Prüfung;
         server.listen(port);
     }
     function handleListen() {
-        console.log("Listening");
+        console.log("Es wird gesucht");
     }
     async function handleRequest(_request, _response) {
-        console.log("I hear voices!");
+        console.log("Gefunden!");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
@@ -71,7 +47,7 @@ var Prüfung;
         await mongoClient.connect();
         let collection = mongoClient.db("Rezepte").collection("Gerichte");
         console.log("Database connection", collection != undefined);
-        console.log("findAll");
+        console.log("Finde alles");
         let cursor = await collection.find();
         await cursor.toArray();
         return collection;

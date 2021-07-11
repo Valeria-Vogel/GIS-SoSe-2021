@@ -158,3 +158,69 @@ li:hover {
     display: inline;
     padding: 50px;
 }
+@media screen and (max-width: 1023px){
+    body{
+        display: block;
+        position: relative;
+    }
+    .Bild{
+        width: 250px;
+        height: 200px;
+        display: inline;
+        padding: 10px;
+    }
+    #button > ul {
+        margin-left: 13%;
+
+    }
+
+    #button > ul > li {
+        width: 400px;   
+    }
+
+    .formular textarea {
+        height: 200px;
+        width: 600px;
+
+    }
+   
+}
+@media screen and (max-width: 780px) {
+    body{
+        width: auto;
+        display: block;
+    }
+    .Formular li{
+        width:50%;
+        height: 50px;
+        margin-top: 30px;
+    }
+    li{
+        display: inline;
+    }
+    #Navigation{
+        width: 100%;
+
+    }
+    li>a{
+        border-radius: 0px;
+        text-align: center;
+    
+    }
+    #button > ul {
+        padding: 30px;
+        margin-left: 3%;
+    
+       
+    }
+    #button > ul > li {
+        width: 200px;
+        
+    }
+    .formular textarea {
+        height: 200px;
+        width: 300px;
+
+    }
+
+}

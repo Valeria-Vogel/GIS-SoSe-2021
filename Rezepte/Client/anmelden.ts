@@ -1,6 +1,9 @@
-"use strict";
-var Prüfung;
-(function (Prüfung) {
+namespace Prüfung {
+
+    export interface Login {
+        message: string;
+        error: string;
+    }
     /* async function clickLogin(): Promise<void> {
          handleRequest(0);
  
@@ -13,31 +16,28 @@ var Prüfung;
          handleRequest(2);
  
      }*/
-    let signin = document.getElementById("signin");
-    let anmelden = document.getElementById("submit");
-    let fertig = document.getElementById("fertig");
-    signin.addEventListener("click", function () {
-        betaetigen();
-        console.log("Eingelogt");
-    });
-    anmelden.addEventListener("click", function () {
+
+    let anmelden: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
+
+    anmelden.addEventListener("click", function (): void {
         betaetigen();
         console.log("Regestriert");
+
     });
-    fertig.addEventListener("click", function () {
-        betaetigen();
-        console.log("Rezept Erstellt");
-    });
-    async function betaetigen() {
-        let formData = new FormData(document.forms[0]);
-        let url = "https://gissose2021heroku.herokuapp.com/";
+
+
+    async function betaetigen(): Promise<void> {
+
+        let formData: FormData = new FormData(document.forms[0]);
+        let url: string = "https://gissose2021heroku.herokuapp.com/";
         // tslint:disable-next-line: no-any
-        let query = new URLSearchParams(formData);
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "?" + query.toString();
-        let response = await fetch(url, { method: "get" });
-        let responseText = await response.text();
+        let response: Response = await fetch(url, { method: "get" });
+        let responseText: string = await response.text();
         console.log(responseText);
         console.log("läuft");
+
     }
     /* if (loginAnswer.error != null) {
          meineRezepte.innerHTML = loginAnswer.error; //wird in DIV ausgegeben
@@ -53,13 +53,13 @@ var Prüfung;
          let query = new URLSearchParams(<any>formData);
  
          if (type == 0) {
-             let url += "/login" + "?" + query.toString();          //Stringumwandlung
-             let response: Response = await fetch(url);  //Wartet auf die URL
+             let url += "/login" + "?" + query.toString();          //Stringumwandlung 
+             let response: Response = await fetch(url);  //Wartet auf die URL 
              let responseText: string = await response.text();
              console.log(responseText);
              let loginAnswer: Login = JSON.parse(responseText); //JSON Okjekt wird erstellt
  
-             //Soll überprüft werden, ob Userdaten richtig eingegeben wurden, falls ja Weiterleitung zu AlleRezepte, falls nein Fehlermeldung
+             //Soll überprüft werden, ob Userdaten richtig eingegeben wurden, falls ja Weiterleitung zu AlleRezepte, falls nein Fehlermeldung 
              if (loginAnswer.error != null) {
                  meineRezepte.innerHTML = loginAnswer.error; //wird in DIV ausgegeben
                  console.log("ALERT: Woops, maybe try another passwort or username!");
@@ -71,8 +71,8 @@ var Prüfung;
          }
  
          else if (type == 1) {
-             url += "/registration" + "?" + query.toString();          //zu string umwandeln
-             let response: Response = await fetch(url);  //auf url warten      //antwort wartet auf die Server url
+             url += "/registration" + "?" + query.toString();          //zu string umwandeln 
+             let response: Response = await fetch(url);  //auf url warten      //antwort wartet auf die Server url 
              let responseText: string = await response.text(); //json okject erstellen
              console.log(responseText);
          }
@@ -84,5 +84,6 @@ var Prüfung;
              console.log("DELETET: User (" + u + ")\nURL: " + url);
              document.getElementById("output").innerHTML += responseText + "\n\n";
          }*/
-})(Prüfung || (Prüfung = {}));
-//# sourceMappingURL=script.js.map
+}
+
+

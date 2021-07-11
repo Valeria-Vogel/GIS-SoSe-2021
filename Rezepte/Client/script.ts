@@ -14,5 +14,7 @@ namespace Prüfung {
     export interface Selection {
         gericht?: Rezepte;
 
+
+
     }
 }

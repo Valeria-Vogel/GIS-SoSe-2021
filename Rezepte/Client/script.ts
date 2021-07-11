@@ -4,18 +4,18 @@ namespace Prüfung {
         message: string;
         error: string;
     }
-   /* async function clickLogin(): Promise<void> {
-        handleRequest(0);
-
-    }
-    async function clickRegistration(): Promise<void> {
-        handleRequest(1);
-    }
-
-    async function clickDelete(): Promise<void> {
-        handleRequest(2);
-
-    }*/
+    /* async function clickLogin(): Promise<void> {
+         handleRequest(0);
+ 
+     }
+     async function clickRegistration(): Promise<void> {
+         handleRequest(1);
+     }
+ 
+     async function clickDelete(): Promise<void> {
+         handleRequest(2);
+ 
+     }*/
 
     let signin: HTMLButtonElement = <HTMLButtonElement>document.getElementById("signin");
     let anmelden: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
@@ -24,18 +24,18 @@ namespace Prüfung {
     signin.addEventListener("click", function (): void {
         betaetigen();
         console.log("Eingelogt");
-        
+
     });
 
     anmelden.addEventListener("click", function (): void {
         betaetigen();
         console.log("Regestriert");
-        
+
     });
     fertig.addEventListener("click", function (): void {
         betaetigen();
         console.log("Rezept Erstellt");
-        
+
     });
 
     async function betaetigen(): Promise<void> {
@@ -44,12 +44,12 @@ namespace Prüfung {
         let url: string = "https://gissose2021heroku.herokuapp.com/";
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        url += "?" + query.toString();  
-        let response: Response = await fetch(url, { method: "get"});
+        url += "?" + query.toString();
+        let response: Response = await fetch(url, { method: "get" });
         let responseText: string = await response.text();
-        console.log(responseText);     
+        console.log(responseText);
         console.log("läuft");
-        
+
     }
     /* if (loginAnswer.error != null) {
          meineRezepte.innerHTML = loginAnswer.error; //wird in DIV ausgegeben

@@ -24,10 +24,6 @@ var Prüfung;
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
-        let response = await fetch(url, { method: "get" });
-        let responseText = await response.text();
-        console.log(responseText);
-        console.log("läuft");
     }
     /* if (loginAnswer.error != null) {
          meineRezepte.innerHTML = loginAnswer.error; //wird in DIV ausgegeben

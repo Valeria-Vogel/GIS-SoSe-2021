@@ -17,11 +17,6 @@ namespace Prüfung {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "?" + query.toString();
-        let response: Response = await fetch(url, { method: "get" });
-        let responseText: string = await response.text();
-        console.log(responseText);
-        console.log("läuft");
-
     }
 }
 

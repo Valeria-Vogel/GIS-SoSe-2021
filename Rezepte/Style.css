@@ -172,19 +172,6 @@ li:hover {
     padding: 50px;
 }
 
-#g1{
-    margin-left: 200px;
-    margin-right: 200px;
-}
-#g2{
-    margin-left: 200px;
-    margin-right: 200px;
-  
-}
-#g3{
-    margin-left: 200px;
-    margin-right: 200px;
-}
 
 #gri1{
 font-size: 20px;
@@ -193,7 +180,7 @@ margin-left: 10px;
 padding-top:350px ;
 padding-right: 210px;
 padding-left: 150px;
-color: darkorchid;
+color:black;
 text-decoration: none;
 display: inline;
 
@@ -208,7 +195,7 @@ display: inline;
     padding-top:350px ;
     padding-right: 200px;
     padding-left: 150px;
-    color: darkorchid;
+    color:black;
     text-decoration: none;
     display: inline;
    
@@ -220,7 +207,7 @@ display: inline;
     padding-top:350px ;
     padding-right: 200px;
     padding-left: 150px;
-    color: darkorchid;
+    color:black;
     text-decoration: none;
     display: inline; 
 
@@ -281,7 +268,7 @@ h4{
     padding-top:350px ;
     padding-right: 210px;
     padding-left: 150px;
-    color: darkorchid;
+    color:black;
     text-decoration: none;
     display: inline;
     
@@ -295,7 +282,7 @@ h4{
     padding-top:350px ;
     padding-right: 200px;
     padding-left: 150px;
-    color: darkorchid;
+    color:black;
     text-decoration: none;
     display: inline;
 
@@ -307,7 +294,7 @@ h4{
     padding-top:350px ;
     padding-right: 200px;
     padding-left: 150px;
-    color: darkorchid;
+    color:black;
     text-decoration: none;
     display: inline; 
  }
@@ -318,7 +305,7 @@ h4{
     padding-top:350px ;
     padding-right: 210px;
     padding-left: 150px;
-    color: darkorchid;
+    color:black;
     text-decoration: none;
     display: inline;
             
@@ -330,7 +317,7 @@ h4{
     padding-top:350px ;
     padding-right: 200px;
     padding-left: 150px;
-    color: darkorchid;
+    color:black;
     text-decoration: none;
     display: inline;
                                
@@ -341,9 +328,10 @@ h4{
     padding-top:350px ;
     padding-right: 200px;
     padding-left: 150px;
-    color: darkorchid;
+    color:black;
     text-decoration: none;
     display: inline; 
+
             
  }
 
@@ -358,6 +346,7 @@ h4{
         height: 200px;
         display: inline;
         padding: 10px;
+        margin-top: 50px;
     }
     #button > ul {
         margin-left: 13%;
@@ -373,6 +362,199 @@ h4{
         width: 600px;
 
     }
+    
+    #gri1{
+        font-size: 20px;
+        margin-left: 125px;
+        margin-top: -475px;
+        padding-top:200px ;
+        padding-right: 100px;
+        padding-left: 50px;
+        color:black;
+        text-decoration: none;
+        display: block;
+        background-color: slateblue ;
+        float:left;
+        
+        
+        
+    }
+        
+    #gri2{
+        
+        font-size: 20px;
+        margin-right: 120px;
+        margin-top: -475px;
+        padding-top:200px ;
+        padding-right: 110px;
+        padding-left: 45px;
+        color:black;
+        text-decoration: none;
+        display: block;
+        background-color: slateblue;
+        float: right;
+           
+            
+    }
+    #gri3{
+        font-size: 20px;
+        margin-left: 250px;
+        margin-top: -200px;
+        padding-top:200px ;
+        padding-right: 110px;
+        padding-left: 50px;
+        color:black;
+        text-decoration: none;
+        display: block; 
+        background-color: slateblue;
+        float: left;
+    }
+    #gri4{
+        font-size: 20px;
+        margin-left: 125px;
+        margin-top: -475px;
+        padding-top:200px ;
+        padding-right: 100px;
+        padding-left: 50px;
+        color:black;
+        text-decoration: none;
+        display: block;
+        background-color: slateblue;
+        float:left;
+        
+        
+        
+    }
+        
+    #gri5{
+        
+        font-size: 20px;
+        margin-right: 120px;
+        margin-top: -475px;
+        padding-top:200px ;
+        padding-right: 110px;
+        padding-left: 45px;
+        color:black;
+        text-decoration: none;
+        display: block;
+        background-color: slateblue;
+        float: right;
+           
+            
+    }
+    #gri6{
+        font-size: 20px;
+        margin-left: 250px;
+        margin-top: -200px;
+        padding-top:200px ;
+        padding-right: 110px;
+        padding-left: 50px;
+        color:black;
+        text-decoration: none;
+        display: block; 
+        background-color: slateblue;
+        float: left;
+    }
+    
+    #gri7{
+        font-size: 20px;
+        margin-left: 125px;
+        margin-top: -475px;
+        padding-top:200px ;
+        padding-right: 100px;
+        padding-left: 50px;
+        color:black;
+        text-decoration: none;
+        display: block;
+        background-color: slateblue;
+        float:left;
+        
+        
+        
+    }
+        
+    #gri8{
+        
+        font-size: 20px;
+        margin-right: 120px;
+        margin-top: -475px;
+        padding-top:200px ;
+        padding-right: 110px;
+        padding-left: 45px;
+        color:black;
+        text-decoration: none;
+        display: block;
+        background-color: slateblue;
+        float: right;
+           
+            
+    }
+    #gri9{
+        font-size: 20px;
+        margin-left: 250px;
+        margin-top: -200px;
+        padding-top:200px ;
+        padding-right: 110px;
+        padding-left: 50px;
+        color:black;
+        text-decoration: none;
+        display: block; 
+        background-color: slateblue;
+        float: left;
+    }
+     
+     
+    .gerRez{
+        width: 250px;
+        height: 200px;
+        float: left;
+    }
+    
+    table{
+        padding: 0px;
+        background-color:lavender;
+        width: 400px; 
+        margin-left: 300px;
+    }
+
+    h4{
+       margin-left: 50px;
+    }
+    #pasZu{
+        float: left;
+        margin-left: 50px;
+        font-size: 20px;
+        font-weight: bolder;
+    }
+    #zuPas{
+        float: left;
+        margin-top: -20px;
+        margin-left: 250px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+        font-weight: bolder;
+    }
+    #zuPas1{
+        float: left;
+        margin-top: -50px;
+        margin-left: 150px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+        font-weight: bolder;
+    }
+    #zuPas2{
+        float: left;
+        margin-top: -50px;
+        margin-left: 250px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+        font-weight: bolder;
+    }
+    
+  
+  
+    
+    
    
 }
 @media screen and (max-width: 765px) {
@@ -412,5 +594,179 @@ h4{
         width: 300px;
 
     }
+    
+    #gri1{
+        font-size: 20px;
+        margin-left: 50px;
+        margin-top: -750px;
+        padding-top:200px ;
+        padding-right: 125px;
+        padding-left: 50px;
+        color:black;
+        text-decoration: none;
+        display: block;
+        background-color: slateblue;
+        float:left;
+        
+    }
+        
+    #gri2{
+        
+        font-size: 20px;
+        margin-left: 50px;
+        margin-top: -480px;
+        padding-top:190px ;
+        padding-right: 125px;
+        padding-left: 90px;
+        color:black;
+        text-decoration: none;
+        display: block;
+        background-color:slateblue;
+        float: left;
+           
+            
+    }
+    #gri3{
+        font-size: 20px;
+        margin-left: 50px;
+        margin-top: -200px;
+        padding-top:200px ;
+        padding-right: 125px;
+        padding-left: 50px;
+        color:black;
+        text-decoration: none;
+        display: block; 
+        background-color:slateblue;
+        float: left;
+    }
+    #gri4{
+        font-size: 20px;
+        margin-left: 50px;
+        margin-top: -750px;
+        padding-top:200px ;
+        padding-right: 125px;
+        padding-left: 50px;
+        color:black;
+        text-decoration: none;
+        display: block;
+        background-color: slateblue;
+        float:left;
+        
+    }
+        
+    #gri5{
+        
+        font-size: 20px;
+        margin-left: 50px;
+        margin-top: -480px;
+        padding-top:190px ;
+        padding-right: 125px;
+        padding-left: 90px;
+        color:black;
+        text-decoration: none;
+        display: block;
+        background-color:slateblue;
+        float: left;
+           
+            
+    }
+    #gri6{
+        font-size: 20px;
+        margin-left: 50px;
+        margin-top: -200px;
+        padding-top:200px ;
+        padding-right: 125px;
+        padding-left: 50px;
+        color:black;
+        text-decoration: none;
+        display: block; 
+        background-color: slateblue;
+        float: left;
+    }
+    #gri7{
+        font-size: 20px;
+        margin-left: 50px;
+        margin-top: -750px;
+        padding-top:200px ;
+        padding-right: 125px;
+        padding-left: 50px;
+        color:black;
+        text-decoration: none;
+        display: block;
+        background-color: slateblue;
+        float:left;
+        
+    }
+        
+    #gri8{
+        
+        font-size: 20px;
+        margin-left: 50px;
+        margin-top: -480px;
+        padding-top:190px ;
+        padding-right: 125px;
+        padding-left: 90px;
+        color:black;
+        text-decoration: none;
+        display: block;
+        background-color: slateblue;
+        float: left;
+           
+            
+    }
+    #gri9{
+        font-size: 20px;
+        margin-left: 50px;
+        margin-top: -200px;
+        padding-top:200px ;
+        padding-right: 125px;
+        padding-left: 50px;
+        color:black;
+        text-decoration: none;
+        display: block; 
+        background-color: slateblue;
+        float: left;
+    }
+    .gerRez{
+        width:100%;
+        height: 225px;
+        float: left;
+    }
+    
+    table{
+        width: 100%; 
+        margin-left: 0px;
+    }
+    #pasZu{
+        float: left;
+        margin-left: 50px;
+        font-size: 20px;
+        font-weight: bolder;
+    }
+    #zuPas{
+        float: left;
+        margin-top: 0px;
+        margin-left: 0px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+        font-weight: bolder;
+    }
+    #zuPas1{
+        float: left;
+        margin-top: 0px;
+        margin-left: 0px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+        font-weight: bolder;
+    }
+    #zuPas2{
+        float: left;
+        margin-top: 0px;
+        margin-left: 0px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+        font-weight: bolder;
+    }
+    
 
 }

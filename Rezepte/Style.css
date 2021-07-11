@@ -62,6 +62,7 @@ li {
     background-color: rgba(78, 75, 75, 0.397);
     
 }
+
 li > a {
     text-decoration: none;
 }
@@ -102,6 +103,10 @@ li:hover {
     font-weight: bolder;
     background-color: rgba(137, 98, 145, 0.397);
     list-style: none;
+    font-size: 20px;
+}
+#button > ul > li:hover {
+    background-color: rgba(70, 24, 81, 0.514);
 }
 
 .formular input[type="text"],
@@ -123,8 +128,16 @@ li:hover {
     padding: 10px 10px;
     border: 2px solid lavender;
 }
-#zutaten{
-    display: line;
+#zusatzZutat input {
+    display: block;
+    padding: 10px 10px;
+    margin-top: 15px;
+    margin-left: 615px;
+    text-align: center;
+    width: 250px;
+    
+    
+
 }
 
 .formular textarea {
@@ -158,6 +171,95 @@ li:hover {
     display: inline;
     padding: 50px;
 }
+
+#g1{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+#g2{
+    margin-left: 200px;
+    margin-right: 200px;
+  
+}
+#g3{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#gri1{
+font-size: 20px;
+
+margin-left: 25px;
+padding-top:350px ;
+padding-right: 150px;
+padding-left: 150px;
+color: darkorchid;
+text-decoration: none;
+display: inline;
+
+
+}
+
+#gri2{
+    font-size: 20px;
+  
+    margin-left: 90px;
+    padding-top:350px ;
+    padding-right: 150px;
+    padding-left: 150px;
+    color: darkorchid;
+    text-decoration: none;
+    display: inline; 
+    
+    }
+#gri3{
+    font-size: 20px;
+    margin-left: 100px;
+    padding-top:350px ;
+    padding-right: 150px;
+    padding-left: 150px;
+    color: darkorchid;
+    text-decoration: none;
+    display: inline; 
+   
+    }
+.gerRez{
+    width: 350px;
+    height: 300px;
+    float: left;
+}
+
+table{
+    padding: 0px;
+    background-color:lavender;
+    width: 600px; 
+    margin-left: 500px;
+}
+th, td{
+    border: 1px solid black;
+    padding: 15px;
+}
+h4{
+   text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    text-shadow: lightskyblue 2px 3px 2px;
+}
+#pasZu{
+    float: left;
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+#zuPas{
+    float: left;
+    margin-left: 450px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+
 @media screen and (max-width: 1023px){
     body{
         display: block;

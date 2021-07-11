@@ -1,9 +1,5 @@
 namespace Prüfung {
 
-    export interface Login {
-        message: string;
-        error: string;
-    }
 
     let fertig: HTMLButtonElement = <HTMLButtonElement>document.getElementById("fertig");
 
@@ -25,6 +21,13 @@ namespace Prüfung {
         console.log(responseText);
         console.log("läuft");
 
+    }
+
+    document.getElementById("plusZutat").addEventListener("click", Zutat);
+    function Zutat(): void {
+        let plusZutaten: HTMLInputElement = document.createElement("input");
+        let gegeben: HTMLElement = document.getElementById("zusatzZutat");
+        gegeben.appendChild(plusZutaten);
     }
 
 }

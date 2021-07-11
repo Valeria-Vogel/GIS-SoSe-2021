@@ -17,5 +17,11 @@ var Prüfung;
         console.log(responseText);
         console.log("läuft");
     }
+    document.getElementById("plusZutat").addEventListener("click", Zutat);
+    function Zutat() {
+        let plusZutaten = document.createElement("input");
+        let gegeben = document.getElementById("zusatzZutat");
+        gegeben.appendChild(plusZutaten);
+    }
 })(Prüfung || (Prüfung = {}));
 //# sourceMappingURL=rezeptEr.js.map

@@ -189,13 +189,14 @@ li:hover {
 #gri1{
 font-size: 20px;
 
-margin-left: 25px;
+margin-left: 10px;
 padding-top:350px ;
-padding-right: 150px;
+padding-right: 210px;
 padding-left: 150px;
 color: darkorchid;
 text-decoration: none;
 display: inline;
+
 
 
 }
@@ -205,23 +206,24 @@ display: inline;
   
     margin-left: 90px;
     padding-top:350px ;
-    padding-right: 150px;
+    padding-right: 200px;
     padding-left: 150px;
     color: darkorchid;
     text-decoration: none;
-    display: inline; 
+    display: inline;
+   
     
     }
 #gri3{
     font-size: 20px;
     margin-left: 100px;
     padding-top:350px ;
-    padding-right: 150px;
+    padding-right: 200px;
     padding-left: 150px;
     color: darkorchid;
     text-decoration: none;
     display: inline; 
-   
+
     }
 .gerRez{
     width: 350px;
@@ -258,6 +260,92 @@ h4{
     font-size: 15px;
     font-weight: bolder;
 }
+#zuPas1{
+    float: left;
+    margin-left: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: bolder;
+}
+#zuPas2{
+    float: left;
+    margin-left: 350px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: bolder;
+}
+#gri4{
+    font-size: 20px;
+    
+    margin-left: 10px;
+    padding-top:350px ;
+    padding-right: 210px;
+    padding-left: 150px;
+    color: darkorchid;
+    text-decoration: none;
+    display: inline;
+    
+    
+    
+    }
+#gri5{
+    font-size: 20px;
+
+    margin-left: 90px;
+    padding-top:350px ;
+    padding-right: 200px;
+    padding-left: 150px;
+    color: darkorchid;
+    text-decoration: none;
+    display: inline;
+
+
+}
+#gri6{
+    font-size: 20px;
+    margin-left: 100px;
+    padding-top:350px ;
+    padding-right: 200px;
+    padding-left: 150px;
+    color: darkorchid;
+    text-decoration: none;
+    display: inline; 
+ }
+
+#gri7{
+    font-size: 20px;           
+    margin-left: 10px;
+    padding-top:350px ;
+    padding-right: 210px;
+    padding-left: 150px;
+    color: darkorchid;
+    text-decoration: none;
+    display: inline;
+            
+}
+            
+#gri8{
+    font-size: 20px;
+    margin-left: 90px;
+    padding-top:350px ;
+    padding-right: 200px;
+    padding-left: 150px;
+    color: darkorchid;
+    text-decoration: none;
+    display: inline;
+                               
+ }
+#gri9{
+    font-size: 20px;
+    margin-left: 100px;
+    padding-top:350px ;
+    padding-right: 200px;
+    padding-left: 150px;
+    color: darkorchid;
+    text-decoration: none;
+    display: inline; 
+            
+ }
 
 
 @media screen and (max-width: 1023px){

@@ -17,7 +17,7 @@ namespace Prüfung {
 
     }*/
 
-    let signin: HTMLButtonElement = <HTMLButtonElement>document.getElementById("signIn");
+    let signin: HTMLButtonElement = <HTMLButtonElement>document.getElementById("signin");
     let anmelden: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submit");
     let fertig: HTMLButtonElement = <HTMLButtonElement>document.getElementById("fertig");
 

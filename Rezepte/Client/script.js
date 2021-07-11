@@ -13,7 +13,7 @@ var Prüfung;
          handleRequest(2);
  
      }*/
-    let signin = document.getElementById("signIn");
+    let signin = document.getElementById("signin");
     let anmelden = document.getElementById("submit");
     let fertig = document.getElementById("fertig");
     signin.addEventListener("click", function () {
